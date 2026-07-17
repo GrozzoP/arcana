@@ -20,7 +20,7 @@ Una lista simplemente enlazada funciona como una cadena: cada elemento está lig
 - El último nodo apunta a `null`
 
 ### Representación
-![](lista%20enlazada.svg)
+![](../../attachments/grimorio/data-structures/lista-enlazada.svg)
 
 La imagen muestra una lista de tres nodos enlazados. Cada nodo está dividido en dos secciones: la parte izquierda contiene un valor o dato, y la parte derecha contiene un puntero que apunta al siguiente nodo. El último nodo tiene su puntero apuntando a null, indicando el final de la lista. Un puntero externo llamado head señala al primer nodo desde la izquierda, marcando la entrada a la estructura.
 
@@ -40,12 +40,19 @@ La imagen muestra una lista de tres nodos enlazados. Cada nodo está dividido en
 - `insertarFinal`: $O(n)$
 - `eliminar`: $O(n)$
 - `buscar`: $O(n)$
+- `recorrer`: $O(n)$
 - Espacio: $O(n)$
 > **Nota:** La complejidad de inserciones al inicio y final se invierten si el puntero va a tail
+
 ### Detalles operativos
 - Puede haber overflow (solo si se agota la memoria del sistema)
 - Puede haber underflow (al intentar borrar o leer en una lista vacía)
 - No permite búsqueda eficiente ni acceso directo, ya que es $O(n)$
+- La función  `insertarOrdenado(x)` asume que la lista se encuentra ordenada.
+
+### Casos a considerar
+- Cuando se borra un elemento de una lista con un unico nodo, se borra donde se encuentra el `head`. Se debe modificar el `head` a lo que corresponda (otro nodo o `null`).
+- Si hay varios nodos con el mismo dato, tanto `buscar(x)` como `eliminar(x)` solo actuan sobre la primera aparición. Si se desea eliminar todas las ocurrencias, hay que iterar explícitamente en vez de retornar en la primera coincidencia
 
 ## 3. Implementación
 
@@ -74,6 +81,18 @@ class Lista:
         nuevo.sig = self.head
         self.head = nuevo
 
+    def insertar_ordenado(self, x):
+        nuevo = Nodo(x)
+        if self.head is None or self.head.dato >= x:
+            nuevo.sig = self.head
+            self.head = nuevo
+            return
+        actual = self.head
+        while actual.sig and actual.sig.dato < x:
+            actual = actual.sig
+        nuevo.sig = actual.sig
+        actual.sig = nuevo
+    
     def insertar_final(self, x):
         nuevo = Nodo(x)
         if self.head is None:
@@ -96,6 +115,14 @@ class Lista:
                 return
             anterior = actual
             actual = actual.sig
+
+    def buscar(self, x):
+        actual = self.head
+        while actual:
+            if actual.dato == x:
+                return actual
+            actual = actual.sig
+        return None
 
     def recorrer(self):
         actual = self.head
