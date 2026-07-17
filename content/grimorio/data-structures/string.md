@@ -7,6 +7,7 @@ alias:
   - cadena
   - cadena de caracteres
 ---
+
 ## 1. Qué es y cómo funciona
 
 ### Intuición
@@ -98,16 +99,16 @@ Aunque lo más común es un array, también existen otras implementaciones:
 ### Operaciones principales
 
 1. **Access / Indexing (Acceso)**
-   **Función**: Obtiene el carácter en la posición i mediante acceso directo por índice.
+   **Función:** Obtiene el carácter en la posición i mediante acceso directo por índice.
 
 2. **Insert / Delete (Inserción y Borrado)**
-   **Función**: Agrega o elimina un carácter en cualquier posición, requiriendo desplazar elementos.
+   **Función:** Agrega o elimina un carácter en cualquier posición, requiriendo desplazar elementos.
 
 3. **Concatenation (Concatenación)**
-   **Función**: Une dos strings, generando un nuevo bloque de memoria con ambos contenidos.
+   **Función:** Une dos strings, generando un nuevo bloque de memoria con ambos contenidos.
 
 4. **Find / Search (Búsqueda)**
-   **Función**: Localiza una subcadena dentro de un texto; puede optimizarse con algoritmos como KMP.
+   **Función:** Localiza una subcadena dentro de un texto; puede optimizarse con algoritmos como KMP.
 
 5. **Length / Size (Tamaño)**
    **Función:** Devuelve la cantidad de caracteres almacenados.
@@ -116,7 +117,7 @@ Aunque lo más común es un array, también existen otras implementaciones:
    **Función:** Compara dos strings carácter a carácter.
 
 7. **Transformation (ToUpper / ToLower)**
-   **Función**: Convierte los caracteres recorriendo la cadena.
+   **Función:** Convierte los caracteres recorriendo la cadena.
 
 8. **Append (Añadir al final)**
    **Función:** Agrega contenido al final; en strings inmutables implica copia, en buffers evita este costo.
@@ -126,22 +127,23 @@ Aunque lo más común es un array, también existen otras implementaciones:
 
 ### Complejidad
 
-| Operación       | Tiempo (peor caso)                       | Complejidad Espacial |
-| --------------- | ---------------------------------------- | -------------------- |
-| Access          | O(1)                                     | O(1)                 |
-| Insert / Delete | O(n)                                     | O(n)                 |
-| Append          | O(n) inmutable / O(1) amortizado mutable | O(n)                 |
-| Concat          | O(n + m)                                 | O(n + m)             |
-| Find            | O(n*m) naive / O(n+m) KMP                | O(1)                 |
-| Compare         | O(n)                                     | O(1)                 |
-| Length          | O(1) ASCII / O(n) UTF-8 sin índice       | O(1)                 |
-| Slice           | O(k)                                     | O(k)                 |
+| Operación       | Tiempo (peor caso)                       | Complejidad Espacial          |
+| --------------- | ---------------------------------------- | ------------------------------|
+| Access          | O(1) ASCII / O(n) UTF-8 sin índice       | O(1)                          |
+| Insert / Delete | O(n)                                     | O(n)                          |
+| Concat          | O(n + m)                                 | O(n + m)                      |
+| Find            | O(n\*m) naive / O(n+m) KMP               | O(1) naive / O(m) KMP         |
+| Length          | O(1) ASCII / O(n) UTF-8 sin índice       | O(1)                          |
+| Compare         | O(n)                                     | O(1)                          |
+| Transform       | O(n)                                     | O(n) inmutable / O(1) mutable |
+| Append          | O(n) inmutable / O(1) amortizado mutable | O(n)                          |
+| Slice           | O(k)                                     | O(k)                          |
 
 ### Detalles operativos
 
 - **Encoding (UTF-8 vs ASCII):** En ASCII el acceso es siempre O(1). En UTF-8, debido a que los caracteres tienen ancho variable (1 a 4 bytes), el acceso y el cálculo de longitud pueden degradarse a O(n) si el lenguaje no utiliza índices adicionales.
 
-- **Data Locality (Localidad de datos):** Gracias a la contigüidad, los strings aprovechan la memoria caché de la CPU. Esto hace que, en la práctica, un recorrido O(n) sea extremadamente más veloz que en estructuras no contiguas como las listas enlazadas.
+- **Data Locality (Localidad de datos):** Gracias a la contigüidad, los strings aprovechan la memoria caché de la CPU. Esto hace que, en la práctica, un recorrido O(n) sea mucho más veloz que en estructuras no contiguas como las listas enlazadas.
 
 - **Inmutabilidad y memoria:** Cualquier modificación implica una copia O(n); concatenar en un bucle acumula ese costo hasta O(n²). Los buffers dinámicos lo evitan, aunque al reasignar pueden duplicar temporalmente el uso de memoria.
 
@@ -207,7 +209,7 @@ for _ in range(5):
 print(buffer.getvalue())
 ```
 
-Se usa un buffer para acumular caracteres sin crear nuevos strings en cada paso, reduciendo el costo a O(n)
+Se usa un buffer para acumular caracteres sin crear nuevos strings en cada paso, reduciendo el costo a O(n).
 
 ---
 
@@ -251,7 +253,7 @@ Alternativas: buffers mutables (StringBuilder), arrays de caracteres o estructur
 
 ### Ventajas / desventajas
 
-**Ventajas / desventajas:** El string estándar es la opción más simple y segura: acceso O(1), thread-safe por inmutabilidad y compatible universalmente. Su principal costo es que cualquier modificación implica una copia O(n), lo que lo hace inferior a StringBuilder para escritura intensiva, a los arrays de caracteres para control de bajo nivel, y a los Ropes para textos muy grandes.
+El string estándar es la opción más simple y segura: acceso O(1), thread-safe por inmutabilidad y compatible universalmente. Su principal costo es que cualquier modificación implica una copia O(n), lo que lo hace inferior a StringBuilder para escritura intensiva, a los arrays de caracteres para control de bajo nivel, y a los Ropes para textos muy grandes.
 
 ### Señales de reconocimiento
 
@@ -278,7 +280,7 @@ Su inmutabilidad los convierte en claves ideales para hash tables: el hash se ca
 
 ### Notas avanzadas
 
-- **Persistencia y Concurrencia:** la inmutabilidad del string estándar lo hace inherentemente seguro para hilos (thread-safe), permitiendo que múltiples procesos accedan a la misma instancia sin riesgo de modificación o corrupción de datos.
+- **Persistencia y Concurrencia:** la inmutabilidad del string estándar lo hace inherentemente seguro para hilos (thread-safe), permitiendo que múltiples hilos accedan a la misma instancia sin riesgo de modificación o corrupción de datos.
 
 - **Deduplicación de memoria (String Interning):** entornos como la JVM o .NET mantienen un pool de strings, donde valores iguales pueden compartir la misma referencia en memoria, optimizando el uso de recursos.
 
@@ -289,4 +291,4 @@ Su inmutabilidad los convierte en claves ideales para hash tables: el hash se ca
 - [FreeCodeCamp - Strings](https://www.freecodecamp.org)
 - [Harper College - Data Structures](http://www.harpercollege.edu/bus-ss/cis/166/mmckenzi/contents.htm)
 - [Better String Library](http://bstring.sourceforge.net)
-- [Princeton CS217 - String Assignment](http://www.cs.princeton.edu/courses/archive/spring02/cs217/asgts/ish/ish.html)
+- [Princeton CS217 - String Assignment](http://www.cs.princeton.edu/courses/archive/spring02/cs217/asgts/mystring/mystring.html)
