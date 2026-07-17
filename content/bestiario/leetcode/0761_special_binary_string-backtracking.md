@@ -4,7 +4,7 @@ tags:
   - b/leetcode
 ---
 
-← Volver a la [[LeetCode761_Special_Binary_String|descripción del problema]]
+← Volver a la [[0761_special_binary_string|descripción del problema]]
 
 ## Técnicas utilizadas
 

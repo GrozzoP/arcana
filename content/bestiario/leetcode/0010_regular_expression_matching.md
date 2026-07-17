@@ -88,5 +88,5 @@ Otro problema que se presenta al usar `*` es que puede aparecer por múltiples c
 
 ## Soluciones disponibles
 - [[0010_regular_expression_matching-backtracking]]
-- [[0010_regular_expression_matching-PD_top_down]]
-- [[0010_regular_expression_matching-PD_buttom_up]]
+- [[0010_regular_expression_matching-pd-top-down]]
+- [[0010_regular_expression_matching-pd-bottom-up]]

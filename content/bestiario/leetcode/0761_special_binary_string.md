@@ -111,5 +111,5 @@ Para abordar este problema, es fundamental:
 
 ## Soluciones disponibles
 
-- [[LeetCode761_Special_Binary_String-Backtracking]]
-- [[LeetCode761_Special_Binary_String-RecursivoGreedy]]
+- [[0761_special_binary_string-backtracking]]
+- [[0761_special_binary_string-recursivo-greedy]]

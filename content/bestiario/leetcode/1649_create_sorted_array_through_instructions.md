@@ -87,5 +87,5 @@ Una alternativa que no requiere estructuras de datos adicionales es usar **Merge
 
 ## Soluciones disponibles
 
-- [[1649_create_sorted_array_through_instructions_fuerza-bruta]]
-- [[1649_create_sorted_array_through_instructions_division-y-conquista]]
+- [[1649_create_sorted_array_through_instructions-fuerza-bruta]]
+- [[1649_create_sorted_array_through_instructions-division-y-conquista]]

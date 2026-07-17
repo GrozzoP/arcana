@@ -98,7 +98,7 @@ parten de entender primero esa relación entre base y capacidad total.
 ## Soluciones disponibles
 
 - [[1739_building_boxes-greedy]]
-- [[1739_building_boxes-division_y_conquista]]
+- [[1739_building_boxes-division-y-conquista]]
 
 ---
 

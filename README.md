@@ -13,6 +13,11 @@ El proyecto es mantenido por la cátedra y sus alumnos: es un documento vivo que
 
 - Formato recomendado: agregá un nuevo archivo en la carpeta `content/` siguiendo la estructura del proyecto (mirá `content/about.md` como ejemplo). Si tu aporte incluye imágenes, adjuntalas en `content/attachments/`.
 
+- **Convención de nombres en `content/bestiario/leetcode/`:**
+  - Enunciado base: `NNNN_titulo_en_snake_case.md`, donde `NNNN` es el número del problema en LeetCode con cero a la izquierda hasta 4 dígitos, y el título va en minúsculas con guion bajo entre palabras.
+  - Solución: `NNNN_titulo_en_snake_case-tecnica.md`, agregando un guion y un slug de técnica en kebab-case. Reutilizá los slugs ya existentes en vez de inventar uno nuevo: `fuerza-bruta`, `backtracking`, `greedy`, `programacion-dinamica`, `pd-top-down`, `pd-bottom-up`, `division-y-conquista`, `branch-and-bound`, `bfs-fuerza-bruta`, `recursivo-greedy`.
+  - No incluyas "leetcode"/"LeetCode" en el nombre del archivo: ya está en la carpeta contenedora y en el tag `b/leetcode`.
+
 - **Revisión:** los PRs serán revisados por el equipo docente y por ayudantes; se valora la corrección, claridad y el esfuerzo por documentar supuestos y límites.
 
 ### Cómo empezar

@@ -89,6 +89,6 @@ En ambos enfoques, la regla de no repetir alturas se maneja igual: recordando la
 
 ## Soluciones disponibles
 
-- [[LeetCode218_The_Skyline_Problem-Fuerza-Bruta]]
-- [[LeetCode218_The_Skyline_Problem-DyC]]
+- [[0218_the_skyline_problem-fuerza-bruta]]
+- [[0218_the_skyline_problem-division-y-conquista]]
 
