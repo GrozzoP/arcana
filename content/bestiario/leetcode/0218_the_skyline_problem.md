@@ -1,5 +1,5 @@
 ---
-title: Leetcode0218 - The Skyline Problem
+title: LeetCode0218 - The Skyline Problem
 tags:
   - b/leetcode
 ---

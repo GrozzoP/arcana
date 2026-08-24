@@ -11,7 +11,7 @@ El problema se modela como un grafo dirigido donde cada nodo es un estado defini
 
 Para que la búsqueda por fuerza bruta sea (masomenos) viable, se aplican dos optimizaciones:
 
-- **Memorización de estados visitados:** Se descartan los estados `(posición, velocidad)` que ya fueron procesados, guardados en un [Set](../../grimorio/data-structures/set.md).
+- **Memorización de estados visitados:** Se descartan los estados `(posición, velocidad)` que ya fueron procesados, guardados en un [Set](set.md).
 - **Poda direccional:** Solo se aplica la reversa (`R`) si el próximo movimiento `A` nos pasa de largo del objetivo. Es decir, si nos adelantamos `target` yendo hacia adelante (velocidad positiva), o si nos alejamos más yendo hacia atrás (velocidad negativa).
 - **Poda exceso:** En el caso de que la posición exceda o iguale el doble del target $(pos >= 2*Target)$ , se sabe que no va a ser una solución óptima, entonces lo cortamos.
 - **Poda negativa:** También se comprobó que en una solución óptima, la posición jamás será negativa. Sabiendo esto se agrega un chequeo de $pos >= 0$ como condición de poda.

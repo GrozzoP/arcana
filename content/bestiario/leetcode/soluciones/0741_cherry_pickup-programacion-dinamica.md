@@ -1,11 +1,11 @@
 ---
-title: Leetcode0741 - Cherry Pickup - Programación Dinámica
+title: LeetCode0741 - Cherry Pickup - Programación Dinámica
 tags:
   - b/leetcode
 alias:
 ---
 
-> Solución para el problema [Cherry Pickup (LeetCode #741)](0741_cherry_pickup.md).
+> Solución para el problema [Cherry Pickup (LeetCode741)](0741_cherry_pickup.md).
 
 ### Técnicas utilizadas
 
@@ -28,7 +28,7 @@ Su producto da `N × N × N = N^3` combinaciones posibles. La cuarta coordenada,
 
 La PD ataca el desperdicio de la fuerza bruta, que visita esos mismos `O(N^3)` estados una cantidad **exponencial** de veces porque cada `(r1, c1, r2)` se alcanza por múltiples combinaciones de movimientos previos. La **primera** vez que se resuelve un estado, su resultado se guarda en una tabla de memoización (un [[diccionario]] indexado por `(r1, c1, r2)`); las veces siguientes se devuelve el valor cacheado en `O(1)`. Así, cada estado se computa **una única vez**, transformando el costo de exponencial a polinómico sin alterar el resultado.
 
-![Subproblemas superpuestos y memoización](../../attachments/cherry_pickup_subproblemas.svg)
+![Subproblemas superpuestos y memoización](cherry_pickup_subproblemas.svg)
 
 ### La recurrencia
 
@@ -117,7 +117,7 @@ Sobre la misma instancia (`N = 3`, respuesta `5`). La rama óptima es la misma q
 
 Las dos últimas filas muestran el ahorro: estados que la fuerza bruta volvería a expandir por completo, la PD los resuelve consultando la tabla. El valor final propagado a `(0,0,0)` es `5`, y `max(0, 5) = 5`.
 
-![Grilla original y tabla de memoización](../../attachments/cherry_pickup_tabla_pd.svg)
+![Grilla original y tabla de memoización](cherry_pickup_tabla_pd.svg)
 
 Al igual que en los problemas de tabla 2D vistos en clase, la tabla se llena desde los casos base hacia el objetivo; la diferencia es que acá se indexa por la **terna** `(r1, c1, r2)` y no por una matriz, porque el estado tiene tres coordenadas libres. La celda `(0,0,0)` es la que contiene la respuesta del problema.
 

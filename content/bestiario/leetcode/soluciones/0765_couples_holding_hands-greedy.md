@@ -1,5 +1,5 @@
 ---
-title: Leetcode0765 - Couples Holding Hands - Greedy
+title: LeetCode0765 - Couples Holding Hands - Greedy
 tags:
   - b/leetcode
 ---
@@ -19,7 +19,7 @@ La estrategia greedy se basa en las siguientes propiedades del problema:
 
 - **Subestructura óptima:** una vez que una pareja queda correctamente ubicada, el resto de la fila conserva la misma estructura del problema original, pero con una pareja menos por acomodar. Por lo tanto, resolver óptimamente el problema restante junto con las decisiones ya tomadas produce una solución óptima global.
 
-> Para conocer rápidamente la posición actual de cada persona, se mantiene un [map](../../grimorio/data-structures/map) donde la clave es la persona y el valor es su posición en la fila.
+> Para conocer rápidamente la posición actual de cada persona, se mantiene un [map](map.md) donde la clave es la persona y el valor es su posición en la fila.
 
 ## Código
 

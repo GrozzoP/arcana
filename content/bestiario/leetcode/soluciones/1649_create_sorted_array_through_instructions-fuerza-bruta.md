@@ -1,5 +1,5 @@
 ---
-title: '1649 - Create Sorted Array through Instructions - Fuerza Bruta'
+title: 'LeetCode1649 - Create Sorted Array through Instructions - Fuerza Bruta'
 tags:
   - 'leetcode'
   - 'brute force'

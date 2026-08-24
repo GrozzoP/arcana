@@ -1,5 +1,5 @@
 ---
-title: 'LeetCode #0420 - Strong Password Checker'
+title: 'LeetCode0420 - Strong Password Checker'
 tags: ['b/leetcode']
 ---
 ## Nombre y enunciado

@@ -1,5 +1,5 @@
 ---
-title: Leetcode1739 - Building Boxes
+title: LeetCode1739 - Building Boxes
 tags: ['b/leetcode']
 ---
 

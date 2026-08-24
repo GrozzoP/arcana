@@ -1,5 +1,5 @@
 ---
-title: 'LeetCode #0420 - Strong Password Checker - Programación Dinámica'
+title: 'LeetCode0420 - Strong Password Checker - Programación Dinámica'
 tags: ['b/leetcode']
 ---
 
@@ -202,4 +202,4 @@ La solución por Programación Dinámica es ligeramente más costosa en memoria,
 
 ## Referencias
 * **GeeksforGeeks.** [Dynamic Programming](https://www.geeksforgeeks.org/dynamic-programming/). Artículo detallado sobre los principios y aplicaciones de la programación dinámica.
-* **Diccionario de memoria (Memoization):** Referencia interna a la estructura [Map](../../grimorio/data-structures/map.md) utilizada para evitar el recálculo del árbol de decisiones.
+* **Diccionario de memoria (Memoization):** Referencia interna a la estructura [Map](map.md) utilizada para evitar el recálculo del árbol de decisiones.

@@ -1,5 +1,5 @@
 ---
-title: Leetcode0741 - Cherry Pickup
+title: LeetCode0741 - Cherry Pickup
 tags:
   - b/leetcode
 alias:
@@ -24,7 +24,7 @@ Lo que vuelve al problema interesante es que **no se puede resolver optimizando 
 
 La observación clave que destraba el problema es de **simetría**: un viaje de ida `(0,0) → (N-1,N-1)` seguido de uno de vuelta `(N-1,N-1) → (0,0)` es equivalente a **dos recolectores que parten simultáneamente** de `(0,0)` y avanzan, ambos, hacia `(N-1,N-1)` usando sólo movimientos abajo/derecha. Un camino recorrido "al revés" tiene exactamente la misma forma que uno recorrido "hacia adelante". Esta reformulación es lo que permite razonar sobre ambos recorridos a la vez.
 
-![Reformulación: dos recolectores simultáneos](../../attachments/cherry_pickup_dos_recolectores.svg)
+![Reformulación: dos recolectores simultáneos](cherry_pickup_dos_recolectores.svg)
 
 ### Definición formal
 
@@ -42,7 +42,7 @@ grid = [[ 0,  1, -1],
         [ 1,  1,  1]]
 ```
 
-![Grilla de ejemplo 3×3 con cerezas y espinas](../../attachments/cherry_pickup_grid.svg)
+![Grilla de ejemplo 3×3 con cerezas y espinas](cherry_pickup_grid.svg)
 
 El tablero tiene `5` cerezas (en `(0,1)`, `(1,0)`, `(2,0)`, `(2,1)`, `(2,2)`) y dos espinas que bloquean toda la columna derecha superior.
 
@@ -53,7 +53,7 @@ Pensándolo como **dos recolectores simultáneos**:
 
 Total: `5` cerezas. Es el máximo posible, ya que entre ambos recogen **todas** las cerezas del tablero.
 
-![Caminos óptimos que recogen las 5 cerezas](../../attachments/cherry_pickup_caminos_optimos.svg)
+![Caminos óptimos que recogen las 5 cerezas](cherry_pickup_caminos_optimos.svg)
 
 **Respuesta esperada: `5`.**
 
@@ -64,7 +64,7 @@ Total: `5` cerezas. Es el máximo posible, ya que entre ambos recogen **todas** 
 3. Notar que ambos recolectores dan **la misma cantidad de pasos** en todo momento: tras `t` pasos, un recolector en la fila `r` está en la columna `t - r`. Esto reduce el estado de cuatro coordenadas `(r1, c1, r2, c2)` a sólo **tres** `(r1, c1, r2)`, porque `c2 = r1 + c1 - r2`.
 4. Plantear la recursión sobre ese estado y, recién después, atacar el costo agregando memoización.
 
-![Reducción del estado de 4 a 3 coordenadas](../../attachments/cherry_pickup_estado.svg)
+![Reducción del estado de 4 a 3 coordenadas](cherry_pickup_estado.svg)
 
 ### Soluciones disponibles
 

@@ -1,5 +1,5 @@
 ---
-title: Leetcode0218 - The Skyline Problem - Fuerza Bruta
+title: LeetCode0218 - The Skyline Problem - Fuerza Bruta
 tags:
   - b/leetcode
 ---

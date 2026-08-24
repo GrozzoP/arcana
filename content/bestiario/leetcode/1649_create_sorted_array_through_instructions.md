@@ -1,5 +1,5 @@
 ---
-title: 1649 - Create Sorted Array through Instructions
+title: LeetCode1649 - Create Sorted Array through Instructions
 tags:
   - leetcode
   - merge sort

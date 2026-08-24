@@ -1,11 +1,11 @@
 ---
-title: Leetcode0741 - Cherry Pickup - Fuerza Bruta
+title: LeetCode0741 - Cherry Pickup - Fuerza Bruta
 tags:
   - b/leetcode
 alias:
 ---
 
-> Solución para el problema [Cherry Pickup (LeetCode #741)](0741_cherry_pickup.md).
+> Solución para el problema [Cherry Pickup (LeetCode741)](0741_cherry_pickup.md).
 
 ### Técnicas utilizadas
 
@@ -20,7 +20,7 @@ Como tras `t` pasos un recolector en la fila `r` está forzosamente en la column
 
 En cada paso, cada recolector elige entre **abajo** o **derecha**: `2 × 2 = 4` combinaciones. La fuerza bruta consiste en **probar las cuatro** en cada nivel de la recursión y conservar la que maximiza las cerezas, sin ninguna poda ni reaprovechamiento de cálculos. Se suma `grid[r1][c1]`, y `grid[r2][c2]` sólo si los recolectores están en celdas distintas (para no contar dos veces la misma cereza).
 
-![Las 4 transiciones posibles en cada paso](../../attachments/cherry_pickup_movimientos.svg)
+![Las 4 transiciones posibles en cada paso](cherry_pickup_movimientos.svg)
 
 ### Código
 

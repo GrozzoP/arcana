@@ -1,5 +1,5 @@
 ---
-title: Leetcode0765 - Couples Holding Hands - Fuerza Bruta
+title: LeetCode0765 - Couples Holding Hands - Fuerza Bruta
 tags:
   - b/leetcode
 ---
@@ -9,7 +9,7 @@ Búsqueda por fuerza bruta sobre el espacio de estados utilizando **BFS**: se ex
 
 La búsqueda se realiza por niveles, donde cada nivel representa una cantidad fija de swaps realizados. Por lo tanto, la primera configuración válida encontrada corresponde a la menor cantidad de intercambios necesarios.
 
-> Para evitar explorar repetidamente la misma configuración, se utiliza un [set](../../grimorio/data-structures/set) que almacena los estados ya visitados.
+> Para evitar explorar repetidamente la misma configuración, se utiliza un [set](set.md) que almacena los estados ya visitados.
 
 ## Idea de la solución
 
@@ -82,7 +82,7 @@ Resultado: 1
 
 ### Temporal
 
-Sea $m = 2n$ la longitud del arreglo, donde $n$ es la cantidad de parejas. El algoritmo explora por niveles las distintas configuraciones posibles de la fila. Para evitar recorrer indefinidamente los mismos estados, cada configuración visitada se almacena en un [conjunto](../../grimorio/data-structures/set) y no vuelve a explorarse.
+Sea $m = 2n$ la longitud del arreglo, donde $n$ es la cantidad de parejas. El algoritmo explora por niveles las distintas configuraciones posibles de la fila. Para evitar recorrer indefinidamente los mismos estados, cada configuración visitada se almacena en un [conjunto](set.md) y no vuelve a explorarse.
 
 En el peor caso pueden visitarse hasta $m!$ configuraciones distintas, ya que cada una corresponde a una permutación de las personas en la fila. Desde cada estado pueden intentarse hasta $\binom{m}{2}=O(m^2)$ intercambios posibles.
 

@@ -1,5 +1,5 @@
 ---
-title: Leetcode0765 - Couples Holding Hands
+title: LeetCode0765 - Couples Holding Hands
 tags:
   - b/leetcode
 ---

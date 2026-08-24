@@ -1,5 +1,5 @@
 ---
-title: LeetCode#0174 - Dungeon Game - Programación Dinámica - Top-down
+title: LeetCode0174 - Dungeon Game - Programación Dinámica - Top-down
 tags:
   - b/leetcode
 ---

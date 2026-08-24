@@ -1,5 +1,5 @@
 ---
-title: '1649 - Create Sorted Array through Instructions - División y Conquista'
+title: 'LeetCode1649 - Create Sorted Array through Instructions - División y Conquista'
 tags:
   - 'leetcode'
   - 'divide & conquer'
@@ -146,4 +146,4 @@ La fuerza bruta mantiene `nums` explícitamente e inserta cada elemento contando
 ## Referencias
 
 - Cormen et al., *Introduction to Algorithms* (CLRS) — Sección 2.3 (Merge Sort) y Problema 2-4 (conteo de inversiones).
-- [LeetCode #315 - Count of Smaller Numbers After Self](https://leetcode.com/problems/count-of-smaller-numbers-after-self/)
+- [LeetCode315 - Count of Smaller Numbers After Self](https://leetcode.com/problems/count-of-smaller-numbers-after-self/)

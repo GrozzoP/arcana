@@ -1,5 +1,5 @@
 ---
-title: Leetcode0010 - Regular Expression Matching
+title: LeetCode0010 - Regular Expression Matching
 tags:
   - b/leetcode
 ---

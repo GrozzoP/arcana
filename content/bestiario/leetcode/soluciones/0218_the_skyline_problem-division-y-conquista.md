@@ -1,5 +1,5 @@
 ---
-title: Leetcode0218 - The Skyline Problem - División y Conquista
+title: LeetCode0218 - The Skyline Problem - División y Conquista
 tags:
   - b/leetcode
 ---

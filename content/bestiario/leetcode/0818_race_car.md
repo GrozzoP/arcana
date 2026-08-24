@@ -70,5 +70,5 @@ Finalmente para buscar una solución eficiente, se debe buscar la relación de r
 
 ## Soluciones disponibles
 
-- [0818_race_car-bfs-fuerza-bruta](./0818_race_car-bfs-fuerza-bruta.md)
-- [0818_race_car-programacion-dinamica](./0818_race_car-programacion-dinamica.md)
+- [0818_race_car-bfs-fuerza-bruta](0818_race_car-bfs-fuerza-bruta.md)
+- [0818_race_car-programacion-dinamica](0818_race_car-programacion-dinamica.md)

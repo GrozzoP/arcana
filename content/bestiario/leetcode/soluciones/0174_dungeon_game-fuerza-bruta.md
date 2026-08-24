@@ -1,5 +1,5 @@
 ---
-title: LeetCode#0174 - Dungeon Game - Fuerza Bruta
+title: LeetCode0174 - Dungeon Game - Fuerza Bruta
 tags:
   - b/leetcode
 ---

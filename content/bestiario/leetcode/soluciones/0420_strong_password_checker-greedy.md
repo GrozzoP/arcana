@@ -1,5 +1,5 @@
 ---
-title: 'LeetCode #0420 - Strong Password Checker - Greedy'
+title: 'LeetCode0420 - Strong Password Checker - Greedy'
 tags: ['b/leetcode']
 ---
 

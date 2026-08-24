@@ -18,7 +18,7 @@ La aplicación de la técnica se estructura en las siguientes partes:
 2. **Transiciones (Descomposición del problema):** Si `target` no es una de las posiciones representadas por el caso base, entonces estará entre uno contenido entre dos valores: $2^{k-1} - 1 < t < 2^k - 1$. Desde estos puntos, se procede a evaluar todas las decisiones óptimas posibles para reducir la distancia. Para ello, se utilizan dos estrategias:
    - **Pasarse y retroceder:** Aceleramos `k` veces hasta pasarnos del objetivo, ponemos reversa y nos queda una nueva distancia absoluta por recorrer hacia atrás. Se reduce el problema a Costo = `k` + 1 + `resolver`($2^k - 1$ - `target`)
    - **Quedarse corto y tomar envión:** Aceleramos `k-1` veces, frenando antes del objetivo. Esto implica poner reversa, y luego acelerar `i` veces en dirección contraria $(0 ≤ i < {k-1})$ y volvemos a poner reversa para apuntar al objetivo. Esto genera una nueva distancia restante y se reduce el problema a: Costo = (`k` - 1) + 1 + `i` + 1 + `resolver(nuevaDistancia)`
-3. **Memoización y solapamiento de subproblemas:** Dado que las estrategias calculan distancias absolutas restantes, el árbol de recursividad pedirá resolver las mismas distancias múltiples veces por diferentes caminos (por ejemplo, si se tiene `target = 10`, entonces `resolver(3)` puede surgir tanto pasandose y retrocediendo como quedándose corto y tomando envión). Para agilizar estos cálculos, se almacena el costo mínimo calculado para cada distancia en un [Diccionario](../../grimorio/data-structures/map.md). Antes de evaluar las transiciones para un `target` consultamos si esa distancia ya fue resuelta, retornamos el valor en tiempo `O(1)`, evitando que el árbol de decisiones crezca de forma exponencial.
+3. **Memoización y solapamiento de subproblemas:** Dado que las estrategias calculan distancias absolutas restantes, el árbol de recursividad pedirá resolver las mismas distancias múltiples veces por diferentes caminos (por ejemplo, si se tiene `target = 10`, entonces `resolver(3)` puede surgir tanto pasandose y retrocediendo como quedándose corto y tomando envión). Para agilizar estos cálculos, se almacena el costo mínimo calculado para cada distancia en un [Diccionario](map.md). Antes de evaluar las transiciones para un `target` consultamos si esa distancia ya fue resuelta, retornamos el valor en tiempo `O(1)`, evitando que el árbol de decisiones crezca de forma exponencial.
 
 
 ### Código
@@ -65,7 +65,7 @@ def _resolver(target: int, map: dict) -> int:
 
 ### Traza de ejemplo
 
-![](../../attachments/bestiario/leetcode/arbol-top-down.svg)
+![](arbol-top-down.svg)
 La imagen ilustra el árbol de recursividad generado al ejecutar el algoritmo para `target = 6`.
 
 **Explicación del árbol de recursividad:**
@@ -113,7 +113,7 @@ $O(T)$ está dado por la pila de llamadas recursivas y el tamaño del `map` para
 ---
 
 ## Programación dinámica - Bottom-up
-En este caso, se procede a rellenar un [Vector](../../grimorio/data-structures/array.md) de estados. Las ecuaciones para calcular las posibles posiciones de referencia es la misma, pero se cambia la dirección del flujo de la resolución. Aquí se resuelven los subproblemas de menor a mayor.
+En este caso, se procede a rellenar un [Vector](array.md) de estados. Las ecuaciones para calcular las posibles posiciones de referencia es la misma, pero se cambia la dirección del flujo de la resolución. Aquí se resuelven los subproblemas de menor a mayor.
 
 ### Idea de la solución
 La aplicación de la técnica se estructura en las siguientes partes:
@@ -249,4 +249,4 @@ Aunque ambos enfoques de DP son superiores a BFS en promedio, en el peor caso to
 A diferencia de [BFS](0818_race_car-bfs-fuerza-bruta.md) que explora paso a paso el árbol de posibilidades teniendo en cuenta posición y velocidad, la programación dinámica reduce el problema a solo la distancia absoluta. Esto permite que se reemplace la "simulación" con saltos matemáticos directos entre posiciones de referencia. Como resultado, la técnica de programación dinámica es superior en espacio ($O(T)$ frente a $O(T\log{T})$ de BFS) y en promedio mejor en velocidad. Como dificultad, la lógica matemática que plantea el problema es más difícil de deducir que en BFS.
 
 ## Referencias
-[Ejemplo Leetcode 494 explicado](https://www.youtube.com/watch?v=g0npyaQtAQM&list=PLot-Xpze53lcvx_tjrr_m2lgD2NsRHlNO)
+[Ejemplo LeetCode 494 explicado](https://www.youtube.com/watch?v=g0npyaQtAQM&list=PLot-Xpze53lcvx_tjrr_m2lgD2NsRHlNO)

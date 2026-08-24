@@ -1,5 +1,5 @@
 ---
-title: LeetCode#0174 - Dungeon Game
+title: LeetCode0174 - Dungeon Game
 tags:
   - b/leetcode
 ---

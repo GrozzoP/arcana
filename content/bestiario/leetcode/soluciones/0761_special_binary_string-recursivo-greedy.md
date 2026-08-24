@@ -153,7 +153,7 @@ Evaluemos la función con la entrada del archivo de descripción: $S = \text{"11
 
 ## Referencias
 
-- Leetcode Discussion: *Explain with Parentheses analog*
+- LeetCode Discussion: *Explain with Parentheses analog*
 - *Algoritmos Greedy y su optimalidad en problemas de ordenamiento*. Corvalán, A.
 - [Secuencias de Parentesis Balanceados y Caminos de Dyck](https://en.wikipedia.org/wiki/Dyck_path)
 - [[string#2. Operaciones y complejidad|Operaciones elementales sobre Cadenas (Strings)]]
