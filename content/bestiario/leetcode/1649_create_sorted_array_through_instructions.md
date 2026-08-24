@@ -1,7 +1,7 @@
 ---
 title: LeetCode1649 - Create Sorted Array through Instructions
 tags:
-  - leetcode
+  - b/leetcode
   - merge sort
   - divide and conquer
 ---

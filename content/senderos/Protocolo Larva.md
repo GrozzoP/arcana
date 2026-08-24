@@ -1,3 +1,9 @@
+---
+tags:
+  - hub
+  - sendero
+---
+
 **Temática:** Recursividad · Relaciones de Recurrencia · Teorema Maestro
 
 ## Contexto
