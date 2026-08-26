@@ -3,7 +3,6 @@ title: String
 tags:
   - data-structures
 alias:
-  - string
   - cadena
   - cadena de caracteres
 ---
@@ -274,9 +273,9 @@ El string estándar es la opción más simple y segura: acceso O(1), thread-safe
 
 ### Relación con otras estructuras
 
-El string se apoya conceptualmente en el array: es un array especializado de caracteres.
+El string se apoya conceptualmente en el [[array]]: es un array especializado de caracteres.
 
-Su inmutabilidad los convierte en claves ideales para hash tables: el hash se calcula una sola vez y se cachea.
+Su inmutabilidad los convierte en claves ideales para la [[hash table]]: el hash se calcula una sola vez y se cachea.
 
 ### Notas avanzadas
 

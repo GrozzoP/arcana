@@ -1,7 +1,8 @@
 ---
 title: LeetCode0010 - Regular Expression Matching
 tags:
-  - b/leetcode
+  - leetcode
+  - bestia
 ---
 ## Nombre y enunciado
 

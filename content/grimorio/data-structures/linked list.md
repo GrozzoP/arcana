@@ -3,9 +3,10 @@ title: Linked List
 tags:
   - data-structures
 alias:
-  - linked list
   - lista enlazada
   - lista simple
+  - lista simplemente enlazada
+  - singly linked list
 ---
 
 ## 1. Qué es y cómo funciona
@@ -180,14 +181,15 @@ lista.recorrer()  # 1, 2, 3
 
 ### Variantes
 - Lista con puntero a tail
-- Lista doblemente enlazada
+- [[doubly linked list]]
 - Lista circular
 - Lista desordenada vs. lista ordenada
 
 ### Relación con otras estructuras
-- Las pilas y colas son básicamente listas simples con políticas de inserción y eliminación limitadas (LIFO y FIFO respectivamente). 
+- El [[stack]] y las colas son básicamente listas simples con políticas de inserción y eliminación limitadas (LIFO y FIFO respectivamente). 
 - Es la base para implementar árboles ya que se trata a los hijos de un nodo como una lista enlazada. 
-- Funciona como una solución para resolver colisiones en una tabla hash utilizando encadenamiento (chaining). 
+- Funciona como una solución para resolver colisiones en una [[hash table]] utilizando encadenamiento (chaining). 
+- Cada nodo se modela como un [[struct]] que agrupa el dato y el puntero al siguiente.
 
 ### Notas avanzadas
 

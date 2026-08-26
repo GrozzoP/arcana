@@ -3,8 +3,9 @@ title: Deque
 tags:
   - data-structures
 alias:
-  - Deque
   - Double-ended queue
+  - cola doble
+  - cola de doble extremo
 ---
 ## 1. Qué es y cómo funciona
 ### Intuición
@@ -200,9 +201,9 @@ print("La palabra: "+palabra+" "+ "si es un palindromo"if palindromo else "no es
 
 
 ### Relación con otras estructuras
-- Es una generalización de Pila y Cola.
-- Se puede implementar sobre una lista doblemente enlazada.
-- Se puede implementar sobre un array circular.
+- Es una generalización de [[stack]] y de cola.
+- Se puede implementar sobre una [[doubly linked list]].
+- Se puede implementar sobre un [[dynamic array]] circular.
 
 
 ### Notas avanzadas

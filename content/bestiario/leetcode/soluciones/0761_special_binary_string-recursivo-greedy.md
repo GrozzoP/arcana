@@ -1,7 +1,8 @@
 ---
 title: LeetCode0761 - Special Binary String - División y Conquista + Greedy
 tags:
-  - b/leetcode
+  - leetcode
+  - solucion
 ---
 
 ← Volver a la [[0761_special_binary_string|descripción del problema]]

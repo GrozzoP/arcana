@@ -1,7 +1,8 @@
 ---
 title: LeetCode0761 - Special Binary String
 tags:
-  - b/leetcode
+  - leetcode
+  - bestia
 ---
 
 ## Nombre y enunciado

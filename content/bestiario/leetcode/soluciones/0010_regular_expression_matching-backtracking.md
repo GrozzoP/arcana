@@ -1,7 +1,8 @@
 ---
 title: LeetCode0010 - Regular Expression Matching - Backtracking
 tags:
-  - b/leetcode
+  - leetcode
+  - solucion
 ---
 ## Técnicas utilizadas
 Búsqueda de coincidencias exhaustivas mediante **backtracking**. Vamos a realizar lookahead (echar un vistazo) desde el carácter actual al carácter siguiente para decidir si es necesario ramificar la ambigüedad que plantea el carácter \*
@@ -77,7 +78,7 @@ Buscamos la solución para
 
 
 ### Gráfico
-![Gráfico de traza en excalidraw](árbol_de_llamadas-backtracking.svg)
+![Gráfico de traza en excalidraw](../../../attachments/bestiario/leetcode/árbol_de_llamadas-backtracking.svg)
 
 ## Complejidad
 
@@ -89,7 +90,7 @@ La primera ramificación ocurre ignorando `x*`. Esta, a su vez, realiza ambas ra
 Una vez que la primera ramificación retorna, si retornó falso, se ejecutará la segunda rama. Es así como las llamadas crecen exponencialmente en base 2.
 
 ### Espacial
-$O(m + n)$ es la complejidad espacial, lo que corresponde a la cantidad de llamadas que ocurren y se almacenan en el [stack](stack.md) a lo sumo $n + m$ veces. Esto se ve cuando el patrón coincide con la cadena, ya que si se consumió todo el patrón, la cadena tiene que estar completamente consumida para retornar verdadero.
+$O(m + n)$ es la complejidad espacial, lo que corresponde a la cantidad de llamadas que ocurren y se almacenan en el [[stack]] a lo sumo $n + m$ veces. Esto se ve cuando el patrón coincide con la cadena, ya que si se consumió todo el patrón, la cadena tiene que estar completamente consumida para retornar verdadero.
 
 ## Cuándo usar esta técnica
 ### Favorable cuando

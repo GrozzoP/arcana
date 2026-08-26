@@ -3,8 +3,9 @@ title: Array
 tags:
   - data-structures
 alias:
-  - array
   - arreglo
+  - static array
+  - arreglo estático
 ---
 ## 1. Qué es y cómo funciona
 
@@ -175,7 +176,7 @@ Además, las listas enlazadas utilizan memoria dinámica, lo que les permite aju
 
 ### Relación con otras estructuras
 
-El array es base para matrices, listas dinámicas, heaps binarios (representados implícitamente en arrays mediante índices), stacks, queues (implementables sobre arrays) y tablas hash. También aparece como soporte en algoritmos de ordenamiento y búsqueda.
+El array es base para matrices, [[dynamic array]], heaps binarios (representados implícitamente en arrays mediante índices), [[stack]], queues (implementables sobre arrays) y [[hash table]]. También aparece como soporte en algoritmos de ordenamiento y búsqueda.
 
 ### Notas avanzadas
 

@@ -1,7 +1,8 @@
 ---
 title: LeetCode0761 - Special Binary String - Fuerza Bruta (Backtracking)
 tags:
-  - b/leetcode
+  - leetcode
+  - solucion
 ---
 
 ← Volver a la [[0761_special_binary_string|descripción del problema]]

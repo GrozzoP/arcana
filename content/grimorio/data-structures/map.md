@@ -3,11 +3,12 @@ title: Map
 tags:
   - data-structures
 alias:
-  - map
   - dictionary
   - mapa
   - diccionario
   - hashmap
+  - associative array
+  - arreglo asociativo
 ---
 ## 1. Qué es y cómo funciona
 
@@ -228,7 +229,7 @@ No conviene usarlo cuando:
 | Array            | Menor uso de memoria y acceso por índice real               | Buscar por contenido cuesta O(n)                |
 | Lista enlazada   | Inserciones simples y flexibles                             | Búsqueda lineal O(n)                            |
 | Árbol balanceado | Mantiene elementos ordenados y permite recorrerlos en orden | Más complejo de implementar como TDA base       |
-| Set              | Ideal cuando solo importa saber si una clave existe         | No almacena valores asociados                   |
+| [[set]]          | Ideal cuando solo importa saber si una clave existe         | No almacena valores asociados                   |
 
 ### Ventajas / Desventajas
 
@@ -257,13 +258,14 @@ Hay varias pistas en un problema que sugieren que un Map puede ser la estructura
 
 ### Variantes
 
-- Existen múltiples formas de implementar mapas según las necesidades: los basados en tablas hash priorizan velocidad de acceso promedio constante; los basados en árboles balanceados mantienen un orden en las claves; y otros como los Linked Maps preservan el orden de inserción. Estas variantes representan distintos compromisos entre eficiencia, orden y uso de memoria.
+- Existen múltiples formas de implementar mapas según las necesidades: los basados en [[hash table]] priorizan velocidad de acceso promedio constante; los basados en árboles balanceados mantienen un orden en las claves; y otros como los Linked Maps preservan el orden de inserción. Estas variantes representan distintos compromisos entre eficiencia, orden y uso de memoria.
 
 ### Relación con otras estructuras
 
 - Respecto a su relación con otras estructuras, los mapas dependen conceptualmente de:
-  - Arrays, como base para almacenar datos (especialmente en hashing).
-  - Listas enlazadas, usadas en manejo de colisiones.
+  - [[hash table]], la implementación más común para lograr acceso promedio O(1).
+  - [[array]], como base para almacenar datos (especialmente en hashing).
+  - [[linked list]], usadas en manejo de colisiones.
   - Árboles, para mantener orden y garantizar complejidad logarítmica.
 
 Esto los convierte en una especie de “estructura compuesta”, que reutiliza ideas de otras más básicas.

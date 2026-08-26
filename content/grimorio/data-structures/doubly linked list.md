@@ -4,7 +4,8 @@ tags:
   - data-structures
 alias:
   - lista doble
-  - doubly linked list
+  - lista doblemente enlazada
+  - DLL
 ---
 ## 1. Qué es y cómo funciona
 
@@ -254,10 +255,10 @@ Una lista doblemente enlazada suele ser adecuada cuando el problema menciona:
 
 ### Relación con otras estructuras
 
-- **Lista simplemente enlazada**: es su antecesora conceptual. La lista doble agrega navegación hacia atrás.
+- **[[linked list]]**: es su antecesora conceptual. La lista doble agrega navegación hacia atrás.
 - **Grafos**: las listas enlazadas se usan frecuentemente para representar listas de adyacencia.
-- **Deque**: puede implementarse naturalmente con una lista doblemente enlazada.
-- **Tabla hash + lista doble**: combinación típica para implementar una caché LRU eficiente.
+- **[[deque]]**: puede implementarse naturalmente con una lista doblemente enlazada.
+- **[[hash table]] + lista doble**: combinación típica para implementar una caché LRU eficiente.
 
 ### Notas avanzadas
 

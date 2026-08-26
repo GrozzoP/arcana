@@ -1,3 +1,7 @@
+---
+title: La Fisura se Abre
+---
+
 El Devorador mutó. En esta nueva forma, cada avatar que domina una región de `n` dimensiones:
 
 1. Traza primero un **sello de contención** sobre toda la región (costo lineal en `n`), para evitar que el Archivo detecte la fisura antes de tiempo.

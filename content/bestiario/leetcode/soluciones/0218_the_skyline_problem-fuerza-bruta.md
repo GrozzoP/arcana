@@ -1,9 +1,9 @@
 ---
 title: LeetCode0218 - The Skyline Problem - Fuerza Bruta
 tags:
-  - b/leetcode
+  - leetcode
+  - solucion
 ---
-
 ## Técnicas utilizadas
 Búsqueda por fuerza bruta: se explora exhaustivamente el espacio de edificios sin aplicar poda ni aprovechar subestructura óptima, confiando en revisar todas las combinaciones posibles en lugar de en una estrategia más fina. En esta solución, para cada edificio se lo compara contra todos los demás para decidir si sus dos puntos característicos —la esquina superior izquierda `(ini, alt)` y el punto de su pared derecha `(fin, altura_resultante)`— forman parte del contorno final.
 

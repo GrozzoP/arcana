@@ -1,6 +1,6 @@
 ---
 title: 'ACM138 - Street Numbers'
-tags: ['b/acm']
+tags: ['acm', 'bestia']
 ---
 
 ## Nombre y enunciado

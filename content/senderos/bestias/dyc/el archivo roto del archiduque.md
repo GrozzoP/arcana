@@ -1,7 +1,7 @@
 ---
 title: El Archivo Roto del Archiduque
 tags:
-  - b/dyc
+  - dyc
 ---
 El Archiduque Vorn custodia el Gran Archivo: una lista de n pergaminos ordenados por fecha. Un aprendiz los mezcló y ahora están en desorden. El Archiduque necesita reordenarlos, pero el archivo es enorme y los métodos simples de los escribas son demasiado lentos. Un antiguo grimorio describe un método llamado Merge Sort: *"divide la pila en dos, ordena cada mitad, y luego combínalas"*. El aprendiz copió el código... pero dejó tres partes sin terminar.
 

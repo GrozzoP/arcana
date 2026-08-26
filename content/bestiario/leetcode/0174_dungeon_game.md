@@ -1,7 +1,8 @@
 ---
 title: LeetCode0174 - Dungeon Game
 tags:
-  - b/leetcode
+  - leetcode
+  - bestia
 ---
 ## Nombre y enunciado
 

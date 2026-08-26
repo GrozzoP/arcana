@@ -1,8 +1,7 @@
 ---
 title: LeetCode1739 - Building Boxes
-tags: ['b/leetcode']
+tags: ['leetcode', 'bestia']
 ---
-
 ## Nombre y enunciado
 
 [LeetCode 1739 - Building Boxes](https://leetcode.com/problems/building-boxes/)

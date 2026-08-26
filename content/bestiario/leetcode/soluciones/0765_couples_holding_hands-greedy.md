@@ -1,7 +1,8 @@
 ---
 title: LeetCode0765 - Couples Holding Hands - Greedy
 tags:
-  - b/leetcode
+  - leetcode
+  - solucion
 ---
 ## Técnicas utilizadas
 
@@ -19,7 +20,7 @@ La estrategia greedy se basa en las siguientes propiedades del problema:
 
 - **Subestructura óptima:** una vez que una pareja queda correctamente ubicada, el resto de la fila conserva la misma estructura del problema original, pero con una pareja menos por acomodar. Por lo tanto, resolver óptimamente el problema restante junto con las decisiones ya tomadas produce una solución óptima global.
 
-> Para conocer rápidamente la posición actual de cada persona, se mantiene un [map](map.md) donde la clave es la persona y el valor es su posición en la fila.
+> Para conocer rápidamente la posición actual de cada persona, se mantiene un [[map]] donde la clave es la persona y el valor es su posición en la fila.
 
 ## Código
 
@@ -94,9 +95,9 @@ $O(m)$ porque se almacena un diccionario con la posición actual de cada persona
 
 ## Comparación con las otras soluciones
 
-Frente a [fuerza bruta](0765_couples_holding_hands-fuerza-bruta.md), greedy evita por completo la exploración de combinaciones posibles de swaps: en lugar de probar alternativas, corrige cada banco en el momento y avanza. Esto reduce la complejidad de factorial a lineal.
+Frente a [[0765_couples_holding_hands-fuerza-bruta]], greedy evita por completo la exploración de combinaciones posibles de swaps: en lugar de probar alternativas, corrige cada banco en el momento y avanza. Esto reduce la complejidad de factorial a lineal.
 
-Frente a [branch and bound](0765_couples_holding_hands-branch-and-bound.md), la ventaja también es clara: branch and bound todavía necesita explorar un árbol de búsqueda y mantener una mejor solución parcial, mientras que greedy no explora ramas ni requiere podas, porque cada intercambio local ya forma parte de una solución óptima.
+Frente a [[0765_couples_holding_hands-branch-and-bound]], la ventaja también es clara: branch and bound todavía necesita explorar un árbol de búsqueda y mantener una mejor solución parcial, mientras que greedy no explora ramas ni requiere podas, porque cada intercambio local ya forma parte de una solución óptima.
 
 ## Referencias
 

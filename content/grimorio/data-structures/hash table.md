@@ -3,8 +3,9 @@ title: Hash Table
 tags:
   - data-structures
 alias:
-  - hash table
   - tabla hash
+  - hashmap
+  - tabla de dispersión
 ---
 ## 1. Qué es y cómo funciona
 
@@ -264,17 +265,17 @@ Más flexible, pero usa más memoria
 - Evitar clustering primario/secundario
 
 ### Relaciones con Otras Estructuras
-**Base del tipo abstracto “diccionario” (mapa)**: Generaliza la idea de asociar claves con valores, similar a estructuras como mapas ordenados, pero optimizada para acceso directo en lugar de orden.
+**Base del tipo abstracto “diccionario” ([[map]])**: Generaliza la idea de asociar claves con valores, similar a estructuras como mapas ordenados, pero optimizada para acceso directo en lugar de orden.
 
 **Alternativa a árboles de búsqueda (como BST o árboles balanceados)**: Mientras los árboles mantienen los datos ordenados con complejidad O(log n), la hash table prioriza velocidad O(1) promedio sacrificando el orden.
 
-**Usada en conjuntos (sets)**: Implementa estructuras donde solo interesa la pertenencia de elementos (sin valores asociados), reutilizando el mecanismo de hashing.
+**Usada en el [[set]]**: Implementa estructuras donde solo interesa la pertenencia de elementos (sin valores asociados), reutilizando el mecanismo de hashing.
 
 **Base de índices y cachés**: Se utiliza para acceso rápido en sistemas como cachés, tablas de símbolos en compiladores y bases de datos (indexación por clave).
 
 **Puede combinarse con otras estructuras**: Por ejemplo:
- - Hash table + lista enlazada (encadenamiento)
- - Hash table + arrays dinámicos (implementaciones modernas como en Python)
+ - Hash table + [[linked list]] (encadenamiento)
+ - Hash table + [[dynamic array]] (implementaciones modernas como en Python)
 
 **No adecuada para datos ordenados o recorridos secuenciales eficientes**: Si se requiere mantener orden o hacer búsquedas por rango, estructuras como árboles balanceados son más apropiadas.
 

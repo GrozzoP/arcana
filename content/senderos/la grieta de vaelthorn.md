@@ -2,6 +2,7 @@
 tags:
   - hub
   - sendero
+title: La Grieta de Vaelthorn
 ---
 **Temática:** Recursividad · Relaciones de Recurrencia · Teorema Maestro
 
@@ -10,15 +11,15 @@ Sos la guardiana del Archivo Arcano de Vaelthorn. Hace siglos se selló entre su
 
 ---
 
-![[Primer Presagio]]
+![[primer presagio]]
 
 ---
 
-![[La Fisura se Abre]]
+![[la fisura se abre]]
 
 ---
 
-![[El Despertar]]
+![[el despertar]]
 
 ---
 

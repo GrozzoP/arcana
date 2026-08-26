@@ -1,3 +1,7 @@
+---
+title: Primer Presagio
+---
+
 Los primeros informes describen la forma más débil del Devorador: avanza por una cadena de `n` dimensiones, una por vez. En cada dimensión deja un eco de sí mismo y recién después cruza a la siguiente.
 
 ```

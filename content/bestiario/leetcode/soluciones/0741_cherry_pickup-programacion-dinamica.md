@@ -1,16 +1,17 @@
 ---
 title: LeetCode0741 - Cherry Pickup - Programación Dinámica
 tags:
-  - b/leetcode
+  - leetcode
+  - solucion
 alias:
 ---
 
-> Solución para el problema [Cherry Pickup (LeetCode741)](0741_cherry_pickup.md).
+> Solución para el problema [[0741_cherry_pickup]].
 
 ### Técnicas utilizadas
 
 - **Programación Dinámica (PD):** se descompone el problema en subproblemas que se **solapan**, se resuelve cada uno **una sola vez** y se guarda su resultado para reutilizarlo. Es aplicable porque el problema tiene **subestructura óptima** (la mejor solución global se arma con las mejores soluciones de sus subproblemas) y **subproblemas superpuestos** (el mismo estado se alcanza por muchos caminos).
-- **Memoización (PD *top-down*):** se conserva la recursión natural de la [fuerza bruta](0741_cherry_pickup-fuerza-bruta.md) y se la envuelve con un cache: antes de computar un estado se consulta si ya fue resuelto.
+- **Memoización (PD *top-down*):** se conserva la recursión natural de la [[0741_cherry_pickup-fuerza-bruta]] y se la envuelve con un cache: antes de computar un estado se consulta si ya fue resuelto.
 
 ### Idea de la solución
 
@@ -22,11 +23,11 @@ La recursión de los **dos recolectores** ya identifica el estado mínimo: `(r1,
 - `c1` ∈ {0 … N-1} → `N` valores
 - `r2` ∈ {0 … N-1} → `N` valores
 
-Su producto da `N × N × N = N^3` combinaciones posibles. La cuarta coordenada, `c2`, **no cuenta**: no es libre, queda determinada por las otras tres (`c2 = r1 + c1 - r2`). Ésa es justamente la ganancia de la [reducción de estado](0741_cherry_pickup.md): si el estado fuera `(r1, c1, r2, c2)` habría `O(N^4)` estados y la tabla —y el tiempo— crecerían un orden más.
+Su producto da `N × N × N = N^3` combinaciones posibles. La cuarta coordenada, `c2`, **no cuenta**: no es libre, queda determinada por las otras tres (`c2 = r1 + c1 - r2`). Ésa es justamente la ganancia de la [[0741_cherry_pickup]]: si el estado fuera `(r1, c1, r2, c2)` habría `O(N^4)` estados y la tabla —y el tiempo— crecerían un orden más.
 
 `N^3` es una **cota superior**: muchas de esas ternas son inalcanzables (por ejemplo, las que dan `c2` fuera de la grilla, o `r2 > r1 + c1`). Pero como sólo buscamos el orden de crecimiento, alcanza con acotar: los estados **realmente visitados** son a lo sumo `N^3`, y eso ya es polinómico.
 
-La PD ataca el desperdicio de la fuerza bruta, que visita esos mismos `O(N^3)` estados una cantidad **exponencial** de veces porque cada `(r1, c1, r2)` se alcanza por múltiples combinaciones de movimientos previos. La **primera** vez que se resuelve un estado, su resultado se guarda en una tabla de memoización (un [[diccionario]] indexado por `(r1, c1, r2)`); las veces siguientes se devuelve el valor cacheado en `O(1)`. Así, cada estado se computa **una única vez**, transformando el costo de exponencial a polinómico sin alterar el resultado.
+La PD ataca el desperdicio de la fuerza bruta, que visita esos mismos `O(N^3)` estados una cantidad **exponencial** de veces porque cada `(r1, c1, r2)` se alcanza por múltiples combinaciones de movimientos previos. La **primera** vez que se resuelve un estado, su resultado se guarda en una tabla de memoización (un [[map]] indexado por `(r1, c1, r2)`); las veces siguientes se devuelve el valor cacheado en `O(1)`. Así, cada estado se computa **una única vez**, transformando el costo de exponencial a polinómico sin alterar el resultado.
 
 ![Subproblemas superpuestos y memoización](cherry_pickup_subproblemas.svg)
 
@@ -97,7 +98,7 @@ def cherry_pickup(grid):
     return max(0, explorar(0, 0, 0))
 ```
 
-La **recursión** (el caso base, las 4 transiciones y el `max`) es la misma que la de la [fuerza bruta](0741_cherry_pickup-fuerza-bruta.md): no cambia *qué* se calcula ni el resultado. Pero el **cuerpo no es idéntico**: la PD agrega dos operaciones que la fuerza bruta no tiene —la **consulta** a la memoria antes de computar (paso 3) y la **escritura** del resultado antes de retornar (paso 4)—. Esas dos líneas son exactamente lo que convierte el algoritmo de inviable a eficiente: sin ellas no hay reutilización de subproblemas y no hay PD.
+La **recursión** (el caso base, las 4 transiciones y el `max`) es la misma que la de la [[0741_cherry_pickup-fuerza-bruta]]: no cambia *qué* se calcula ni el resultado. Pero el **cuerpo no es idéntico**: la PD agrega dos operaciones que la fuerza bruta no tiene —la **consulta** a la memoria antes de computar (paso 3) y la **escritura** del resultado antes de retornar (paso 4)—. Esas dos líneas son exactamente lo que convierte el algoritmo de inviable a eficiente: sin ellas no hay reutilización de subproblemas y no hay PD.
 
 > En Python, el decorador `@lru_cache(maxsize=None)` sobre `explorar` produce el mismo efecto escondiendo los pasos 1–4 en una sola línea. Lo escribimos con el diccionario a la vista porque el mecanismo —y no el azúcar sintáctico— es el que explica el cambio de complejidad.
 
@@ -144,7 +145,7 @@ La PD es la elección indicada cuando se reconocen las **dos señales** que aqu�
 
 Sus **limitaciones**: paga memoria por velocidad (aquí $O(N^3)$, que para `N` muy grande podría ser un problema), y requiere que el estado sea **acotado y bien identificado** —si los estados casi no se repiten, la memoización no ayuda y sólo agrega overhead.
 
-Comparada con la [Fuerza Bruta](0741_cherry_pickup-fuerza-bruta.md), es **estrictamente superior para este problema**: explora **la misma recursión** y llega al mismo resultado, pero al agregarle la memoria pasa de $O(4^{2N})$ a $O(N^3)$ en tiempo, a cambio de subir de $O(N)$ a $O(N^3)$ en memoria. El intercambio es claramente favorable: la memoria crece de forma polinómica mientras que el tiempo que se ahorra era exponencial. La fuerza bruta sólo conviene como referencia conceptual o como oráculo de testing en instancias diminutas; **para resolver el problema de verdad, se usa la PD**.
+Comparada con la [[0741_cherry_pickup-fuerza-bruta]], es **estrictamente superior para este problema**: explora **la misma recursión** y llega al mismo resultado, pero al agregarle la memoria pasa de $O(4^{2N})$ a $O(N^3)$ en tiempo, a cambio de subir de $O(N)$ a $O(N^3)$ en memoria. El intercambio es claramente favorable: la memoria crece de forma polinómica mientras que el tiempo que se ahorra era exponencial. La fuerza bruta sólo conviene como referencia conceptual o como oráculo de testing en instancias diminutas; **para resolver el problema de verdad, se usa la PD**.
 
 > Variante: esta versión es *top-down* (memoización). Existe una formulación *bottom-up* equivalente que llena una tabla 3D iterando `t = 0 … 2(N-1)`, con la misma complejidad `O(N^3)` y la ventaja de evitar el límite de profundidad de recursión.
 

@@ -1,9 +1,10 @@
 ---
 title: LeetCode1649 - Create Sorted Array through Instructions
 tags:
-  - b/leetcode
-  - merge sort
-  - divide and conquer
+  - leetcode
+  - bestia
+  - merge-sort
+  - division-y-conquista
 ---
 
 ## Nombre y enunciado

@@ -3,8 +3,8 @@ title: Set
 tags:
   - data-structures
 alias:
-  - set
   - conjunto
+  - hashset
 ---
 ## 1. Qué es y cómo funciona
 
@@ -34,7 +34,7 @@ De esta definición se sacan las siguientes propiedades:
 
 #### HashSet (tabla hash)
 
-Python implementa su `set` con una **tabla hash de direccionamiento abierto**. Internamente es un array de `m` slots indexados por `h(x) = hash(x) % m`. Cuando hay colisiones, Python resuelve mediante *probing perturbado*. El factor de carga se mantiene por debajo de ≈ 0.60; al superarlo, la tabla se redimensiona al doble y todos los elementos se reinsertan (*rehash*).
+Python implementa su `set` sobre una [[hash table]] de direccionamiento abierto. Internamente es un array de `m` slots indexados por `h(x) = hash(x) % m`. Cuando hay colisiones, Python resuelve mediante *probing perturbado*. El factor de carga se mantiene por debajo de ≈ 0.60; al superarlo, la tabla se redimensiona al doble y todos los elementos se reinsertan (*rehash*).
 
 **Diagrama de una tabla hash con 8 slots:**
 
@@ -48,7 +48,7 @@ Python no incluye un `TreeSet` en su librería estándar; `sortedcontainers.Sort
 
 **Diagrama de un árbol binario de búsqueda balanceado:**
 
-![](/attachments/grimorio/data-structures/.svg)
+![](/attachments/grimorio/data-structures/treeSet.svg)
 
 
 ---
@@ -202,7 +202,7 @@ print("Intersección:", a.interseccion(b))  # ['mundo']
 |---|:---:|:---:|:---:|---|
 | **Set** | ✗ | ✗ | O(1) | Unicidad y velocidad de búsqueda |
 | **Lista** | ✓ | ✓ | O(n) | Orden y acceso por índice importan |
-| **Diccionario (Map)** | ✗ (claves) | ✗ | O(1) | Necesitás asociar datos a cada clave |
+| **Diccionario ([[map]])** | ✗ (claves) | ✗ | O(1) | Necesitás asociar datos a cada clave |
 
 > Un `set` es técnicamente un diccionario donde solo importan las claves y no los valores.
 
@@ -252,8 +252,10 @@ Considerá usar un `Set` cuando el problema presente alguna de estas caracterís
 
 ### Relación con otras estructuras
 
+- **[[hash table]]:** la implementación estándar de `Set` (`HashSet`) reutiliza directamente el mecanismo de hashing para lograr membership testing en O(1).
+- **[[map]]:** un `Set` es conceptualmente un `Map` donde solo importan las claves, no los valores asociados.
 - **Autómatas:** base para definir alfabetos, estados y transiciones.
-- **Listas/Arrays dinámicos:** un `Set` puede implementarse sobre ellos, aunque con menor eficiencia.
+- **[[linked list]] / [[dynamic array]]:** un `Set` puede implementarse sobre ellos, aunque con menor eficiencia.
 - **Ciencia de datos:** operaciones de conjuntos son fundamentales para filtrado, cruce y comparación de datasets.
 
 ---

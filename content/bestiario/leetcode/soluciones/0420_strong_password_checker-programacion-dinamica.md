@@ -1,6 +1,6 @@
 ---
 title: 'LeetCode0420 - Strong Password Checker - Programación Dinámica'
-tags: ['b/leetcode']
+tags: ['leetcode', 'solucion']
 ---
 
 ## Técnicas utilizadas
@@ -196,10 +196,10 @@ $\mathcal{O}(R \times B) + \mathcal{O}(R)$. Requiere memoria para almacenar el m
 - Esta solución realiza trabajo redundante al explorar y evaluar ramificaciones de borrado ineficientes que el enfoque Greedy descarta de antemano mediante reglas de prioridad fijas.
 
 ### Comparación con la solución Greedy
-El enfoque [Greedy](0420_strong_password_checker-greedy.md) resuelve el escenario en $\mathcal{O}(n)$ de tiempo y $\mathcal{O}(1)$ de espacio utilizando una prioridad matemática rígida basada en el módulo de la longitud de las rachas ($L \pmod 3$).
+El enfoque [[0420_strong_password_checker-greedy]] resuelve el escenario en $\mathcal{O}(n)$ de tiempo y $\mathcal{O}(1)$ de espacio utilizando una prioridad matemática rígida basada en el módulo de la longitud de las rachas ($L \pmod 3$).
 
 La solución por Programación Dinámica es ligeramente más costosa en memoria, pero tiene la enorme ventaja de ser mucho más intuitiva de diseñar y deducir, ya que no requiere descubrir "el truco matemático oculto" para coordinar las prioridades de los borrados; la DP encuentra la combinación óptima de forma natural explorando inteligentemente el espacio de soluciones.
 
 ## Referencias
 * **GeeksforGeeks.** [Dynamic Programming](https://www.geeksforgeeks.org/dynamic-programming/). Artículo detallado sobre los principios y aplicaciones de la programación dinámica.
-* **Diccionario de memoria (Memoization):** Referencia interna a la estructura [Map](map.md) utilizada para evitar el recálculo del árbol de decisiones.
+* **Diccionario de memoria (Memoization):** Referencia interna a la estructura [[map]] utilizada para evitar el recálculo del árbol de decisiones.

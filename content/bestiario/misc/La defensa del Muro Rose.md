@@ -1,5 +1,8 @@
 ---
 title: La defensa del Muro Rose
+tags:
+  - bestia
+  - solucion
 ---
 
 # La defensa del Muro Rose

@@ -3,8 +3,8 @@ title: Stack
 tags:
   - data-structures
 alias:
-  - stack
   - pila
+  - LIFO
 ---
 ## 1. Qué es y cómo funciona
 
@@ -21,7 +21,7 @@ Resuelve problemas donde el orden de procesamiento debe invertirse o deshacerse 
 ### Representación
 ![](/attachments/grimorio/data-structures/stack.svg)
 
-Puede implementarse sobre array, lista simplemente enlazada o lista doblemente enlazada. La elección importa según el contexto: el array es más eficiente en caché y simple de implementar, pero requiere redimensionamiento si el tamaño no es fijo; la lista enlazada evita ese problema y hace push/pop en $O(1)$ sin amortizar, a costa de overhead por punteros y peor localidad de memoria. La lista doblemente enlazada no aporta ventaja real para una pila, ya que solo se opera en un extremo.
+Puede implementarse sobre [[array]], [[linked list]] o [[doubly linked list]]. La elección importa según el contexto: el array es más eficiente en caché y simple de implementar, pero requiere redimensionamiento si el tamaño no es fijo; la lista enlazada evita ese problema y hace push/pop en $O(1)$ sin amortizar, a costa de overhead por punteros y peor localidad de memoria. La lista doblemente enlazada no aporta ventaja real para una pila, ya que solo se opera en un extremo.
 
 ## 2. Operaciones y complejidad
 
@@ -110,7 +110,7 @@ while not s.is_empty():
 ### Comparaciones
 - **vs Cola.** orden opuesto: la cola procesa en FIFO, mientras la pila procesa en LIFO. Elegí cola cuando el orden de llegada debe preservarse; elegí pila cuando necesitás invertirlo o deshacerlo.
 - **vs Lista.** la pila es una lista con acceso restringido al tope. Esa restricción es una ventaja de diseño: garantiza el contrato LIFO e impide operaciones que romperían la semántica. Usá lista cuando necesitás acceso o modificación en posiciones arbitrarias.
-- **vs Deque.** el deque es una generalización que incluye a la pila: permite insertar y eliminar en ambos extremos. Usar un deque como pila es válido, pero expone operaciones innecesarias que rompen la restricción LIFO. Preferí la pila cuando querés que la estructura garantice ese contrato por diseño.
+- **vs [[deque]].** el deque es una generalización que incluye a la pila: permite insertar y eliminar en ambos extremos. Usar un deque como pila es válido, pero expone operaciones innecesarias que rompen la restricción LIFO. Preferí la pila cuando querés que la estructura garantice ese contrato por diseño.
 
 #### Ventajas
 - Simplicidad extrema
@@ -139,7 +139,7 @@ while not s.is_empty():
 - Base conceptual de DFS en grafos
 - Usada en parsing (compiladores)
 - Relacionada con colas (tienen el comportamiento opuesto)
-- Puede implementarse sobre listas o arrays dinámicos
+- Puede implementarse sobre [[linked list]] o [[dynamic array]]
 
 ### Notas avanzadas
 

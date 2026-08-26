@@ -1,7 +1,8 @@
 ---
 title: LeetCode0765 - Couples Holding Hands - Branch and Bound
 tags:
-  - b/leetcode
+  - leetcode
+  - solucion
 ---
 ## Técnicas utilizadas
 
@@ -117,7 +118,7 @@ Sin embargo, en la práctica la poda por cota inferior elimina subárboles compl
 
 ### Espacial
 
-La cola de prioridad y el [conjunto](set.md) de visitados pueden almacenar en el peor caso hasta `m!` estados, cada uno de longitud `m`. Por lo tanto, una cota superior para la complejidad espacial es $O(m! \cdot m)$.
+La cola de prioridad y el [[set]] de visitados pueden almacenar en el peor caso hasta `m!` estados, cada uno de longitud `m`. Por lo tanto, una cota superior para la complejidad espacial es $O(m! \cdot m)$.
 
 ## Cuándo usar esta técnica
 

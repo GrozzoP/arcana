@@ -1,7 +1,8 @@
 ---
 title: LeetCode0741 - Cherry Pickup
 tags:
-  - b/leetcode
+  - leetcode
+  - bestia
 alias:
 ---
 ### Enunciado
@@ -32,7 +33,7 @@ La observación clave que destraba el problema es de **simetría**: un viaje de 
 - **Salida:** un entero, la máxima cantidad de cerezas recolectables en el recorrido ida + vuelta. `0` si el camino está bloqueado.
 - **Restricciones:** `1 ≤ N ≤ 50`. Movimientos de ida restringidos a abajo/derecha; de vuelta a arriba/izquierda. Cada cereza se cuenta **una sola vez** aunque ambos recorridos pasen por la misma celda.
 
-La estructura subyacente es un [[arreglo|arreglo bidimensional (grilla)]] sobre el que se definen caminos monótonos.
+La estructura subyacente es un [[array]] bidimensional (grilla) sobre el que se definen caminos monótonos.
 
 ### Ejemplo concreto
 

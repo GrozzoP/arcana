@@ -1,7 +1,8 @@
 ---
 title: LeetCode0765 - Couples Holding Hands - Fuerza Bruta
 tags:
-  - b/leetcode
+  - leetcode
+  - solucion
 ---
 ## Técnicas utilizadas
 
@@ -9,7 +10,7 @@ Búsqueda por fuerza bruta sobre el espacio de estados utilizando **BFS**: se ex
 
 La búsqueda se realiza por niveles, donde cada nivel representa una cantidad fija de swaps realizados. Por lo tanto, la primera configuración válida encontrada corresponde a la menor cantidad de intercambios necesarios.
 
-> Para evitar explorar repetidamente la misma configuración, se utiliza un [set](set.md) que almacena los estados ya visitados.
+> Para evitar explorar repetidamente la misma configuración, se utiliza un [[set]] que almacena los estados ya visitados.
 
 ## Idea de la solución
 
@@ -82,7 +83,7 @@ Resultado: 1
 
 ### Temporal
 
-Sea $m = 2n$ la longitud del arreglo, donde $n$ es la cantidad de parejas. El algoritmo explora por niveles las distintas configuraciones posibles de la fila. Para evitar recorrer indefinidamente los mismos estados, cada configuración visitada se almacena en un [conjunto](set.md) y no vuelve a explorarse.
+Sea $m = 2n$ la longitud del arreglo, donde $n$ es la cantidad de parejas. El algoritmo explora por niveles las distintas configuraciones posibles de la fila. Para evitar recorrer indefinidamente los mismos estados, cada configuración visitada se almacena en un [[set]] y no vuelve a explorarse.
 
 En el peor caso pueden visitarse hasta $m!$ configuraciones distintas, ya que cada una corresponde a una permutación de las personas en la fila. Desde cada estado pueden intentarse hasta $\binom{m}{2}=O(m^2)$ intercambios posibles.
 
@@ -108,9 +109,9 @@ Por lo tanto, una cota superior para la complejidad espacial es $O(m!\cdot m)$.
 
 ## Comparación con las otras soluciones
 
-Frente a [branch and bound](0765_couples_holding_hands-branch-and-bound.md), la fuerza bruta no aprovecha ninguna poda: branch and bound explora el mismo espacio de búsqueda pero descarta ramas que ya no pueden mejorar la mejor solución encontrada, reduciendo el trabajo redundante sin perder la garantía de optimalidad.
+Frente a [[0765_couples_holding_hands-branch-and-bound]], la fuerza bruta no aprovecha ninguna poda: branch and bound explora el mismo espacio de búsqueda pero descarta ramas que ya no pueden mejorar la mejor solución encontrada, reduciendo el trabajo redundante sin perder la garantía de optimalidad.
 
-Frente a [greedy](0765_couples_holding_hands-greedy.md), la diferencia es aún mayor: greedy identifica que alcanza con corregir cada banco de asientos de forma local, evitando por completo la necesidad de explorar combinaciones, y resuelve el problema en tiempo lineal.
+Frente a [[0765_couples_holding_hands-greedy]], la diferencia es aún mayor: greedy identifica que alcanza con corregir cada banco de asientos de forma local, evitando por completo la necesidad de explorar combinaciones, y resuelve el problema en tiempo lineal.
 
 ## Referencias
 

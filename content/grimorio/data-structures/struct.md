@@ -4,7 +4,8 @@ tags:
   - data-structures
 alias:
   - record
-  - struct
+  - estructura
+  - registro
 ---
 ## 1. Qué es y cómo funciona
 ### Intuición
@@ -126,7 +127,7 @@ Es la estructura adecuada cuando te enfrentás al problema: *"Necesito pasar est
 ### Relación con otras estructuras
  
 Los Structs son la base sobre la que se arman casi todas las estructuras dinámicas:
-- Una **Lista Enlazada** se conforma interconectando Structs que contienen el dato y la referencia al nodo siguiente.
+- Una **[[linked list]]** se conforma interconectando Structs que contienen el dato y la referencia al nodo siguiente.
 - Un **Árbol Binario** requiere un Struct que encapsule el valor, el hijo izquierdo y el hijo derecho.
 - Un **Grafo** representa cada nodo como un Struct con su valor y la lista de adyacencia.
 ### Notas avanzadas

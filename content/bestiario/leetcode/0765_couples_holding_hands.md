@@ -1,7 +1,8 @@
 ---
 title: LeetCode0765 - Couples Holding Hands
 tags:
-  - b/leetcode
+  - leetcode
+  - bestia
 ---
 ## Nombre y enunciado
 

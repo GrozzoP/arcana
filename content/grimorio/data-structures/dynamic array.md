@@ -2,9 +2,10 @@
 title: Dynamic Array
 tags:
   - data-structures
-aliases:
-  - dynamic array
+alias:
   - arreglo dinámico
+  - vector
+  - ArrayList
 ---
 ## 1. Qué es y cómo funciona
 
@@ -190,11 +191,11 @@ for i in range(arr.size):
 
 - Factor de crecimiento variable (×1.5 o ×2): balancea uso de memoria vs. frecuencia de copias; con ×2 el total de copias no supera 2n para n inserciones.
 - _Shrinking_: reduce capacidad al bajar del 25% de ocupación para evitar fragmentación externa.
-- Buffer circular sobre array dinámico: base de implementaciones de _deque_ eficientes.
+- Buffer circular sobre array dinámico: base de implementaciones eficientes de [[deque]].
 
 ### Relación con otras estructuras
 
-Es la base de `ArrayList` (Java), `vector` (C++) y `list` (Python). Puede usarse directamente para implementar pilas, colas y deques; compite con la lista enlazada cuando la localidad de caché importa más que la eficiencia en inserciones intermedias.
+Es la base de `ArrayList` (Java), `vector` (C++) y `list` (Python), construida sobre el [[array]] agregando redimensionamiento automático. Puede usarse directamente para implementar [[stack]], colas y [[deque]]; compite con [[linked list]] cuando la localidad de caché importa más que la eficiencia en inserciones intermedias.
 
 ### Notas avanzadas
 

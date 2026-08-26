@@ -1,10 +1,10 @@
 ---
 title: 'LeetCode1649 - Create Sorted Array through Instructions - División y Conquista'
 tags:
-  - b/leetcode
-  - 'divide & conquer'
-  - 'merge sort'
-  - 'división y conquista'
+  - leetcode
+  - solucion
+  - division-y-conquista
+  - merge-sort
 ---
 
 ## Técnicas utilizadas

@@ -1,6 +1,6 @@
 ---
 title: 'ACM138 - Street Numbers - Fuerza Bruta'
-tags: ['b/acm']
+tags: ['acm', 'solucion']
 ---
 
 ## Técnicas utilizadas

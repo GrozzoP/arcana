@@ -1,7 +1,8 @@
 ---
 title: LeetCode0174 - Dungeon Game - Programación Dinámica - Top-down
 tags:
-  - b/leetcode
+  - leetcode
+  - solucion
 ---
 
 Solución por Programación Dinámica Top-Down para [[0174_dungeon_game]].

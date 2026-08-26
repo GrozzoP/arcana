@@ -1,6 +1,6 @@
 ---
 title: 'Ajedrez'
-tags: [b/complejidad]
+tags: [complejidad]
 ---
 
 ## Historia

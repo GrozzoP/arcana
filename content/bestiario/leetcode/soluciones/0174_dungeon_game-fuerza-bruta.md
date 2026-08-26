@@ -1,7 +1,8 @@
 ---
 title: LeetCode0174 - Dungeon Game - Fuerza Bruta
 tags:
-  - b/leetcode
+  - leetcode
+  - solucion
 ---
 
 Solución por fuerza bruta para [[0174_dungeon_game]].

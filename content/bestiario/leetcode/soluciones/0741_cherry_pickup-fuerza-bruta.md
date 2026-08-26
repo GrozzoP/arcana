@@ -1,11 +1,12 @@
 ---
 title: LeetCode0741 - Cherry Pickup - Fuerza Bruta
 tags:
-  - b/leetcode
+  - leetcode
+  - solucion
 alias:
 ---
 
-> Solución para el problema [Cherry Pickup (LeetCode741)](0741_cherry_pickup.md).
+> Solución para el problema [[0741_cherry_pickup]].
 
 ### Técnicas utilizadas
 
@@ -14,7 +15,7 @@ alias:
 
 ### Idea de la solución
 
-Adoptamos la reformulación de **dos recolectores simultáneos** descripta en la [descripción del problema](0741_cherry_pickup.md): ambos parten de `(0,0)` y avanzan hacia `(N-1,N-1)` con movimientos abajo/derecha, dando siempre la misma cantidad de pasos.
+Adoptamos la reformulación de **dos recolectores simultáneos** descripta en la [[0741_cherry_pickup]]: ambos parten de `(0,0)` y avanzan hacia `(N-1,N-1)` con movimientos abajo/derecha, dando siempre la misma cantidad de pasos.
 
 Como tras `t` pasos un recolector en la fila `r` está forzosamente en la columna `t - r`, el estado completo se describe con tres valores: `(r1, c1, r2)`, donde la columna del segundo se deduce como `c2 = r1 + c1 - r2`.
 
@@ -70,7 +71,7 @@ Sobre la instancia de la descripción (`N = 3`, respuesta `5`). Anotamos cada es
 
 En el paso 3 ambos recolectores convergen en `(2,1)`: la cereza se cuenta **una sola vez**. La rama llega al caso base con `5`, y como ninguna otra combinación supera ese valor, `max(0, 5) = 5`.
 
-Nótese que estados como `(2,1 | 2,1)` se alcanzan por **muchas** ramas distintas; la fuerza bruta recalcula su subárbol cada vez (justamente lo que corrige la [versión con memoización](0741_cherry_pickup-programacion-dinamica.md)).
+Nótese que estados como `(2,1 | 2,1)` se alcanzan por **muchas** ramas distintas; la fuerza bruta recalcula su subárbol cada vez (justamente lo que corrige la [[0741_cherry_pickup-programacion-dinamica]]).
 
 ### Complejidad
 

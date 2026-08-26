@@ -1,6 +1,6 @@
 ---
 title: 'LeetCode0420 - Strong Password Checker - Greedy'
-tags: ['b/leetcode']
+tags: ['leetcode', 'solucion']
 ---
 
 ## Técnicas utilizadas
@@ -144,7 +144,7 @@ Debido a que el algoritmo no utiliza ninguna estructura de datos para almacenami
 
 ### Comparación con la solución de Programación Dinámica
 
-La versión Greedy es mucho más eficiente en términos de complejidad temporal y espacial, presentando una implementación más concisa y legible. Sin embargo, la versión de [programación dinámica](0420_strong_password_checker-programacion-dinamica.md) es más flexible ante cambios en las reglas o costos del problema.
+La versión Greedy es mucho más eficiente en términos de complejidad temporal y espacial, presentando una implementación más concisa y legible. Sin embargo, la versión de [[0420_strong_password_checker-programacion-dinamica]] es más flexible ante cambios en las reglas o costos del problema.
 
 ## Referencias
 * **GeeksforGeeks.** [Greedy Algorithms](https://www.geeksforgeeks.org/greedy-algorithms/). Artículo detallado sobre las propiedades matemáticas y la elección óptima en algoritmos greedy.
