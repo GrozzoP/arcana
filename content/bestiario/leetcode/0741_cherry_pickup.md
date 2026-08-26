@@ -3,7 +3,6 @@ title: LeetCode0741 - Cherry Pickup
 tags:
   - leetcode
   - bestia
-alias:
 ---
 ### Enunciado
 

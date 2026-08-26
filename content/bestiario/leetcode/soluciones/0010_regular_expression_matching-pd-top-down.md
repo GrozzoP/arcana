@@ -101,7 +101,7 @@ Obtenemos una complejidad $O(m \times n)$, siendo `m = len(s)` y `n = len(p)`. L
 Gracias a la memoización, cada uno se calcula exactamente una vez, y el trabajo por subproblema es $O(1)$.
 
 ### Espacial
-El diccionario `memo` almacena como máximo $(m + 1) \times (n + 1)$ entradas. A esto se suma el espacio de la [[stack]] de recursión, que en el peor caso tiene profundidad $O(m + n)$ cuando no hay `*` y se avanza un índice por llamada. 
+El diccionario `memo` almacena como máximo $(m + 1) \times (n + 1)$ entradas. A esto se suma el espacio de la [[stack]] de recursión, que en el peor caso tiene profundidad $O(m + n)$ cuando no hay `*` y se avanza un índice por llamada.
 
 Dado $O(m + n) + O(m \times n)$ con $n, m \ge 1$, se cumple que $m + n \le 2mn$, lo que lleva a que $O(m + n) \subseteq O(m \times n)$. Entonces, podemos concluir que la complejidad espacial dominante es $O(m \times n)$.
 
@@ -117,7 +117,7 @@ Dado $O(m + n) + O(m \times n)$ con $n, m \ge 1$, se cumple que $m + n \le 2mn$,
 
 ## Comparaciones
 ### Solución buttom-up
-El enfoque top-down, que es el desarrollado en este trabajo, parte de la pregunta original `helper(0, 0)` y se apoya en la recursión para descomponerla en subproblemas más pequeños, memoizando cada resultado en un diccionario a medida que se resuelve por primera vez. Solo se calculan los estados `(i, j)` que efectivamente se necesitan para responder la pregunta inicial. 
+El enfoque top-down, que es el desarrollado en este trabajo, parte de la pregunta original `helper(0, 0)` y se apoya en la recursión para descomponerla en subproblemas más pequeños, memoizando cada resultado en un diccionario a medida que se resuelve por primera vez. Solo se calculan los estados `(i, j)` que efectivamente se necesitan para responder la pregunta inicial.
 
 El enfoque bottom-up, en cambio, invierte el orden de razonamiente ya que, en lugar de partir de la pregunta y descender hacia los casos base, parte de los casos base (`dp(m, n) = True`, y en general la fila `i = m`) y construye la tabla iterativamente. Esto exige que el orden de llenado de la tabla respete las dependencias de la recurrencia explícita (por ejemplo, llenar de derecha a izquierda y de abajo hacia arriba, ya que `dp(i,j)` depende de `dp(i+1,j)`, `dp(i,j+2)` y `dp(i+1,j+1)`), algo que en el top-down se resuelve automáticamente gracias a la [[stack]] de llamadas.
 

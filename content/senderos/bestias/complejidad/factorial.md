@@ -1,6 +1,7 @@
 ---
 title: 'Factorial Recursivo e Iterativo'
-tags: [complejidad]
+tags:
+  - complejidad
 ---
 
 Ambas versiones de este algoritmo calculan $n!$, pero ¿tienen la misma complejidad?

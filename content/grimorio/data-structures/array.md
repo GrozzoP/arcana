@@ -21,7 +21,7 @@ Resuelve el problema de tener que crear muchas variables individuales. Por ejemp
 - **Tamaño Fijo**: Una vez que un array es creado, su tamaño no puede ser cambiado. Esto significa que debemos saber el número máximo de elementos que necesitaremos almacenar en el momento de la creación del array.  
 - **Homogeneidad de tipos**: Todos los elementos de un array deben ser del mismo tipo de datos, ya sea primitivo (como *int*, *char*, *double*) o referencias de objetos.  
 - **Acceso Indexado**: Cada elemento en un array es accesible a través de su índice, comenzando por el índice 0 para el primer elemento. Esta característica permite la rápida recuperación y actualización de elementos dentro del array.  
-- **Memoria contigua**: Los elementos se almacenan en posiciones adyacentes. 
+- **Memoria contigua**: Los elementos se almacenan en posiciones adyacentes.
 
 Internamente, la posición de cada elemento se determina por su índice y el tamaño del tipo de datos en bytes.
 
@@ -33,7 +33,7 @@ Un **array** se representa internamente como un **bloque contiguo de memoria**, 
 
 - Están almacenados uno a continuación del otro
 
-El acceso a un elemento se realiza calculando su dirección de memoria a partir de una dirección base  y un desplazamiento fijo (stride) multiplicado por el índice. Esta organización es la que permite que el acceso por índice tenga complejidad $O(1)$. 
+El acceso a un elemento se realiza calculando su dirección de memoria a partir de una dirección base  y un desplazamiento fijo (stride) multiplicado por el índice. Esta organización es la que permite que el acceso por índice tenga complejidad $O(1)$.
 
 ![](/attachments/grimorio/data-structures/array.svg)
 
@@ -54,7 +54,7 @@ Es requerido que el array respete estas complejidades debido a su representació
 
 ### Detalles operativos
 
-Como se detalló anteriormente, modificar la estructura interna es costoso debido a la naturaleza contigua de elementos en memoria. 
+Como se detalló anteriormente, modificar la estructura interna es costoso debido a la naturaleza contigua de elementos en memoria.
 
 En implementaciones estáticas de arrays, hay que cuidar el acceso fuera de rango, porque puede producir errores o dar lugar a vulnerabilidades como suele suceder con los arrays en lenguaje de programación C (out of range).
 
@@ -71,7 +71,7 @@ Por otra parte, si la implementación es dinámica, el cambio es notorio ya que 
 ### Invariantes
 
 - Contigüidad de memoria (los elementos permanecen contiguos)  
-- Homogeneidad de tipo de dato   
+- Homogeneidad de tipo de dato
 - Tamaño consistente  
 - Los índices deben mantenerse válidos (0 <= i < logitud-array)
 
@@ -180,7 +180,7 @@ El array es base para matrices, [[dynamic array]], heaps binarios (representados
 
 ### Notas avanzadas
 
-En arquitecturas modernas, el array se beneficia enormemente del caché de la CPU debido a la localidad de los datos; al estar contiguos, el procesador puede precargar bloques enteros, acelerando el procesamiento secuencial. 
+En arquitecturas modernas, el array se beneficia enormemente del caché de la CPU debido a la localidad de los datos; al estar contiguos, el procesador puede precargar bloques enteros, acelerando el procesamiento secuencial.
 
 **Persistencia**: no es una buena base para estructuras persistentes. Modificar una versión sin destruir la anterior implica copiar el array completo $O(n)$, ya que no permite compartir eficientemente partes de la estructura entre versiones.
 
@@ -190,6 +190,6 @@ En arquitecturas modernas, el array se beneficia enormemente del caché de la CP
 
 ## 6. Referencias y recursos
 
-* Cormen, T. H., et al. (2022). Introduction to Algorithms (4th ed. Chapter 10: Elementary Data Structures). MIT Press. 
-* Lafore, R. (2002). Data Structures & Algorithms in Java. Sams. (Chapter 2: Arrays)
+- [[COR2011]] - Chapter 10: Elementary Data Structures.
+- [[LAF2002]] - Chapter 2: Arrays.
 

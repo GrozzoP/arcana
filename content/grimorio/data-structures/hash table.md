@@ -41,7 +41,7 @@ Una **colisión** ocurre cuando dos claves distintas generan el mismo índice en
 ### Representación
 ![Muestra](hashtable.svg)
 
-Se implementa generalmente sobre **vectores unidimensionales**, aunque rara vez sobre matrices (dependiendo de la cantidad de componentes de la clave). La función hash, a partir de la clave en formato String que le demos, en este caso “abel”, nos dará el índice del vector en el que se guardará el valor. En caso de colisión, se usan listas, árboles o direccionamiento abierto. 
+Se implementa generalmente sobre **vectores unidimensionales**, aunque rara vez sobre matrices (dependiendo de la cantidad de componentes de la clave). La función hash, a partir de la clave en formato String que le demos, en este caso “abel”, nos dará el índice del vector en el que se guardará el valor. En caso de colisión, se usan listas, árboles o direccionamiento abierto.
 
 #### Componentes
 - **Vector (Bucket Array)**  
@@ -80,7 +80,7 @@ Se implementa generalmente sobre **vectores unidimensionales**, aunque rara vez 
 <sup>3</sup>Para cada *n* en las celdas, se hace referencia a la cantidad de elementos de la subestructura de resolución.
 
 #### Complejidad Espacial
-Esta complejidad puede verse afectada en gran parte por la función de Hash, debido a que según cómo sea de precisa y manejada podemos evitar **colisiones**, variando así las posibilidades de tener un mayor o menor uso de la complejidad espacial, en normas generales podemos deducir que ganamos “velocidad” en cuánto a complejidad computacional, sin embargo perdemos en complejidad espacial, ya que requerimos más estructuras dinámicas o un mayor uso de la memoria para guardar los elementos en caso de tener colisiones, lo que desencadena en que vamos a tener estructuras auxiliares (listas nodos, etc) o también es común que tengamos ciertos espacios vacíos en el array. 
+Esta complejidad puede verse afectada en gran parte por la función de Hash, debido a que según cómo sea de precisa y manejada podemos evitar **colisiones**, variando así las posibilidades de tener un mayor o menor uso de la complejidad espacial, en normas generales podemos deducir que ganamos “velocidad” en cuánto a complejidad computacional, sin embargo perdemos en complejidad espacial, ya que requerimos más estructuras dinámicas o un mayor uso de la memoria para guardar los elementos en caso de tener colisiones, lo que desencadena en que vamos a tener estructuras auxiliares (listas nodos, etc) o también es común que tengamos ciertos espacios vacíos en el array.
 
 - Espacio total: `O(n)`
 
@@ -88,12 +88,12 @@ Esta complejidad puede verse afectada en gran parte por la función de Hash, deb
 - **Puede haber colisiones**: Distintas claves pueden mapear al mismo índice; deben resolverse con encadenamiento o direccionamiento abierto.
 - **Depende de la función hash**: Una mala función hash degrada el rendimiento hacia O(n).
 - **Factor de carga y redimensionamiento**: Cuando la tabla se llena demasiado, se realiza **rehashing**, lo cual es costoso pero poco frecuente (costo amortizado).
-- **Claves deben ser hashables**: En implementaciones como Python, deben ser inmutables (ej: `str`, `int`, `tuple`). 
+- **Claves deben ser hashables**: En implementaciones como Python, deben ser inmutables (ej: `str`, `int`, `tuple`).
 - **No mantiene orden (en general)**: Salvo implementaciones específicas (como `dict` en Python moderno), no se garantiza orden de inserción.
 - **Posible clustering (direccionamiento abierto)**: La acumulación de elementos contiguos puede degradar el rendimiento.
 - **Uso eficiente para búsquedas, no para recorridos ordenados**: Si se necesita orden, otras estructuras (como árboles balanceados) son más adecuadas.
 
-## 3. Implementaciones
+## 3. Implementación
 
 ### Idea de implementación
 Mantener una colección de pares clave-valor distribuida en posiciones calculadas mediante una función hash.
@@ -180,7 +180,7 @@ def ackermann(m, n, hashtable):
 
 ---
 
-## 4. Uso y Criterio
+## 4. Uso y criterio
 
 ### Casos de uso
 - Diccionarios  
@@ -223,7 +223,7 @@ def ackermann(m, n, hashtable):
 **Trade off**: Una tabla de hash permite realizar operaciones fundamentales en tiempo constante promedio (O(1)), siendo altamente eficiente para búsquedas y actualizaciones. Sin embargo, su rendimiento depende críticamente de la calidad de la función hash, el manejo de colisiones y el control del factor de carga.
 
 
-## 5. Relaciones y Extensiones
+## 5. Relaciones y extensiones
 
 ### Variantes según manejo de colisiones
 
@@ -321,6 +321,5 @@ Para mitigar problemas:
 - Puede romper reproducibilidad exacta entre ejecuciones (el orden interno cambia).
 
 ## 6. Referencias y recursos
-Cormen, Thomas H. (1989) *Introduction to algorithms* - Chapter 11. Hash Tables
-
-Drozdek, Adam. (1995) *Data structures and algorithms in C++* - Chapter 10. Hashing
+- [[COR2011]] - Chapter 11: Hash Tables
+- [[DRO1995]] - Chapter 10: Hashing

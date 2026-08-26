@@ -1,6 +1,7 @@
 ---
 title: 'El detective algorítmico'
-tags: [complejidad]
+tags:
+  - complejidad
 ---
 
 Un programador midió su algoritmo con distintas entradas:

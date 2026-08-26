@@ -66,20 +66,20 @@ Las parejas son: $(0,1)$, $(2,3)$, $(4,5)$ y $(6,7)$.
 
    Analizamos si cada persona está ubicada junto a su pareja.
 
-   * La persona `0` está junto a `2`, pero su pareja es `1` $\rightarrow$ **No está con su pareja.**
-   * La persona `2` está junto a `0`, pero su pareja es `3` $\rightarrow$ **No está con su pareja.**
-   * La persona `4` está junto a `7`, pero su pareja es `5` $\rightarrow$ **No está con su pareja.**
-   * La persona `6` está junto a `5`, pero su pareja es `7` $\rightarrow$ **No está con su pareja.**
+   - La persona `0` está junto a `2`, pero su pareja es `1` $\rightarrow$ **No está con su pareja.**
+   - La persona `2` está junto a `0`, pero su pareja es `3` $\rightarrow$ **No está con su pareja.**
+   - La persona `4` está junto a `7`, pero su pareja es `5` $\rightarrow$ **No está con su pareja.**
+   - La persona `6` está junto a `5`, pero su pareja es `7` $\rightarrow$ **No está con su pareja.**
 
 2. **Primer intercambio:**
 
    Comenzamos por la primera posición de la fila.
 
-   * Encontramos a la persona `0`.
-   * Su pareja es `1`.
-   * Buscamos al `1`, que se encuentra en la posición `2`.
-   * La persona ubicada junto a `0` se encuentra en la posición `1`, por lo que allí debe quedar su pareja.
-   * Intercambiamos las personas ubicadas en las posiciones `1` y `2`, logrando que la pareja `(0,1)` quede junta.
+   - Encontramos a la persona `0`.
+   - Su pareja es `1`.
+   - Buscamos al `1`, que se encuentra en la posición `2`.
+   - La persona ubicada junto a `0` se encuentra en la posición `1`, por lo que allí debe quedar su pareja.
+   - Intercambiamos las personas ubicadas en las posiciones `1` y `2`, logrando que la pareja `(0,1)` quede junta.
 
    La fila queda:
 
@@ -93,11 +93,11 @@ Las parejas son: $(0,1)$, $(2,3)$, $(4,5)$ y $(6,7)$.
 
    Continuamos recorriendo la fila hasta encontrar la siguiente persona que aún no está junto a su pareja.
 
-   * Encontramos a la persona `5`.
-   * Su pareja es `4`.
-   * Buscamos al `4`, que se encuentra en la posición `6`.
-   * La persona ubicada junto a `5` se encuentra en la posición `5`, por lo que allí debe quedar su pareja.
-   * Intercambiamos las personas ubicadas en las posiciones `5` y `6`, logrando que la pareja `(4,5)` quede junta.
+   - Encontramos a la persona `5`.
+   - Su pareja es `4`.
+   - Buscamos al `4`, que se encuentra en la posición `6`.
+   - La persona ubicada junto a `5` se encuentra en la posición `5`, por lo que allí debe quedar su pareja.
+   - Intercambiamos las personas ubicadas en las posiciones `5` y `6`, logrando que la pareja `(4,5)` quede junta.
 
    La fila queda:
 

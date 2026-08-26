@@ -118,7 +118,7 @@ Evaluemos la función con la entrada del archivo de descripción: $S = \text{"11
 
 ### Temporal
 - **Análisis:** En el peor de los casos (cadenas completamente anidadas como `"111000"` o bloques repetidos), el algoritmo se ejecuta en tiempo cuadrático respecto a la longitud de la [[string|cadena]] $N$.
-- **Justificación:** 
+- **Justificación:**
   1. En cada nivel de recursión, el recorrido de la [[string|cadena]] para identificar componentes toma $O(N)$ pasos.
   2. La profundidad máxima del árbol de recursión es $N/2$ (cuando la [[string|cadena]] está totalmente anidada).
   3. En cada nivel de la recursión, el ordenamiento de los componentes puede tomar $O(M \log M)$ comparaciones, donde cada comparación entre cadenas de longitud $L$ toma $O(L)$ tiempo. La suma de longitudes de las cadenas a ordenar es a lo sumo $N$, por lo que la fase de ordenamiento está acotada por $O(N \log N)$ o $O(N^2)$ en el peor de los casos.

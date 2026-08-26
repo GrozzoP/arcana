@@ -1,6 +1,7 @@
 ---
 title: 'Cotas'
-tags: [complejidad]
+tags:
+  - complejidad
 ---
 
 ¿Cuáles de estas afirmaciones son verdaderas?

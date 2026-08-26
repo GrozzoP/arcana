@@ -1,6 +1,7 @@
 ---
 title: 'Análisis de Fragmento de Código 3'
-tags: [complejidad]
+tags:
+  - complejidad
 ---
 
 Mirá este fragmento de código:

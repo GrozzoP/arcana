@@ -1,6 +1,8 @@
 ---
 title: 'ACM138 - Street Numbers'
-tags: ['acm', 'bestia']
+tags:
+  - acm
+  - bestia
 ---
 
 ## Nombre y enunciado
@@ -29,20 +31,20 @@ En este caso, la secuencia de soluciones (h, N) se encuentra en:
 En ambos casos, las series inician en 0 y 1, pero los siguientes valores pueden considerarse soluciones sucesivas. En ambos casos explicita cómo hallarlos.
 
 $$
-h_n = 
-\begin{cases} 
+h_n =
+\begin{cases}
 0 & \text{si } n = 0 \\
 1 & \text{si } n = 1 \\
-6 \times h_{n-1} - h_{n-2} & \text{si } n \geq 2 
+6 \times h_{n-1} - h_{n-2} & \text{si } n \geq 2
 \end{cases}
 $$
 
 $$
-N_{n} = 
-\begin{cases} 
+N_{n} =
+\begin{cases}
 0 & \text{si } n = 0 \\
 1 & \text{si } n = 1 \\
-6 \times N_{n-1} - N_{n-2} + 2 & \text{si } n \geq 2 
+6 \times N_{n-1} - N_{n-2} + 2 & \text{si } n \geq 2
 \end{cases}
 $$
 

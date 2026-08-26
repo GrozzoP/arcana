@@ -1,6 +1,8 @@
 ---
 title: LeetCode1739 - Building Boxes
-tags: ['leetcode', 'bestia']
+tags:
+  - leetcode
+  - bestia
 ---
 ## Nombre y enunciado
 

@@ -1,6 +1,8 @@
 ---
 title: 'ACM138 - Street Numbers - Fuerza Bruta'
-tags: ['acm', 'solucion']
+tags:
+  - acm
+  - solucion
 ---
 
 ## Técnicas utilizadas
@@ -83,4 +85,4 @@ $O(1)$ auxiliar (más $O(10)$ para guardar los resultados), ya que no se almacen
 Una solución que explota la ecuación de Pell genera cada par directamente a partir del anterior en $O(1)$ por solución, con complejidad total $O(k)$ para k soluciones. La fuerza bruta cuadrática es más fácil de entender y verificar, pero menos eficiente para k grande.
 
 ## Referencias
-N/A
+- N/A

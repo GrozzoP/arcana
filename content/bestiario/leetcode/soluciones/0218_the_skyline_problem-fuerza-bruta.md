@@ -89,7 +89,7 @@ def skyline_fuerza_bruta(edificios):
 Vemos las comparaciones del primer edificio `[2,9,10]` contra el resto (`i` es el edificio analizado, `j` el que se compara):
 
 
-|  ini_i  |  fin_i | alt_i | ini_j | fin_j  | alt_j |flag1  | flag2 | 
+|  ini_i  |  fin_i | alt_i | ini_j | fin_j  | alt_j |flag1  | flag2 |
 |---------|--------|-------|-------|--------|-------|-------|-------|
 |2	|9	|10	|3	|7	|15	|True	|True   |
 |2	|9	|10	|5	|12	|12	|True	|False  |
@@ -128,5 +128,4 @@ En resumen: la fuerza bruta gana en **simplicidad y facilidad de verificación**
 ## Referencias
 
 ### Sobre la técnica (fuerza bruta / búsqueda exhaustiva)
-- GeeksforGeeks — [Algoritmo de fuerza bruta, ventajas y desventajas](https://www.geeksforgeeks.org/brute-force-approach-and-its-pros-and-cons/):
-Articulo cuándo conviene utilizar fuerza bruta.
+- GeeksforGeeks — [Algoritmo de fuerza bruta, ventajas y desventajas](https://www.geeksforgeeks.org/brute-force-approach-and-its-pros-and-cons/): Articulo cuándo conviene utilizar fuerza bruta.

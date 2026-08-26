@@ -77,4 +77,4 @@ $O(T\log{T})$ también, ya que sabemos que habrá $T\log{T}$ estados nuevos en e
 La solución con [[0818_race_car-programacion-dinamica]] es más ligera en espacio ($O(T)$ frente a $O(T\log{T})$ de BFS) y también en tiempo (en promedio), aunque en el peor caso sean iguales. DP analiza la distancia basándose en secuencias completas de aceleraciones antes de revertir, reduciendo el problema a subproblemas de menor escala y reduciendo el uso de memoria y procesamiento, en promedio, a costo de ser bastante más compleja a la comprensión.
 
 ## Referencias
-[Explicación de posición negativa](https://stackoverflow.com/questions/76770058/proof-of-dynamic-programming-solution-for-leetcode-818-racecar)
+- [Explicación de posición negativa](https://stackoverflow.com/questions/76770058/proof-of-dynamic-programming-solution-for-leetcode-818-racecar)

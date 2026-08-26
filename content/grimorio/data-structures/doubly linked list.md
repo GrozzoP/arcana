@@ -288,5 +288,5 @@ Una lista doblemente enlazada suele ser adecuada cuando el problema menciona:
 
 ## 6. Referencias y recursos
 
-- Cormen, Leiserson, Rivest y Stein. *Introduction to Algorithms*, capítulo 10, sección 10.2, página 257.
-- Goodrich y Tamassia. *Data Structures and Algorithms in Java*, cuarta edición, capítulo 3, sección 3.3, página 170.
+- [[COR2011]] - Capítulo 10, sección 10.2, página 257.
+- [[GOO2005]] - Capítulo 3, sección 3.3, página 170.

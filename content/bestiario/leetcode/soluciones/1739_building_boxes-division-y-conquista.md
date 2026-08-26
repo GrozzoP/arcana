@@ -1,8 +1,8 @@
 ---
 title: "LeetCode1739 - Building Boxes - División y conquista"
-tags: ['leetcode', 'solucion']
-problema: "LeetCode 1739 - Building Boxes"
-tecnica: "División y conquista / Búsqueda binaria"
+tags:
+  - leetcode
+  - solucion
 ---
 
 ## Técnicas utilizadas

@@ -1,6 +1,7 @@
 ---
 title: 'Saludos'
-tags: [complejidad]
+tags:
+  - complejidad
 ---
 
 Llegás a una reunión. La regla es que cada persona saluda a todas las demás exactamente una vez.

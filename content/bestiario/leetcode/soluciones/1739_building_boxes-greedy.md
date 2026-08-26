@@ -1,9 +1,8 @@
 ---
 title: "LeetCode1739 - Building Boxes - Greedy"
-tags: ['leetcode', 'solucion']
-problema: "LeetCode 1739 - Building Boxes"
-tecnica: "Greedy (iterativo y forma cerrada O(1))"
-grupo: "delta"
+tags:
+  - leetcode
+  - solucion
 ---
 ## Solución 1: Greedy iterativo
 

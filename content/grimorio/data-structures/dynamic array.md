@@ -147,7 +147,7 @@ for i in range(arr.size):
     print(arr.array[i]) # 10, 15, 30
 ```
 
-## 4. Cuándo Usar un Array Dinámico
+## 4. Uso y criterio
 
 ### Casos de uso
 
@@ -185,7 +185,7 @@ for i in range(arr.size):
 - _"Se agrega continuamente al final"_
 - _"Se recorre constantemente"_
 
-## 5. Relaciones y Extensiones
+## 5. Relaciones y extensiones
 
 ### Variantes
 
@@ -205,7 +205,7 @@ Es la base de `ArrayList` (Java), `vector` (C++) y `list` (Python), construida s
 
 **Concurrencia**: un resize mientras otro hilo itera produce comportamiento indefinido. La alternativa habitual son estructuras segmentadas ([ConcurrentVector](https://learn.microsoft.com/en-us/cpp/parallel/concrt/reference/concurrent-vector-class?view=msvc-170)) que evitan mover toda la memoria.
 
-## 6. Referencias
+## 6. Referencias y recursos
 
 - [**Complejidad computacional de problemas y el análisis y diseño de algoritmos**](https://gc.scalahed.com/recursos/files/r161r/w25152w/Semana1/recursos/elisa.pdf). Elisa Schaeffer, 2008.
 - **Documentación sobre operaciones de ArrayList en Java**: [Java ArrayList](https://www.w3schools.com/java/java_arraylist.asp)

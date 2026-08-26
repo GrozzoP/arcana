@@ -116,7 +116,7 @@ Independientemente de la implementación elegida, el flujo conceptual de las ope
   1. Buscar la clave.
   2. Si existe → reemplazar valor.
   3. Si no → el comportamiento depende del contrato: insertar el par nuevo, ignorar la operación, o señalar el error. En muchas implementaciones `update` e `insert` convergen en una única operación _upsert_.
-     
+
 ---
 
 ### Invariantes
@@ -284,7 +284,7 @@ Esto los convierte en una especie de “estructura compuesta”, que reutiliza i
 ### Libros
 
 - [[COR2011]] — Cap. 11: Hash Tables _(implementación concreta del Map mediante hashing)_.
-- Sedgewick & Wayne — _Algorithms_ (4ª ed.), Cap. 3: Searching _(Maps con hashing y árboles balanceados; independiente del lenguaje)_.
+- [[SED2011]] — Cap. 3: Searching _(Maps con hashing y árboles balanceados; independiente del lenguaje)_.
 
 ### Visualizaciones
 

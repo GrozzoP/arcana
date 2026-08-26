@@ -3,7 +3,6 @@ title: LeetCode0741 - Cherry Pickup - Fuerza Bruta
 tags:
   - leetcode
   - solucion
-alias:
 ---
 
 > Solución para el problema [[0741_cherry_pickup]].
@@ -88,4 +87,4 @@ Comparada con la [[0741_cherry_pickup-programacion-dinamica|otra solución]], co
 
 ### Referencias
 
-- Cormen, Leiserson, Rivest, Stein — *Introduction to Algorithms* (3ª ed.), Cap. 15 (motivación de PD a partir de recursión exhaustiva).
+- [[COR2011]] — Cap. 15 (motivación de PD a partir de recursión exhaustiva).

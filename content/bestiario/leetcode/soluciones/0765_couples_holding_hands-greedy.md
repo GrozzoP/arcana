@@ -102,5 +102,5 @@ Frente a [[0765_couples_holding_hands-branch-and-bound]], la ventaja también es
 ## Referencias
 
 - Estructura de datos: [[map]]
-- Libro Algorithm Design: [Algorithm Design - Kleinberg & Tardos](https://theswissbay.ch/pdf/Gentoomen%20Library/Algorithms/Algorithm%20Design%20-%20John%20Kleinberg%20-%20%C3%89va%20Tardos.pdf)
+- [[KLE2005]]
 - [Artículo de referencia](https://repovive.com/roadmaps/greedy-algorithms/greedy-optimization/problem-couples-holding-hands)

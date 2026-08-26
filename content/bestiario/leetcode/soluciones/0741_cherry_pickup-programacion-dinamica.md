@@ -3,7 +3,6 @@ title: LeetCode0741 - Cherry Pickup - Programación Dinámica
 tags:
   - leetcode
   - solucion
-alias:
 ---
 
 > Solución para el problema [[0741_cherry_pickup]].
@@ -151,5 +150,5 @@ Comparada con la [[0741_cherry_pickup-fuerza-bruta]], es **estrictamente superio
 
 ### Referencias
 
-- Cormen, Leiserson, Rivest, Stein — *Introduction to Algorithms* (3ª ed.), Cap. 15: Dynamic Programming.
+- [[COR2011]] — Cap. 15: Dynamic Programming.
 - Documentación de Python — `functools.lru_cache`: https://docs.python.org/3/library/functools.html#functools.lru_cache

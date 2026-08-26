@@ -46,13 +46,13 @@ El problema, entonces, no es de simulación sino de estructura de datos: ¿cómo
 **Condición matemática explícita:**
 
 El costo de insertar el $i$-ésimo elemento se define como:
- 
+
 $$
 \text{costo}(i) = \min\Bigl(\bigl|\{j < i : \text{instructions}[j] < \text{instructions}[i]\}\bigr|,\ \bigl|\{j < i : \text{instructions}[j] > \text{instructions}[i]\}\bigr|\Bigr)
 $$
- 
+
 donde $|\cdot|$ denota la cardinalidad del conjunto (cantidad de elementos que cumplen la condición). El resultado final es la suma de todos los costos individuales, tomada módulo $10^9+7$:
- 
+
 $$
 \text{resultado} = \left(\sum_{i=0}^{n-1} \text{costo}(i)\right) \bmod (10^9 + 7)
 $$

@@ -1,6 +1,8 @@
 ---
 title: 'Template Estructura de Datos'
-tags: ['data-structures', 'template']
+tags:
+  - data-structures
+  - template
 alias: ['nombre', 'otro']
 ---
 ## 1. Qué es y cómo funciona

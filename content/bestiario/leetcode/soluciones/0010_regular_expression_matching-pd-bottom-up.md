@@ -11,18 +11,18 @@ Programación dinámica con enfoque **Bottom-Up (tabulación)**. Se construye un
 El problema pide verificar si una cadena `s` matchea un patrón `p` que puede contener `.` (cualquier carácter) y `*` (cero o más repeticiones del carácter anterior).
 
 La solución construye una matriz llamada 'dp' de tamaño $(m+1) \times (n+1)$, donde:
-`dp[i][j] = True` si el sufijo `s[i:]` coincide con el sufijo `p[j:]`. 
+`dp[i][j] = True` si el sufijo `s[i:]` coincide con el sufijo `p[j:]`.
 
-La matriz se completa desde la esquina inferior derecha hacia la superior izquierda, ya que cada estado depende únicamente de estados "más adelante" en la cadena y el patrón. 
+La matriz se completa desde la esquina inferior derecha hacia la superior izquierda, ya que cada estado depende únicamente de estados "más adelante" en la cadena y el patrón.
 
 Para cada posición se evalúa primero si el carácter actual coincide:
 - Ambos caracteres son iguales.
 - El patrón contiene `.`, que representa cualquier carácter.
 
-El caso base es: 
+El caso base es:
 - Si tanto la cadena como el patrón fueron completamente consumidos, entonces existe coincidencia. Por ello: `dp[m][n] = True`
 
-Para cada posición se determina primero si el carácter actual coincide: 
+Para cada posición se determina primero si el carácter actual coincide:
 
 ```python
 first_match = (
@@ -35,10 +35,10 @@ Luego existen dos posibles caminos a tomar:
 - **Caso 1**: el siguiente carácter del patrón es `*`. Esto ramifica en 2 posibles opciones:
 	- **Opción 1:** El `*` consume cero ocurrencias (representa cero apariciones). Se ignora el par x* y se consulta `dp[i][j+2]`.
     - **Opción 2:** El `*` consume una ocurrencia (carácter). Si existe coincidencia entre los caracteres actuales, se consume un carácter de la cadena permaneciendo sobre el mismo lugar del patrón para poder consumir más repeticiones, consultando `dp[i+1][j]`. Entonces, resulta: `first_match and dp[i + 1][j]`  
-    Basta con que una de ambas opciones sea verdadera. 
+    Basta con que una de ambas opciones sea verdadera.
 
 - **Caso 2:** no hay `*`  
-    Debe existir coincidencia entre los caracteres actuales y luego avanzar simultáneamente una posición tanto en la cadena como en el patrón, donde el resto de la cadena debe coincidir con el resto del patrón, utilizando `dp[i+1][j+1]`. Por lo tanto, resulta: `first_match and dp[i + 1][j + 1]` 
+    Debe existir coincidencia entre los caracteres actuales y luego avanzar simultáneamente una posición tanto en la cadena como en el patrón, donde el resto de la cadena debe coincidir con el resto del patrón, utilizando `dp[i+1][j+1]`. Por lo tanto, resulta: `first_match and dp[i + 1][j + 1]`
 
 Una vez completada toda la matriz, la respuesta buscada queda almacenada en `dp[0][0]`.
 
@@ -127,7 +127,7 @@ flowchart LR
     H["dp[5][7]"] --> I["dp[6][8]"]
 ```
 
-El algoritmo nunca vuelve atrás ni recalcula estados. Cada posición de la tabla se calcula exactamente una vez reutilizando los resultados previamente obtenidos. 
+El algoritmo nunca vuelve atrás ni recalcula estados. Cada posición de la tabla se calcula exactamente una vez reutilizando los resultados previamente obtenidos.
 
 ## Complejidad
 ### Temporal
@@ -146,22 +146,22 @@ $O(m \times n)$
 
 La memoria utilizada corresponde principalmente a la matriz `dp`, que almacena un valor booleano para cada combinación posible entre índices de la cadena y del patrón.
 
-Al tener $(m + 1) \times (n + 1)$ posiciones, el consumo de memoria también es proporcional al producto de las longitudes de la cadena y del patrón. 
+Al tener $(m + 1) \times (n + 1)$ posiciones, el consumo de memoria también es proporcional al producto de las longitudes de la cadena y del patrón.
 
-No existe utilización del [[stack]] de llamadas recursivas, ya que toda la resolución es iterativa. 
+No existe utilización del [[stack]] de llamadas recursivas, ya que toda la resolución es iterativa.
 
 ## Cuándo usar esta técnica
 ### Favorable cuando
 - Existen muchos subproblemas superpuestos, ya que cada estado se calcula una única vez.
 - Las restricciones de longitud permiten almacenar una matriz de tamaño $(m+1) \times (n+1)$.
-- La longitud de la cadena y del patrón puede crecer, ya que el algoritmo mantiene una complejidad polinómica. 
-- Se busca garantizar un tiempo de ejecución polinómico o predecible independientemente del patrón recibido (sobre todo en casos conflictivos dados por patrones con muchos operadores `*`, donde Backtracking sin memorización suele recalcular los mismos estados repetidamente). 
+- La longitud de la cadena y del patrón puede crecer, ya que el algoritmo mantiene una complejidad polinómica.
+- Se busca garantizar un tiempo de ejecución polinómico o predecible independientemente del patrón recibido (sobre todo en casos conflictivos dados por patrones con muchos operadores `*`, donde Backtracking sin memorización suele recalcular los mismos estados repetidamente).
 
 ### Limitaciones
 - Requiere almacenar toda la matriz de estados, consumiendo más memoria que la solución recursiva.
-- Calcula estados que eventualmente podrían no ser necesarios para obtener la respuesta final. 
-- Cuando las restricciones de memoria son muy estrictas puede resultar menos conveniente que otras alternativas optimizadas. 
-- Para entradas muy pequeñas, el costo de construir la tabla puede ser mayor que el beneficio obtenido respecto a una solución recursiva. 
+- Calcula estados que eventualmente podrían no ser necesarios para obtener la respuesta final.
+- Cuando las restricciones de memoria son muy estrictas puede resultar menos conveniente que otras alternativas optimizadas.
+- Para entradas muy pequeñas, el costo de construir la tabla puede ser mayor que el beneficio obtenido respecto a una solución recursiva.
 
 ## Comparaciones
 ### Solución backtracking

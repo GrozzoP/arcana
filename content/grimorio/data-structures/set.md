@@ -245,7 +245,7 @@ Considerá usar un `Set` cuando el problema presente alguna de estas caracterís
 | **ArraySet** | Para conjuntos de enteros: cada posición del array representa al número. |
 | **Bloom Filter** | Array con varias funciones hash. Muy poca memoria, pero puede dar **falsos positivos**. |
 | **Multiset** | Variante que permite repetidos; funciona como un diccionario `{elemento: frecuencia}`. |
- 
+
 > **Cuidado:** Modificar el campo por el cual se ordena un elemento que ya está en el árbol **corrompe la estructura silenciosamente**. El árbol no se re-balancea automáticamente, así que las búsquedas posteriores pueden no encontrar elementos que sí existen. La práctica segura es: eliminar el elemento, modificarlo y reinsertarlo.
 
 ---

@@ -186,9 +186,9 @@ lista.recorrer()  # 1, 2, 3
 - Lista desordenada vs. lista ordenada
 
 ### Relación con otras estructuras
-- El [[stack]] y las colas son básicamente listas simples con políticas de inserción y eliminación limitadas (LIFO y FIFO respectivamente). 
-- Es la base para implementar árboles ya que se trata a los hijos de un nodo como una lista enlazada. 
-- Funciona como una solución para resolver colisiones en una [[hash table]] utilizando encadenamiento (chaining). 
+- El [[stack]] y las colas son básicamente listas simples con políticas de inserción y eliminación limitadas (LIFO y FIFO respectivamente).
+- Es la base para implementar árboles ya que se trata a los hijos de un nodo como una lista enlazada.
+- Funciona como una solución para resolver colisiones en una [[hash table]] utilizando encadenamiento (chaining).
 - Cada nodo se modela como un [[struct]] que agrupa el dato y el puntero al siguiente.
 
 ### Notas avanzadas
@@ -208,4 +208,4 @@ Implicancias:
 - Alternativa práctica: listas thread-local o estructuras persistentes para evitar compartir estado mutable.
 
 ## 6. Referencias y recursos
-[[COR2011]] - CORMEN, T. et al. (2009). Introduction to Algorithms. 3rd ed. MIT Press. Chapter 10.2.
+- [[COR2011]] - Chapter 10.2.

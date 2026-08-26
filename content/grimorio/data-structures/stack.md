@@ -176,4 +176,4 @@ Implicancias:
 - Alternativa común: pilas thread-local para evitar compartir estado cuando es posible.
 
 ## 6. Referencias y recursos
-[[COR2011]] - Chapter 10.1 Stacks and queues
+- [[COR2011]] - Chapter 10.1 Stacks and queues

@@ -138,7 +138,7 @@ Evaluemos la función con la entrada del archivo de descripción: $S = \text{"11
 
 ### Temporal
 - **Análisis:** En el peor de los casos, el algoritmo explora todo el espacio de estados de cadenas especiales válidas de longitud $N$.
-- **Justificación:** 
+- **Justificación:**
   1. El número de cadenas binarias especiales de longitud $N$ es equivalente al número de secuencias de paréntesis balanceados de longitud $N$, el cual está determinado por el **número de Catalan** $C_{N/2}$.
   2. Los números de Catalan crecen de manera extremadamente rápida. Por ejemplo, para $N = 20$, $C_{10} = 16,796$ estados. Para las restricciones del problema ($N = 50$), $C_{25} \approx 4.86 \times 10^{12}$ estados.
   3. En cada estado visitado, el algoritmo realiza bucles anidados $O(N^3)$ para buscar subcadenas consecutivas; al incluir el costo $O(N)$ de evaluar `es_especial()` y construir el nuevo estado, el procesamiento total por estado es $O(N^4)$.
@@ -175,7 +175,7 @@ Evaluemos la función con la entrada del archivo de descripción: $S = \text{"11
 
 ## Referencias
 
-- *Introduction to Algorithms* (Cormen et al.) - Sección de Backtracking y Búsqueda en Espacios de Estados.
+- [[COR2011]] - Sección de Backtracking y Búsqueda en Espacios de Estados.
 - *Números de Catalan y sus aplicaciones combinatorias*.
 - [[set#Definición y propiedades|Definición y propiedades del Conjunto (Set)]]
 - [[string#2. Operaciones y complejidad|Operaciones elementales sobre Cadenas (Strings)]]

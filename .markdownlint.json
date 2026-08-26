@@ -1,6 +1,8 @@
 {
   "default": false,
   "MD047": true,
+  "MD004": { "style": "dash" },
+  "MD009": true,
   "files": [
     "content/**/*.md"
   ],

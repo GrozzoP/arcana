@@ -11,8 +11,8 @@ alias:
 ### Intuición
 Un deque (pronunciado "deck", acrónimo de Double-Ended Queue) es un tipo especial de estructura de datos que permite añadir y eliminar elementos de ambos extremos de forma eficiente. Resuelve problemas donde se necesita la flexibilidad de una pila y una cola simultáneamente.
 ### Definición y propiedades
-- Generalización de Pila y Cola: Puede comportarse como LIFO o FIFO según la necesidad. 
-- Acceso en ambos extremos: Permite insertar y eliminar elementos tanto en el frente (front) como en el final (back). 
+- Generalización de Pila y Cola: Puede comportarse como LIFO o FIFO según la necesidad.
+- Acceso en ambos extremos: Permite insertar y eliminar elementos tanto en el frente (front) como en el final (back).
 - Acceso restringido: Al igual que sus variantes, no permite acceso directo eficiente a elementos intermedios.
 - Invariante clave: Los extremos siempre referencian los elementos más antiguos y más recientes disponibles para su extracción.
 ### Representación
@@ -195,7 +195,7 @@ print("La palabra: "+palabra+" "+ "si es un palindromo"if palindromo else "no es
 ## 5. Relaciones y extensiones
 
 ### Variantes
-- Deque restringido de entrada: La entrada está limitada en un extremo, mientras que la eliminación está permitida en ambos extremos. 
+- Deque restringido de entrada: La entrada está limitada en un extremo, mientras que la eliminación está permitida en ambos extremos.
 - Deque restringido de salida: la salida está limitada en un extremo, pero la inserción está permitida en ambos extremos.
 - Deque restringido en cantidad de elementos máximos
 
@@ -220,7 +220,7 @@ print("La palabra: "+palabra+" "+ "si es un palindromo"if palindromo else "no es
 
 
 ## 6. Referencias y recursos
-- Cormen, T. H., Leiserson, C. E., Rivest, R. L., & Stein, C. Introduction to Algorithms (3rd ed.). MIT Press. Capítulo 10.1: Stacks and queues.
+- [[COR2011]] - Capítulo 10.1: Stacks and queues.
 - Python Software Foundation. collections — Container datatypes: deque. Recuperado de [Python](https://docs.python.org/3/)
 - Python Wiki. Recuperado de [Wiki](https://wiki.python.org/python/FrontPage.html)
 - Geek for Geeks. Deque in Python. Recuperado de: [Deque in Python - GeeksforGeeks](https://www.geeksforgeeks.org/python/deque-in-python/)

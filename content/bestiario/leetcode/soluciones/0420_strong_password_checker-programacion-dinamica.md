@@ -1,6 +1,8 @@
 ---
 title: 'LeetCode0420 - Strong Password Checker - Programación Dinámica'
-tags: ['leetcode', 'solucion']
+tags:
+  - leetcode
+  - solucion
 ---
 
 ## Técnicas utilizadas
@@ -14,22 +16,22 @@ Ademas, existe un **subproblema superpuesto**: la misma racha puede ser evaluada
 Se simplifica el análisis de la contraseña reduciéndola a un conjunto de componentes aislados: cantidad de tipos faltantes y una lista con las longitudes de las `rachas` de caracteres repetidos ($\ge 3$), abstrayéndose de los caracteres específicos.
 
 **Longitud de la contraseña ($n$) y Operaciones Obligatorias:**
-   * Si $n < 6$, existe un déficit de caracteres. Las `inserciones obligatorias` se calculan como $6 - n$.
-   * Si $n > 20$, existe un exceso de caracteres. Los `borrados obligatorios` se calculan como $n - 20$.
-   * Si $6 \le n \le 20$, las operaciones obligatorias por tamaño son $0$.
+   - Si $n < 6$, existe un déficit de caracteres. Las `inserciones obligatorias` se calculan como $6 - n$.
+   - Si $n > 20$, existe un exceso de caracteres. Los `borrados obligatorios` se calculan como $n - 20$.
+   - Si $6 \le n \le 20$, las operaciones obligatorias por tamaño son $0$.
 
 **Longitud de una Racha ($L$) y la cantidad de `Reemplazos necesarios`:**
-   * Una racha de caracteres idénticos de longitud $L$ requiere inicialmente de $\lfloor L / 3 \rfloor$ reemplazos para ser completamente eliminada. Por ejemplo, `"aaa"` ($L=3$) requiere $3 // 3 = 1$ reemplazo (`"aBa"`), mientras que `"aaaaaaa"` ($L=7$) requiere $7 // 3 = 2$ reemplazos (`"aaBaaCa"`).
+   - Una racha de caracteres idénticos de longitud $L$ requiere inicialmente de $\lfloor L / 3 \rfloor$ reemplazos para ser completamente eliminada. Por ejemplo, `"aaa"` ($L=3$) requiere $3 // 3 = 1$ reemplazo (`"aBa"`), mientras que `"aaaaaaa"` ($L=7$) requiere $7 // 3 = 2$ reemplazos (`"aaBaaCa"`).
 
 **El Impacto de los Borrados sobre las Rachas y Reemplazos:**
-   * Borrar caracteres dentro de una racha reduce su longitud, lo que a su vez puede disminuir los reemplazos necesarios. Sin embargo, el impacto no es lineal y depende del residuo matemático de la racha ($L \pmod 3$):
-     * Si $L \pmod 3 == 0$ (ej. $L=3$), borrar **1** carácter reduce la racha a tamaño 2, eliminando la necesidad de reemplazos inmediatamente (ahorro de 1 reemplazo por 1 borrado).
-     * Si $L \pmod 3 == 1$ (ej. $L=4$), se necesitan borrar **2** caracteres para reducir los reemplazos.
-     * Si $L \pmod 3 == 2$ (ej. $L=5$), se necesitan borrar **3** caracteres para reducir los reemplazos.
-   * La Programación Dinámica se encarga de probar todas las distribuciones posibles de los `borrados obligatorios` sobre las distintas rachas para encontrar **la combinación que cause la mayor reducción de reemplazos pendientes**.
+   - Borrar caracteres dentro de una racha reduce su longitud, lo que a su vez puede disminuir los reemplazos necesarios. Sin embargo, el impacto no es lineal y depende del residuo matemático de la racha ($L \pmod 3$):
+     - Si $L \pmod 3 == 0$ (ej. $L=3$), borrar **1** carácter reduce la racha a tamaño 2, eliminando la necesidad de reemplazos inmediatamente (ahorro de 1 reemplazo por 1 borrado).
+     - Si $L \pmod 3 == 1$ (ej. $L=4$), se necesitan borrar **2** caracteres para reducir los reemplazos.
+     - Si $L \pmod 3 == 2$ (ej. $L=5$), se necesitan borrar **3** caracteres para reducir los reemplazos.
+   - La Programación Dinámica se encarga de probar todas las distribuciones posibles de los `borrados obligatorios` sobre las distintas rachas para encontrar **la combinación que cause la mayor reducción de reemplazos pendientes**.
 
 **La Ecuación Maestra Unificada:**
-   * Las operaciones finales se componen de los `borradosObligatorios` más el valor máximo entre: la **cantidad de reemplazos optimizada**, los **tipos de caracteres faltantes** y las **inserciones obligatorias**. Esto se debe a que una **inserción** o un **reemplazo** estratégicos pueden solucionar simultáneamente un problema de racha y aportar un tipo de carácter faltante (por ejemplo, insertar o reemplazar por una mayúscula en medio de `"aaa"` -> `"aaB"`).
+   - Las operaciones finales se componen de los `borradosObligatorios` más el valor máximo entre: la **cantidad de reemplazos optimizada**, los **tipos de caracteres faltantes** y las **inserciones obligatorias**. Esto se debe a que una **inserción** o un **reemplazo** estratégicos pueden solucionar simultáneamente un problema de racha y aportar un tipo de carácter faltante (por ejemplo, insertar o reemplazar por una mayúscula en medio de `"aaa"` -> `"aaB"`).
 
 $$
  modificaciones\ minimas = borradosObligatorios + \max(reemplazos, tiposFaltantes, insercionesObligatorias)
@@ -137,7 +139,7 @@ Instancia de prueba: `password = "aaaaaaaaabccccccddd123456789"` ($n = 28$)
 
 `rachas = [9, 6, 3]` (Índices de racha 0, 1 y 2 respectivamente, correspondientes a 'a', 'c' y 'd').
 
-`borradosObligatorios` = $= \max(0, 28 - 20) = \mathbf{8}$. 
+`borradosObligatorios` = $= \max(0, 28 - 20) = \mathbf{8}$.
 
 `insercionesObligatorias = 0`.
 
@@ -201,5 +203,5 @@ El enfoque [[0420_strong_password_checker-greedy]] resuelve el escenario en $\ma
 La solución por Programación Dinámica es ligeramente más costosa en memoria, pero tiene la enorme ventaja de ser mucho más intuitiva de diseñar y deducir, ya que no requiere descubrir "el truco matemático oculto" para coordinar las prioridades de los borrados; la DP encuentra la combinación óptima de forma natural explorando inteligentemente el espacio de soluciones.
 
 ## Referencias
-* **GeeksforGeeks.** [Dynamic Programming](https://www.geeksforgeeks.org/dynamic-programming/). Artículo detallado sobre los principios y aplicaciones de la programación dinámica.
-* **Diccionario de memoria (Memoization):** Referencia interna a la estructura [[map]] utilizada para evitar el recálculo del árbol de decisiones.
+- **GeeksforGeeks.** [Dynamic Programming](https://www.geeksforgeeks.org/dynamic-programming/). Artículo detallado sobre los principios y aplicaciones de la programación dinámica.
+- **Diccionario de memoria (Memoization):** Referencia interna a la estructura [[map]] utilizada para evitar el recálculo del árbol de decisiones.

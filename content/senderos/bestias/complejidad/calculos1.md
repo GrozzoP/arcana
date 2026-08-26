@@ -1,6 +1,7 @@
 ---
 title: 'Cálculo de Complejidad 1'
-tags: [complejidad]
+tags:
+  - complejidad
 ---
 
 Si se sabe que el algoritmo de selección tardó 10 segundos en ordenar 10000 elementos:

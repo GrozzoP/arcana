@@ -56,7 +56,7 @@ def is_match(s: str, p: str) -> bool:
 ```
 
 ## Traza de ejemplo
-Buscamos la solución para 
+Buscamos la solución para
 - **String:** addbzc
 - **Patrón:** ad\*ba\*.c
 
@@ -100,7 +100,7 @@ $O(m + n)$ es la complejidad espacial, lo que corresponde a la cantidad de llama
 ### Limitaciones
 - Recalcula subproblemas repetidos cuando ocurren las ramificaciones.
 - No escala bien cuando los límites de longitud crecen.
-- Patrones que contienen muchas ambigüedades y terminan no matcheando al final degradan el algoritmo. 
+- Patrones que contienen muchas ambigüedades y terminan no matcheando al final degradan el algoritmo.
     - Ejemplo: `s = "aaaaaaaaaaaaaaaaaab"` y `p = "a*a*a*a*a*a*a*a*c"` Ninguna poda ayuda: debe explorar todo antes de concluir `False`.
 
 ## Comparaciones

@@ -1,6 +1,7 @@
 ---
 title: 'Doblando un papel'
-tags: [complejidad]
+tags:
+  - complejidad
 ---
 
 Tomás una hoja y la doblás a la mitad. Ahora tiene el doble de grosor. La doblás de nuevo: cuatro veces el grosor original. Cada doblez duplica el grosor.
