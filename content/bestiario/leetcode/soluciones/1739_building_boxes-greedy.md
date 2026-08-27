@@ -4,13 +4,15 @@ tags:
   - leetcode
   - solucion
 ---
-## Solución 1: Greedy iterativo
+## Técnicas utilizadas
 
-**Técnicas utilizadas.** *Greedy (voraz).* Construir la pirámide perfecta nivel por nivel,
-sumando cajas hasta quedarnos sin ellas. Si sobran, agregarlas secuencialmente al piso,
-expandiendo la base paso a paso de la forma más barata posible.
+- **Greedy (voraz):** Construir la pirámide perfecta nivel por nivel, sumando cajas hasta
+  quedarnos sin ellas. Si sobran, agregarlas secuencialmente al piso, expandiendo la base
+  paso a paso de la forma más barata posible.
 
-**Idea de la solución.** Dividimos el problema en dos fases.
+## Idea de la solución
+
+Dividimos el problema en dos fases.
 
 ### Fase 1: construir la pirámide perfecta más grande
 

@@ -15,7 +15,7 @@ Fuerza bruta con recursividad: se generan todos los caminos posibles desde `(0,0
 
 En una matriz `m×n`, cualquier camino válido tiene exactamente `m+n-2` pasos (solo se puede ir a la derecha o hacia abajo), lo que genera $C(m+n-2, m-1)$ caminos posibles.
 
-Cada camino se representa como una [[dynamic array#Ejemplos de código|lista]] de valores. Para cada uno se simula la evolución de la vida del caballero celda por celda: si la vida cae a 0 o menos, se incrementa la vida inicial requerida para mantenerla en exactamente 1. Al terminar el recorrido se registra la vida inicial mínima necesaria para ese camino. El resultado final es el mínimo entre todos.
+Cada camino se representa como un [[dynamic array#Ejemplos de código]] de valores. Para cada uno se simula la evolución de la vida del caballero celda por celda: si la vida cae a 0 o menos, se incrementa la vida inicial requerida para mantenerla en exactamente 1. Al terminar el recorrido se registra la vida inicial mínima necesaria para ese camino. El resultado final es el mínimo entre todos.
 
 ## Código
 
@@ -100,7 +100,7 @@ Detalle de `vida_requerida` para el camino óptimo:
 
 **Temporal:** $O(C(m+n-2, m-1) × (m+n))$: se exploran todos los caminos posibles y cada uno tiene longitud `m+n-1`. Para matrices cuadradas de lado `n` esto crece como $O(4^n / \sqrt{n})$.
 
-**Espacial:** Depende de la implementación concreta. En esta en particular, `dfs` acumula todos los caminos en memoria antes de calcular el mínimo: cada camino tiene longitud `m+n-1` y hay $C(m+n-2, m-1)$ caminos posibles, lo que da $O(C(m+n-2, m-1) \times (m+n))$. La [[stack#Call stack en ejecución de programas|pila de recursión]] y el camino en curso ocupan $O(m+n)$, pero el almacenamiento de resultados domina y crece exponencialmente.
+**Espacial:** Depende de la implementación concreta. En esta en particular, `dfs` acumula todos los caminos en memoria antes de calcular el mínimo: cada camino tiene longitud `m+n-1` y hay $C(m+n-2, m-1)$ caminos posibles, lo que da $O(C(m+n-2, m-1) \times (m+n))$. El [[stack#Call stack en ejecución de programas]] y el camino en curso ocupan $O(m+n)$, pero el almacenamiento de resultados domina y crece exponencialmente.
 
 ## Cuándo usar esta técnica
 

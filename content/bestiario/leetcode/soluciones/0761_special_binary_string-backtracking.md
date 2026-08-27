@@ -5,12 +5,12 @@ tags:
   - solucion
 ---
 
-← Volver a la [[0761_special_binary_string|descripción del problema]]
+← Volver a [[0761_special_binary_string]]
 
 ## Técnicas utilizadas
 
-- **Fuerza Bruta / Backtracking:** Modelamos el problema como la búsqueda de un camino en un grafo de estados. Cada estado es una [[string|cadena]] binaria especial válida. Desde cada estado, generamos todas las posibles transiciones válidas (intercambios de subcadenas especiales consecutivas) y exploramos recursivamente cada una de ellas empleando una búsqueda en profundidad (DFS).
-- **Control de Ciclos (Visitados):** Dado que la operación de intercambio es simétrica (si podemos pasar de la [[string|cadena]] $X$ a la [[string|cadena]] $Y$, también podemos regresar de $Y$ a $X$), la estructura del espacio de búsqueda es un grafo no dirigido con ciclos. Para evitar bucles infinitos de recursión, utilizamos un [[set|conjunto]] de estados visitados.
+- **Fuerza Bruta / Backtracking:** Modelamos el problema como la búsqueda de un camino en un grafo de estados. Cada estado es un [[string]] binario especial válido. Desde cada estado, generamos todas las posibles transiciones válidas (intercambios de subcadenas especiales consecutivas) y exploramos recursivamente cada una de ellas empleando una búsqueda en profundidad (DFS).
+- **Control de Ciclos (Visitados):** Dado que la operación de intercambio es simétrica (si podemos pasar del [[string]] $X$ al [[string]] $Y$, también podemos regresar de $Y$ a $X$), la estructura del espacio de búsqueda es un grafo no dirigido con ciclos. Para evitar bucles infinitos de recursión, utilizamos un [[set]] de estados visitados.
 
 ---
 
@@ -18,14 +18,14 @@ tags:
 
 El enfoque de fuerza bruta consiste en simular directamente las reglas del enunciado paso a paso sin asumir ninguna propiedad jerárquica u optimalidad local:
 
-1. **Definir el objetivo:** Encontrar la [[string|cadena]] binaria especial lexicográficamente más grande reachable desde la [[string|cadena]] original.
-2. **Generar transiciones válidas:** Para una [[string|cadena]] dada $S$:
+1. **Definir el objetivo:** Encontrar el [[string]] binario especial lexicográficamente más grande reachable desde el [[string]] original.
+2. **Generar transiciones válidas:** Para un [[string]] dado $S$:
    - Buscamos todas las posibles posiciones de inicio $i$.
    - Encontramos cualquier subcadena especial $A = S[i : j+1]$.
    - Si $A$ es especial, buscamos inmediatamente después (en $j+1$) otra subcadena especial $B = S[j+1 : k+1]$.
-   - Si encontramos un par de subcadenas especiales consecutivas $A$ y $B$, formamos una nueva [[string|cadena]] intercambiándolas: $S_{nueva} = S[:i] + B + A + S[k+1:]$.
+   - Si encontramos un par de subcadenas especiales consecutivas $A$ y $B$, formamos un nuevo [[string]] intercambiándolas: $S_{nueva} = S[:i] + B + A + S[k+1:]$.
 3. **Exploración:** Llamamos recursivamente al algoritmo con $S_{nueva}$.
-4. **Evitar ciclos y optimizar:** Llevamos un registro global del string máximo visto hasta ahora y un [[set|conjunto]] `visited` para no procesar el mismo estado más de una vez.
+4. **Evitar ciclos y optimizar:** Llevamos un registro global del string máximo visto hasta ahora y un [[set]] `visited` para no procesar el mismo estado más de una vez.
 
 ---
 
@@ -99,7 +99,7 @@ Evaluemos la función con la entrada del archivo de descripción: $S = \text{"11
 - `visited = {"11011000"}`.
 - Se buscan subcadenas especiales consecutivas en $S_0$:
   - A partir de la posición $i=0$:
-    - Se encuentra la subcadena especial en `s[0:8]` (toda la [[string|cadena]]), pero no queda espacio para una subcadena consecutiva $B$.
+    - Se encuentra la subcadena especial en `s[0:8]` (todo el [[string]]), pero no queda espacio para una subcadena consecutiva $B$.
   - A partir de la posición $i=1$:
     - Se evalúa `s[1:3] = "10"`. Es especial $\to$ **$sub_A = \text{"10"}$**.
     - Buscamos $sub_B$ inmediatamente después (inicio en index 3, `k` empezando en `j + 2 = 4`):
@@ -147,10 +147,10 @@ Evaluemos la función con la entrada del archivo de descripción: $S = \text{"11
   $$O(C_{N/2} \cdot N^4) \approx O\left(\frac{4^{N/2}}{(N/2)^{3/2}} \cdot N^4\right) = O(2^N \cdot N^{2.5})$$
 
 ### Espacial
-- **Análisis:** La memoria consumida depende principalmente de la [[stack|pila de recursión]] y del [[set|conjunto]] `visited` que almacena las cadenas exploradas.
+- **Análisis:** La memoria consumida depende principalmente de la [[stack]] de recursión y del [[set]] `visited` que almacena las cadenas exploradas.
 - **Justificación:**
-  1. En el peor caso, el [[set|conjunto]] de estados `visited` puede almacenar hasta $O(C_{N/2})$ cadenas.
-  2. Cada [[string|cadena]] ocupa $O(N)$ memoria.
+  1. En el peor caso, el [[set]] de estados `visited` puede almacenar hasta $O(C_{N/2})$ cadenas.
+  2. Cada [[string]] ocupa $O(N)$ memoria.
 - Por lo tanto, la complejidad espacial es exponencial en el peor de los casos:
   
   $$O(C_{N/2} \cdot N)$$
@@ -177,6 +177,6 @@ Evaluemos la función con la entrada del archivo de descripción: $S = \text{"11
 
 - [[COR2011]] - Sección de Backtracking y Búsqueda en Espacios de Estados.
 - *Números de Catalan y sus aplicaciones combinatorias*.
-- [[set#Definición y propiedades|Definición y propiedades del Conjunto (Set)]]
-- [[string#2. Operaciones y complejidad|Operaciones elementales sobre Cadenas (Strings)]]
-- [[stack#Pila implícita en recursión|Uso de la Pila (Stack) en procesos recursivos]]
+- Definición y propiedades: [[set#Definición y propiedades]]
+- Operaciones elementales: [[string#2. Operaciones y complejidad]]
+- Pila implícita en recursión: [[stack#Pila implícita en recursión]]

@@ -28,7 +28,7 @@ donde `malas_parejas` es la cantidad de bancos donde las dos personas sentadas n
 
 Esta cota es válida porque cada intercambio puede corregir como máximo **dos bancos a la vez** (esto ocurre cuando los dos bancos involucrados se completan mutuamente en un único swap), por lo que nunca hacen falta menos de `malas_parejas/2` intercambios, y la cota nunca sobreestima los swaps que faltan.
 
-Para acotar el árbol desde el arranque, se inicializa `upper` con el resultado de una solución conocida, lo que permite empezar a podar desde el primer nivel en lugar de descubrir la cota recién al final de la búsqueda. En este problema, se puede utilizar [[0765_couples_holding_hands-greedy|greedy]] para inicializar `upper`, sin embargo, proporciona directamente la solución óptima haciendo que Branch and Bound deje de aportar una ventaja práctica.
+Para acotar el árbol desde el arranque, se inicializa `upper` con el resultado de una solución conocida, lo que permite empezar a podar desde el primer nivel en lugar de descubrir la cota recién al final de la búsqueda. En este problema, se puede utilizar [[0765_couples_holding_hands-greedy]] para inicializar `upper`, sin embargo, proporciona directamente la solución óptima haciendo que Branch and Bound deje de aportar una ventaja práctica.
 
 ## Código
 
@@ -132,13 +132,13 @@ La cola de prioridad y el [[set]] de visitados pueden almacenar en el peor caso 
 
 - Su peor caso sigue siendo factorial: si la cota inferior es débil (poco ajustada), la poda pierde efectividad y el algoritmo se acerca al comportamiento de la fuerza bruta.
 - Requiere diseñar una función de cota válida (que nunca sobreestime) y, en lo posible, ajustada.
-- Para este problema concreto, sigue siendo mejor utilizar [[0765_couples_holding_hands-greedy|greedy]], que evita explorar combinaciones y resuelve el problema en tiempo lineal.
+- Para este problema concreto, sigue siendo mejor utilizar [[0765_couples_holding_hands-greedy]], que evita explorar combinaciones y resuelve el problema en tiempo lineal.
 
 ## Comparación con las otras soluciones
 
-Frente a [[0765_couples_holding_hands-fuerza-bruta|fuerza bruta]], branch and bound explora el mismo espacio de estados, pero en lugar de expandir exhaustivamente el árbol, usa una cota inferior para descartar subárboles completos sin generarlos, y explora primero los estados más prometedores mediante *best-first search*. Ambas técnicas conservan el mismo peor caso factorial, pero B&B reduce el trabajo redundante en la práctica.
+Frente a [[0765_couples_holding_hands-fuerza-bruta]], branch and bound explora el mismo espacio de estados, pero en lugar de expandir exhaustivamente el árbol, usa una cota inferior para descartar subárboles completos sin generarlos, y explora primero los estados más prometedores mediante *best-first search*. Ambas técnicas conservan el mismo peor caso factorial, pero B&B reduce el trabajo redundante en la práctica.
 
-Frente a [[0765_couples_holding_hands-greedy|greedy]], la diferencia es más fuerte: greedy no necesita explorar ramas alternativas ni mantener cotas, porque corrige cada banco con una decisión local segura y obtiene el óptimo en una sola pasada, sin necesidad de garantizar optimalidad mediante búsqueda.
+Frente a [[0765_couples_holding_hands-greedy]], la diferencia es más fuerte: greedy no necesita explorar ramas alternativas ni mantener cotas, porque corrige cada banco con una decisión local segura y obtiene el óptimo en una sola pasada, sin necesidad de garantizar optimalidad mediante búsqueda.
 
 ## Referencias
 

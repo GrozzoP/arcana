@@ -96,5 +96,3 @@ Finalmente, si se quiere un programa eficiente se puede buscar una recurrencia q
 ## Soluciones disponibles
 
 - [[138_street_numbers-fuerza-bruta]]
-- [[138_street_numbers-recursividad]]
-- [[138_street_numbers-dos-punteros]]

@@ -83,7 +83,7 @@ La fuerza bruta es la herramienta correcta cuando el espacio de soluciones es **
 
 Su **limitación** es fatal aquí: el costo $O(4^{2N})$ la vuelve inviable incluso para grillas modestas (`N = 10` ya implica del orden de `4^18 ≈ 6.8 × 10^10` llamadas). El problema **exige** un enfoque que evite recomputar subproblemas.
 
-Comparada con la [[0741_cherry_pickup-programacion-dinamica|otra solución]], comparte **exactamente la misma recursión y el mismo resultado**; la diferencia es puramente de eficiencia. La PD es estrictamente superior para este problema: añade una tabla de memoización que colapsa el costo de exponencial a polinómico $O(N^3)$, a cambio de $O(N^3)$ de memoria. La fuerza bruta sólo conserva valor **didáctico** (deja ver la idea central sin la maquinaria del cache) y como **oráculo de testing** para instancias chicas.
+Comparada con [[0741_cherry_pickup-programacion-dinamica]], comparte **exactamente la misma recursión y el mismo resultado**; la diferencia es puramente de eficiencia. La PD es estrictamente superior para este problema: añade una tabla de memoización que colapsa el costo de exponencial a polinómico $O(N^3)$, a cambio de $O(N^3)$ de memoria. La fuerza bruta sólo conserva valor **didáctico** (deja ver la idea central sin la maquinaria del cache) y como **oráculo de testing** para instancias chicas.
 
 ### Referencias
 
