@@ -115,9 +115,9 @@ Cada hoja produce su skyline trivial, y en cada nodo interno se fusionan los dos
 |----|---------|-------|-------|-----|----------|------------|
 |  2 | izq     |    10 |     0 |  10 | sí       | `[2,10]`   |
 |  3 | izq     |    15 |     0 |  15 | sí       | `[3,15]`   |
-|  5 | der     |    15 |    12 |  15 | no       | —          |
+|  5 | der     |    15 |    12 |  15 | no       | N/A        |
 |  7 | izq     |    10 |    12 |  12 | sí       | `[7,12]`   |
-|  9 | izq     |     0 |    12 |  12 | no       | —          |
+|  9 | izq     |     0 |    12 |  12 | no       | N/A        |
 | 12 | der     |     0 |     0 |   0 | sí       | `[12,0]`   |
 | 15 | der     |     0 |    10 |  10 | sí       | `[15,10]`  |
 | 20 | der     |     0 |     8 |   8 | sí       | `[20,8]`   |
@@ -162,5 +162,5 @@ Para entradas chicas o con pocos solapamientos, la fuerza bruta puede ser compet
 En resumen: la fuerza bruta gana en **simplicidad y facilidad de verificación**, mientras que división y conquista gana en **escalabilidad**, a costa de una implementación más delicada (el merge tiene varios casos borde) y un mayor uso de memoria por los contornos intermedios.
 
 ## Referencias
-- GeeksforGeeks — [Introducción al algoritmo División y Conquista](https://www.geeksforgeeks.org/dsa/introduction-to-divide-and-conquer-algorithm/): Articulo introductorio al algoritmo de división y conquista.
+- GeeksforGeeks - [Introducción al algoritmo División y Conquista](https://www.geeksforgeeks.org/dsa/introduction-to-divide-and-conquer-algorithm/): Articulo introductorio al algoritmo de división y conquista.
 

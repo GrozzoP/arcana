@@ -63,10 +63,10 @@ Python no incluye un `TreeSet` en su librería estándar; `sortedcontainers.Sort
 | `remove(x)` | Elimina `x`. Lanza `KeyError` si no existe. |
 | `discard(x)` | Elimina `x`. No lanza error si no existe. |
 | `x in s` | Prueba de membresía. Devuelve `True`/`False`. |
-| `s \| t` / `union` | Unión — elementos en `s` o en `t`. |
-| `s & t` / `intersection` | Intersección — elementos en `s` **y** en `t`. |
-| `s - t` / `difference` | Diferencia — elementos en `s` que no están en `t`. |
-| `s <= t` / `issubset` | Subconjunto — `True` si todo `x ∈ s` también está en `t`. |
+| `s \| t` / `union` | Unión: elementos en `s` o en `t`. |
+| `s & t` / `intersection` | Intersección: elementos en `s` **y** en `t`. |
+| `s - t` / `difference` | Diferencia: elementos en `s` que no están en `t`. |
+| `s <= t` / `issubset` | Subconjunto: `True` si todo `x ∈ s` también está en `t`. |
 | `len(s)` | Cardinalidad del set. |
 | `for x in s` | Iteración en orden arbitrario. |
 | `s.clear()` | Vacía el set. |
@@ -290,7 +290,7 @@ def visitar(url):
 
 ## 6. Referencias y recursos
 
-- [El Libro de Python — Sets](https://ellibrodepython.com/sets-python#crear-set-python)
-- [CodeGym ES — Conjunto Java](https://codegym.cc/es/groups/posts/es.829.conjunto-java)
-- [Wikipedia — Conjunto (programación)](https://es.wikipedia.org/wiki/Conjunto_(programaci%C3%B3n))
-- [Frogames — Aplicaciones de conjuntos y lógica](https://cursos.frogamesformacion.com/pages/blog/26-005-aplicaciones-de-conjuntos-y-logica)
+- [El Libro de Python - Sets](https://ellibrodepython.com/sets-python#crear-set-python)
+- [CodeGym ES - Conjunto Java](https://codegym.cc/es/groups/posts/es.829.conjunto-java)
+- [Wikipedia - Conjunto (programación)](https://es.wikipedia.org/wiki/Conjunto_(programaci%C3%B3n))
+- [Frogames - Aplicaciones de conjuntos y lógica](https://cursos.frogamesformacion.com/pages/blog/26-005-aplicaciones-de-conjuntos-y-logica)

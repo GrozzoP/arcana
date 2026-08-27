@@ -84,7 +84,7 @@ Mínimo: **7** (camino R→R→D→D).
 
 ![](/attachments/bestiario/leetcode/0174-fuerza-bruta-arbol.svg)
 
-El árbol de exploración completo para este ejemplo: cada hoja es uno de los 6 caminos, con la vida final requerida. Las celdas con borde grueso (`(1,1)`, `(1,2)`, `(2,1)`) se recalculan varias veces por distintos caminos, sin reutilizar ningún resultado — la raíz del problema que resuelve Programación Dinámica.
+El árbol de exploración completo para este ejemplo: cada hoja es uno de los 6 caminos, con la vida final requerida. Las celdas con borde grueso (`(1,1)`, `(1,2)`, `(2,1)`) se recalculan varias veces por distintos caminos, sin reutilizar ningún resultado. Esa es la raíz del problema que resuelve Programación Dinámica.
 
 Detalle de `vida_requerida` para el camino óptimo:
 
@@ -98,7 +98,7 @@ Detalle de `vida_requerida` para el camino óptimo:
 
 ## Complejidad
 
-**Temporal:** $O(C(m+n-2, m-1) × (m+n))$ — se exploran todos los caminos posibles y cada uno tiene longitud `m+n-1`. Para matrices cuadradas de lado `n` esto crece como $O(4^n / \sqrt{n})$.
+**Temporal:** $O(C(m+n-2, m-1) × (m+n))$: se exploran todos los caminos posibles y cada uno tiene longitud `m+n-1`. Para matrices cuadradas de lado `n` esto crece como $O(4^n / \sqrt{n})$.
 
 **Espacial:** Depende de la implementación concreta. En esta en particular, `dfs` acumula todos los caminos en memoria antes de calcular el mínimo: cada camino tiene longitud `m+n-1` y hay $C(m+n-2, m-1)$ caminos posibles, lo que da $O(C(m+n-2, m-1) \times (m+n))$. La [[stack#Call stack en ejecución de programas|pila de recursión]] y el camino en curso ocupan $O(m+n)$, pero el almacenamiento de resultados domina y crece exponencialmente.
 
@@ -114,7 +114,7 @@ Detalle de `vida_requerida` para el camino óptimo:
 
 ## Comparación con Programación Dinámica
 
-La fuerza bruta evalúa todos los caminos sin ninguna poda ni reutilización de resultados intermedios. Programación Dinámica resuelve cada celda exactamente una vez en $O(m×n)$, aprovechando que muchos caminos comparten subproblemas — algo que la fuerza bruta ignora por completo. Para instancias de tamaño real, esto la vuelve la técnica claramente preferible.
+La fuerza bruta evalúa todos los caminos sin ninguna poda ni reutilización de resultados intermedios. Programación Dinámica resuelve cada celda exactamente una vez en $O(m×n)$, aprovechando que muchos caminos comparten subproblemas, algo que la fuerza bruta ignora por completo. Para instancias de tamaño real, esto la vuelve la técnica claramente preferible.
 
 ## Referencias
 

@@ -4,7 +4,7 @@ tags:
   - dyc
 ---
 En la Torre de Fibonacci, un oráculo falso convence a los aprendices de que todo puede resolverse con división y conquista. "¡Divide el problema!", grita. Pero el sabio Ermitage sabe que algunos problemas tienen una estructura donde dividir y reconquistar crea más trabajo del que ahorra. El oráculo presenta el cálculo del n-ésimo número de Fibonacci como candidato perfecto para división y conquista recursivo. Ermitage sonríe… y deja que los aprendices descubran el error por sí mismos.
-## Enunciado — Fibonacci Recursivo Ingenuo
+## Enunciado: Fibonacci Recursivo Ingenuo
 
 Considerar esta implementación "división y conquista" de Fibonacci:
 

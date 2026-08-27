@@ -22,8 +22,8 @@ El caso `.*` es especialmente traicionero: puede absorber cualquier cantidad de 
 
 ## Definición formal
 **Entrada:**
-- `s` — string de texto, compuesto solo de letras minúsculas (a–z).
-- `p` — patrón, compuesto de letras minúsculas, `.` y `*`.
+- `s`: string de texto, compuesto solo de letras minúsculas (a–z).
+- `p`: patrón, compuesto de letras minúsculas, `.` y `*`.
 Se garantiza que `*` nunca aparece al inicio y nunca hay dos `*` consecutivos.
 
 **Salida:** `true` si `p` cubre `s` en su totalidad. Caso contrario, `false`.

@@ -283,13 +283,13 @@ Esto los convierte en una especie de “estructura compuesta”, que reutiliza i
 
 ### Libros
 
-- [[COR2011]] — Cap. 11: Hash Tables _(implementación concreta del Map mediante hashing)_.
-- [[SED2011]] — Cap. 3: Searching _(Maps con hashing y árboles balanceados; independiente del lenguaje)_.
+- [[COR2011]] - Cap. 11: Hash Tables _(implementación concreta del Map mediante hashing)_.
+- [[SED2011]] - Cap. 3: Searching _(Maps con hashing y árboles balanceados; independiente del lenguaje)_.
 
 ### Visualizaciones
 
-- VisuAlgo — Hash Table: `visualgo.net/en/hashtable` _(implementación basada en hashing)_
-- VisuAlgo — BST / AVL: `visualgo.net/en/bst` _(implementación basada en árbol balanceado)_
+- VisuAlgo - Hash Table: `visualgo.net/en/hashtable` _(implementación basada en hashing)_
+- VisuAlgo - BST / AVL: `visualgo.net/en/bst` _(implementación basada en árbol balanceado)_
 
 ### Documentación
 

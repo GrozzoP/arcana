@@ -16,7 +16,7 @@ Un recolector parte de la esquina superior izquierda `(0, 0)` y debe llegar a la
 
 El objetivo es **maximizar la cantidad total de cerezas recolectadas** en el viaje de ida y vuelta. Si no existe ningún camino válido entre `(0, 0)` y `(N-1, N-1)` (porque las espinas lo bloquean), la respuesta es `0`.
 
-> Enunciado original: [LeetCode 741 — Cherry Pickup](https://leetcode.com/problems/cherry-pickup/)
+> Enunciado original: [LeetCode 741 - Cherry Pickup](https://leetcode.com/problems/cherry-pickup/)
 
 ### Intuición
 

@@ -5,7 +5,7 @@ tags:
   - solucion
 ---
 ## Técnicas utilizadas
-Búsqueda por fuerza bruta: se explora exhaustivamente el espacio de edificios sin aplicar poda ni aprovechar subestructura óptima, confiando en revisar todas las combinaciones posibles en lugar de en una estrategia más fina. En esta solución, para cada edificio se lo compara contra todos los demás para decidir si sus dos puntos característicos —la esquina superior izquierda `(ini, alt)` y el punto de su pared derecha `(fin, altura_resultante)`— forman parte del contorno final.
+Búsqueda por fuerza bruta: se explora exhaustivamente el espacio de edificios sin aplicar poda ni aprovechar subestructura óptima, confiando en revisar todas las combinaciones posibles en lugar de en una estrategia más fina. En esta solución, para cada edificio se lo compara contra todos los demás para decidir si sus dos puntos característicos, la esquina superior izquierda `(ini, alt)` y el punto de su pared derecha `(fin, altura_resultante)`, forman parte del contorno final.
 
 ## Idea de la solución
 Cada edificio puede llegar a aportar un punto en su esquina superior izquierda `[ini, altura]` o en algún lugar de su pared lateral derecha `[fin, altura_resultante]` dependiendo de los otros edificios; si está aislado, ese segundo punto sería `[fin, 0]`. Para cada edificio se recorre el arreglo de edificios para ver si esos puntos quedan tapados por otro edificio o pueden sumarse a la solución. A fines prácticos vamos a llamar a estos puntos punto1 y punto2.
@@ -121,11 +121,11 @@ $O(N)$ debido a los resultados, que en el caso donde todos los edificios esten a
 ## Comparación con la solución división y conquista
 La fuerza bruta decide punto por punto comparando cada edificio contra todos los demás, con un costo $O(n^2)$. División y conquista, en cambio, calcula los contornos de dos mitades y los **fusiona** en tiempo lineal, evitando comparaciones redundantes y bajando el costo total a $O(n \log n)$.
 
-Para entradas chicas o con pocos solapamientos, la fuerza bruta puede ser competitiva —o incluso más rápida en la práctica— gracias a su factor constante bajo y a que no usa recursión ni estructuras intermedias. A medida que crece $n$ y aumentan los solapamientos, la ventaja de división y conquista toma más peso.
+Para entradas chicas o con pocos solapamientos, la fuerza bruta puede ser competitiva (o incluso más rápida en la práctica) gracias a su factor constante bajo y a que no usa recursión ni estructuras intermedias. A medida que crece $n$ y aumentan los solapamientos, la ventaja de división y conquista toma más peso.
 
 En resumen: la fuerza bruta gana en **simplicidad y facilidad de verificación**, mientras que división y conquista gana en **escalabilidad**, a costa de una implementación más delicada (el merge tiene varios casos borde) y un mayor uso de memoria por los contornos intermedios.
 
 ## Referencias
 
 ### Sobre la técnica (fuerza bruta / búsqueda exhaustiva)
-- GeeksforGeeks — [Algoritmo de fuerza bruta, ventajas y desventajas](https://www.geeksforgeeks.org/brute-force-approach-and-its-pros-and-cons/): Articulo cuándo conviene utilizar fuerza bruta.
+- GeeksforGeeks - [Algoritmo de fuerza bruta, ventajas y desventajas](https://www.geeksforgeeks.org/brute-force-approach-and-its-pros-and-cons/): Articulo cuándo conviene utilizar fuerza bruta.

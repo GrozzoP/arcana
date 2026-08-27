@@ -114,17 +114,17 @@ Evolución del vector `dp`:
 
 ## Cómo funciona la optimización de memoria
 
-Una implementación clásica usa una matriz `dp[m][n]`. Pero recorriendo la matriz desde la esquina inferior derecha hacia la superior izquierda, cada celda únicamente necesita conocer el valor inmediatamente debajo y el valor inmediatamente a la derecha — no hace falta conservar todas las filas ya calculadas.
+Una implementación clásica usa una matriz `dp[m][n]`. Pero recorriendo la matriz desde la esquina inferior derecha hacia la superior izquierda, cada celda únicamente necesita conocer el valor inmediatamente debajo y el valor inmediatamente a la derecha: no hace falta conservar todas las filas ya calculadas.
 
 Por eso alcanza con reutilizar un único arreglo de longitud `n`, actualizándolo fila por fila, lo que reduce la complejidad espacial de $O(m \times n)$ a $O(n)$ sin modificar la complejidad temporal.
 
 ## Complejidad
 
 ### Temporal
-$O(m \times n)$ — cada celda se calcula exactamente una vez.
+$O(m \times n)$: cada celda se calcula exactamente una vez.
 
 ### Espacial
-$O(n)$ — un único vector auxiliar de tamaño `n`, reutilizado fila por fila.
+$O(n)$: un único vector auxiliar de tamaño `n`, reutilizado fila por fila.
 
 ## Cuándo usar esta técnica
 
@@ -141,7 +141,7 @@ $O(n)$ — un único vector auxiliar de tamaño `n`, reutilizado fila por fila.
 
 Ambas versiones comparten la misma complejidad temporal ($O(m \times n)$), por lo que no es lo que las diferencia. La ventaja del bottom-up es de memoria y de constantes prácticas: evita el $O(m \times n)$ del memo y la pila de recursión del top-down, reemplazándolos por un único vector $O(n)$, y evita el overhead de las llamadas a función y el hashing de claves en cada acceso al memo.
 
-Con las restricciones de este problema ($m, n \le 200$, profundidad de recursión máxima $m+n-2 = 398$) el top-down no corre un riesgo real de stack overflow — esa no es la razón para preferir bottom-up aquí.
+Con las restricciones de este problema ($m, n \le 200$, profundidad de recursión máxima $m+n-2 = 398$) el top-down no corre un riesgo real de stack overflow. Esa no es la razón para preferir bottom-up aquí.
 
 | Característica              | Top-Down (Recursivo)                            | Bottom-Up (Iterativo) |
 | ---------------------------- | ------------------------------------------------ | ----------------------- |

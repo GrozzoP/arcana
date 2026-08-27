@@ -194,7 +194,7 @@ lista.recorrer()  # 1, 2, 3
 ### Notas avanzadas
 
 #### Versiones persistentes
-Insertar al frente crea un nuevo head que apunta a la lista existente sin copiarla — la versión anterior queda intacta gracias al structural sharing (reutilización).
+Insertar al frente crea un nuevo head que apunta a la lista existente sin copiarla. La versión anterior queda intacta gracias al structural sharing (reutilización).
 Implicancias:
 - Inserción al frente O(1) compartiendo todos los nodos excepto el nuevo.
 - Útil para blockchain, snapshots y programación funcional (**Haskell**)

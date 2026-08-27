@@ -91,7 +91,7 @@ def createSortedArray(instructions):
 - `5 > 2` → `greater_count[3] += (len(left) - i) = 2 - 1 = 1` → `greater_count[3] = 1 + 1 = 2`
 - `5 <= 6` → se copia el `5` sin generar conteo.
 
-Resultado: `greater_count = [0, 0, 0, 2]` para índices `[0,1,2,3]` — antes del valor `2` (índice 3) hay dos mayores (el `5` y el `6`).
+Resultado: `greater_count = [0, 0, 0, 2]` para índices `[0,1,2,3]`: antes del valor `2` (índice 3) hay dos mayores (el `5` y el `6`).
 
 **Cálculo del costo:**
 
@@ -141,9 +141,9 @@ $O(n)$. Por `greater_count` y los arreglos temporales de cada fusión, más $O(\
 
 ### Comparación con Fuerza Bruta
 
-La fuerza bruta mantiene `nums` explícitamente e inserta cada elemento contando menores/mayores entre los ya insertados, con costo $O(n^2)$ — inviable para $n = 10^5$. Esta solución logra el mismo resultado en $O(n \log n)$ al obtener esos conteos como subproducto del propio ordenamiento. El trade-off es complejidad de implementación a cambio de eficiencia.
+La fuerza bruta mantiene `nums` explícitamente e inserta cada elemento contando menores/mayores entre los ya insertados, con costo $O(n^2)$, inviable para $n = 10^5$. Esta solución logra el mismo resultado en $O(n \log n)$ al obtener esos conteos como subproducto del propio ordenamiento. El trade-off es complejidad de implementación a cambio de eficiencia.
 
 ## Referencias
 
-- [[COR2011]] — Sección 2.3 (Merge Sort) y Problema 2-4 (conteo de inversiones).
+- [[COR2011]] - Sección 2.3 (Merge Sort) y Problema 2-4 (conteo de inversiones).
 - [LeetCode315 - Count of Smaller Numbers After Self](https://leetcode.com/problems/count-of-smaller-numbers-after-self/)
