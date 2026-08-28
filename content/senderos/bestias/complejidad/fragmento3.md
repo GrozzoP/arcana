@@ -14,9 +14,6 @@ PARA i = 2 HASTA n HACER
             Aux ← a(k-1)
             a(k-1) ← a(k)
             a(k) ← Aux
-        FIN SI
-    FIN PARA
-FIN PARA
 ```
 
 ¿Cuál es la complejidad de este código? ¿Por qué?
