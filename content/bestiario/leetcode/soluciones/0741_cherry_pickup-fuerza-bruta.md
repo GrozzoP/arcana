@@ -7,7 +7,7 @@ tags:
 
 > Solución para el problema [[0741_cherry_pickup]].
 
-### Técnicas utilizadas
+## Técnicas utilizadas
 
 - **Fuerza Bruta:** se exploran **todas** las posibilidades del espacio de soluciones sin descartar ramas mediante razonamiento, quedándose con la mejor. Acá, "todas las posibilidades" son todas las formas en que los dos recolectores pueden avanzar paso a paso.
 - **Recursividad:** la exploración se expresa como una función que se invoca a sí misma, avanzando los recolectores un paso y delegando el resto del recorrido a las llamadas recursivas.

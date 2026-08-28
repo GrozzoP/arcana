@@ -7,7 +7,7 @@ tags:
 
 > Solución para el problema [[0741_cherry_pickup]].
 
-### Técnicas utilizadas
+## Técnicas utilizadas
 
 - **Programación Dinámica (PD):** se descompone el problema en subproblemas que se **solapan**, se resuelve cada uno **una sola vez** y se guarda su resultado para reutilizarlo. Es aplicable porque el problema tiene **subestructura óptima** (la mejor solución global se arma con las mejores soluciones de sus subproblemas) y **subproblemas superpuestos** (el mismo estado se alcanza por muchos caminos).
 - **Memoización (PD *top-down*):** se conserva la recursión natural de la [[0741_cherry_pickup-fuerza-bruta]] y se la envuelve con un cache: antes de computar un estado se consulta si ya fue resuelto.

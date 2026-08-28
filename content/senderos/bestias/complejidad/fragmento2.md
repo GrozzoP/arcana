@@ -76,7 +76,7 @@ Este bucle se ejecuta desde $i=1$ hasta $n$. Como vimos en el Paso 1, $n = a^2$ 
 
 ### Paso 4: Combinar ambos bucles
 
-El bucle PARA está **anidado dentro** del bucle MIENTRAS. Como el bucle interno hace siempre la **misma cantidad de trabajo** en cada pasada (porque $n$ no cambia), simplemente multiplicamos 
+El bucle PARA está **anidado dentro** del bucle MIENTRAS. Como el bucle interno hace siempre la **misma cantidad de trabajo** en cada pasada (porque $n$ no cambia), simplemente multiplicamos
 
 $$
 \underbrace{O(\log a)}_{\text{veces que se repite MIENTRAS}} \times \underbrace{O(a^2)}_{\text{trabajo del PARA en cada pasada}}
