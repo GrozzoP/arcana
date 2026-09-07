@@ -3,18 +3,37 @@ title: Skip List
 tags:
   - data-structures
 alias:
-  - alias
+  - Lista por Saltos
 ---
 ## 1. Qué es y cómo funciona
 
 ### Intuición
 
+Una **Lista por Saltos** (Skip List) es una estructura similar a una [[linked list|lista enlazada]], pero cuenta con punteros adicionales que permiten saltear algunos elementos y acceder más rápidamente a la información.
 
+Esta estructura busca solucionar dos problemas principales. Por un lado, reduce el costo de búsqueda de una lista tradicional, en la que es necesario recorrer los elementos de forma secuencial. Por otro lado, permite obtener un rendimiento de búsqueda similar al de un árbol balanceado, pero sin la necesidad de realizar operaciones de rebalanceo cada vez que se inserta o elimina un elemento.
 ### Definición y propiedades
 
+Se trata de una estructura de datos probabilística y jerárquica. Sus principales reglas e invariantes son:
 
+- **Capa base completa:** El nivel inferior (Nivel 0) es una lista enlazada que contiene todos los elementos insertados, ordenados de menor a mayor.
+
+- **Balanceo probabilístico:** La estructura no realiza un balanceo estricto. En su lugar, utiliza un generador de números aleatorios para determinar en qué niveles se encuentra cada elemento.
+
+- **Subconjuntos anidados:** Cada nivel superior contiene un subconjunto de los elementos del nivel inmediatamente inferior.
+
+- **Límites:** La cantidad de niveles está limitada por un valor máximo denominado `MaxLevel`. Además, todos los niveles finalizan en un nodo especial denominado `NIL`.
+
+- **Complejidad esperada:** La distribución aleatoria de los punteros adicionales permite realizar búsquedas, inserciones y eliminaciones con una complejidad esperada de **O(log n)**.
 ### Representación
 
+Internamente, la estructura es gestionada por un nodo cabecera (header) sin valor de datos, el cual contiene punteros iniciales para todos los niveles posibles.
+
+![Representacion visual skip list](skipList.svg)
+
+A continuación, se muestra un ejemplo del recorrido para hacer una búsqueda.
+
+![Representacion visual skip list busqueda](skipListBusqueda.svg)
 
 ## 2. Operaciones y complejidad
 
