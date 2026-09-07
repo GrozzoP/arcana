@@ -30,23 +30,102 @@ alias:
 ## 3. Implementación
 
 ### Idea de implementación
-- Item
+
+Un Skip List es una lista enlazada ordenada con niveles extra de "atajos". Cada nodo tiene un valor `key` y un arreglo `forward[]` con un puntero por cada nivel en el que participa. La lista en sí misma mantiene un `level` (el nivel más alto actualmente en uso) y un nodo `head` sentinela con punteros a todos los niveles posibles. Además, define dos parámetros fijos: `MAX_LEVEL`, el tope que ningún nodo puede superar, y `P`, la probabilidad que gobierna cuántos niveles alcanza cada nodo nuevo.
+
+- Buscar una clave se hace de arriba hacia abajo: en el nivel más alto se avanza mientras el siguiente nodo sea menor a la clave buscada; cuando no se puede avanzar más, se baja un nivel. Al llegar al nivel 0, el siguiente nodo es el candidato.
+
+- Para `insert` se hace ese mismo recorrido, pero guardando en un arreglo `update[]` el último nodo visitado en cada nivel. Después se sortea el nivel del nuevo nodo mediante un proceso aleatorio: se sube un nivel con probabilidad `P` en cada paso, hasta un tope `MAX_LEVEL` (y si ese nivel supera al `level` actual de la lista, este se actualiza). Una vez determinado el nivel, se enlaza el nuevo nodo en cada uno de sus niveles usando `update[]`.
+
+- `delete` hace el mismo recorrido para obtener `update[]`, y si el nodo existe, lo desenlaza en cada nivel donde aparecía, ajustando `forward` de cada `update[i]`.
+
 
 ### Invariantes
-- Item
+
+- Los niveles están anidados: todo nodo presente en el nivel *i* también está en el nivel *i-1* (y así hasta el nivel 0, donde están todos los elementos).
+- Cada nivel mantiene los elementos ordenados por clave.
+- El nivel de un nodo se fija al insertarlo (no cambia salvo que se borre y reinserte).
+- `head` siempre existe y tiene punteros válidos (o `None`) en los `MAX_LEVEL` niveles.
+- El nivel "activo" de la lista (`self.level`) nunca supera `MAX_LEVEL`, y solo crece cuando un nodo insertado sortea un nivel mayor al actual.
 
 ### Ejemplo de código
 
 ```python
+import random
 
+MAX_LEVEL = 16
+P = 0.5
+
+class Node:
+    def __init__(self, key, level):
+        self.key = key
+        self.forward = [None] * (level + 1)
+
+class SkipList:
+    def __init__(self):
+        self.head = Node(None, MAX_LEVEL)
+        self.level = 0
+
+    def _random_level(self):
+        lvl = 0
+        while random.random() < P and lvl < MAX_LEVEL:
+            lvl += 1
+        return lvl
+
+    def search(self, key):
+        node = self.head
+        for i in range(self.level, -1, -1):
+            while node.forward[i] and node.forward[i].key < key:
+                node = node.forward[i]
+        node = node.forward[0]
+        return node is not None and node.key == key
+
+    def insert(self, key):
+        update = [None] * (MAX_LEVEL + 1)
+        node = self.head
+        for i in range(self.level, -1, -1):
+            while node.forward[i] and node.forward[i].key < key:
+                node = node.forward[i]
+            update[i] = node
+
+        new_level = self._random_level()
+        if new_level > self.level:
+            for i in range(self.level + 1, new_level + 1):
+                update[i] = self.head
+            self.level = new_level
+
+        new_node = Node(key, new_level)
+        for i in range(new_level + 1):
+            new_node.forward[i] = update[i].forward[i]
+            update[i].forward[i] = new_node
+
+    def delete(self, key):
+        update = [None] * (MAX_LEVEL + 1)
+        node = self.head
+        for i in range(self.level, -1, -1):
+            while node.forward[i] and node.forward[i].key < key:
+                node = node.forward[i]
+            update[i] = node
+
+        target = node.forward[0]
+        if target is None or target.key != key:
+            return  # no existe
+        for i in range(self.level + 1):
+            if update[i].forward[i] != target:
+                break
+            update[i].forward[i] = target.forward[i]
 ```
 
-```python
-
-```
+#### Ejemplo de uso
 
 ```python
+sl = SkipList()
+for k in [3, 6, 7, 9, 12, 19]:
+    sl.insert(k)
 
+print(sl.search(9))   # True
+sl.delete(9)
+print(sl.search(9))   # False
 ```
 
 ## 4. Uso y criterio
