@@ -37,14 +37,52 @@ A continuación, se muestra un ejemplo del recorrido para hacer una búsqueda.
 
 ## 2. Operaciones y complejidad
 
-### Operaciones principales
-- Item
+### 2.1 Operaciones principales
 
-### Complejidad
-- Item
+Las operaciones básicas son:
 
-### Detalles operativos
+- **`find(k)`**: localiza un elemento a partir de su clave.
+- **`insert(k)`**: agrega una clave en la posición que mantiene el orden.
+- **`delete(k)`**: elimina una clave de todos los niveles en los que participa.
 
+Al conservar las claves ordenadas, también permite:
+
+- **`min()` / `max()`**: devuelven el primer y el último elemento.
+- **`predecessor(k)` / `successor(k)`**: obtienen los elementos inmediatamente anterior y posterior a una clave.
+- **`range(a, b)`**: devuelve los elementos comprendidos en un intervalo.
+- **`iterate()`**: recorre todos los elementos en orden siguiendo el nivel inferior.
+
+Como operaciones especiales:
+
+- **`append(k)`**: agrega directamente una clave al final, siempre que sea mayor que todas las existentes.
+- **`concat(A, B)`**: une directamente dos skip lists si todas las claves de `A` son menores que las de `B`. Si sus rangos se intercalan, debe realizarse una fusión.
+
+### 2.2 Complejidad temporal y espacial
+
+| Operación | Tiempo esperado | Peor caso |
+|---|---:|---:|
+| `find`, `insert`, `delete` | `O(log n)` | `O(n)` |
+| `range`, con `k` resultados | `O(log n + k)` | `O(n)` |
+| `min` | `O(1)` | `O(1)` |
+| `max` | `O(log n)` | `O(n)` |
+| `predecessor`, `successor` | `O(log n)` | `O(n)` |
+| `iterate` | `O(n)` | `O(n)` |
+| `append` | `O(log n)` | `O(n)` |
+| `concat`, con rangos separados | `O(log n)` | `O(MaxLevel)` |
+
+Los costos logarítmicos son **esperados** porque dependen de la distribución aleatoria de las alturas. El peor caso es lineal cuando los niveles superiores no proporcionan saltos útiles y debe recorrerse casi todo el nivel inferior. El caso extremo ocurre cuando todos los nodos tienen altura 1 y ninguno participa en niveles superiores.
+
+El análisis amortizado no es central, ya que no existen operaciones caras periódicas que deban distribuirse entre varias operaciones, como el redimensionamiento de un `ArrayList` o el *rehashing* de una tabla hash.
+
+El espacio total es `O(n)` esperado, porque cada nodo almacena una cantidad promedio constante de enlaces. En el peor caso es `O(n · MaxLevel)`.
+
+### 2.3 Detalles operativos
+
+- La skip list no establece por sí sola si admite claves repetidas. La implementación debe decidir si se comporta como un conjunto, rechazando duplicados, o como una colección que permite varias apariciones de una misma clave. Si se almacenaran pares clave-valor, también debería decidirse si una clave repetida reemplaza el valor anterior.
+- `insert` y `delete` suelen utilizar un arreglo temporal con los predecesores de cada nivel, lo que permite actualizar los enlaces sin volver hacia atrás. Su implementación se desarrolla en la sección 3.
+- Si ya se tiene una referencia a un nodo, obtener su `successor` cuesta `O(1)`, porque basta con seguir su enlace del nivel inferior.
+- `max` puede reducirse a `O(1)` guardando una referencia al último nodo. De manera similar, optimizar `append` y `concat` requiere guardar el último nodo de cada nivel, a cambio de mantener referencias adicionales.
+- `concat` puede unir directamente dos skip lists cuando sus rangos no se intercalan. Como se conecta un enlace por cada nivel activo, su costo esperado es `O(log n)`; en el peor caso se recorren los `MaxLevel` niveles permitidos, por lo que cuesta `O(MaxLevel)`. Si los rangos se intercalan, se necesita una fusión de `O(n + m)`.
 
 ## 3. Implementación
 
