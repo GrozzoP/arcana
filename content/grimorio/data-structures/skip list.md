@@ -244,7 +244,8 @@ Por otro lado, las desventajas son las siguientes:
 - En su caso de uso de índice en memoria, se asimila al rol que cumple B-Tree en bases de datos relacionales.
 
 ### Notas avanzadas
-
+- **Concurrencia:** Ideal para sistemas multiprocesador. Permite múltiples lecturas y escrituras simultáneas con muy baja contención de bloqueos, siendo mucho más simple de adaptar que los árboles balanceados.
+- **Persistencia:** Su lógica probabilística facilita la creación de versiones "aplicativas" (persistentes) de la estructura, permitiendo conservar estados anteriores de los datos tras una modificación sin necesidad de reescribir toda la lista.
 
 ## 6. Referencias y recursos
 
