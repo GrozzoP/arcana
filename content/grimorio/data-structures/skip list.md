@@ -196,11 +196,11 @@ print(sl.search(9))   # False
 
 ### Cuándo NO usarlo
 
-- Con una memoria limitada o pocos registros, debido a que se requieren muchos punteros extras.
+- Con una memoria limitada/pocos registros, debido a que se requieren muchos punteros extras.
 - Si la cantidad de datos son aptos para estar en un array, y se realizan pocas inserciones.
 - Necesitas garantías acerca del peor caso, porque esta estructura no ofrece límites exactos para esta medida de complejidad.
 - Cuando se precisan estructuras de datos compactas en disco.
-- En sistemas de tiempo real estrictos, donde no es tolerable que una operación tarde más de lo esperado, la skip list, al ser probabilística, no puede garantizar eso.
+- En sistemas de tiempo real estrictos, donde no es tolerable que una operación tarde demasiado, al ser probabilística, no puede garantizar eso.
 
 ### Comparaciones
 | Estructura       | Ventaja frente a Skip List                                      | Desventaja frente a Skip List                       |
@@ -213,38 +213,40 @@ print(sl.search(9))   # False
 ### Ventajas / desventajas
 
 Las ventajas son:
-- Implementación simple, sin rotaciones ni lógica de rebalanceo, y es fácil constituir la concurrencia de forma segur.
+- Implementación simple, sin rotaciones ni lógica de rebalanceo, y es fácil constituir la concurrencia de forma segura.
 - Mantiene los elementos ordenados y permite recorridos por rango eficientes.
-- Se adapta bien a las inserciones y eliminaciones sin necesidad de reequilibrarse _(más fácil de razonar que en un AVL-Tree o Red-Black-Tree)_.
+- Se adapta bien a las inserciones y eliminaciones sin necesidad de reequilibrarse.
 - Complejidad temporal esperada es O(log n) para búsqueda, inserción y eliminación.
 
 Por otro lado, las desventajas son las siguientes:
 - No es determinista, porque el peor caso de las operaciones podría degradarse a O(n) _(todos los nodos quedan en un mismo nivel)_.
-- Mayor uso de memoria por nodo _(en promedio el doble que una lista enlazada simple)_.
-- No es apta para sistemas de tiempo real estrictos que requieren garantías absolutas de peor caso.
+- Mayor uso de memoria por nodo _(el doble que una lista enlazada simple)_.
+- No es apta para sistemas de tiempo real estrictos.
 - Son unidireccionales, no pueden recorrer hacia atrás.
 
 ### Señales de reconocimiento
-Existen varias pistas o situaciones específicas donde puede concluirse que esta estructura de datos es la adecuada:
 - "Necesito una alternativa más simple que un árbol balanceado"
 - "Hay múltiples hilos/procesos leyendo y escribiendo al mismo tiempo"
 - "El orden importa, pero no se necesita garantía absoluta de peor caso"
-- "Queremos un conjunto ordenado por puntaje o ranking"
-- "Se necesita consultar todos los elementos dentro de un rango"
+- "Queremos un conjunto ordenado por puntaje/ranking"
+- "Se necesita consultar todos los elementos de un rango"
 
 ## 5. Relaciones y extensiones
 
 ### Variantes
-
-- Item
+- Indexada
+- Concurrente
+- Determinística
 
 ### Relación con otras estructuras
-
+- El nivel 0 funciona como una Linked List, contiene todos los elementos y funciona como una linked list  convencional.
+- Es similar al AVL-Tree o Red-Black Tree, ya que permiten realizar operaciones en O(log n).
+- En su caso de uso de índice en memoria, se asimila al rol que cumple B-Tree en bases de datos relacionales.
 
 ### Notas avanzadas
 
 
 ## 6. Referencias y recursos
 
-- Item
+- [Skip Lists: A Probabilistic Alternative to Balanced Trees](https://15721.courses.cs.cmu.edu/spring2018/papers/08-oltpindexes1/pugh-skiplists-cacm1990.pdf)
 
