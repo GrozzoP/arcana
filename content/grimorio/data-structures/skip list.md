@@ -9,9 +9,9 @@ alias:
 
 ### Intuición
 
-Una **Lista por Saltos** (Skip List) es una estructura similar a una [[linked list|lista enlazada]], pero cuenta con punteros adicionales que permiten saltear algunos elementos y acceder más rápidamente a la información.
+Una **Lista por Saltos** (Skip List) es una [[linked list|lista enlazada]] con punteros adicionales que te permiten saltarte algunos elementos y acceder más rápidamente a la información.
 
-Esta estructura busca solucionar dos problemas principales. Por un lado, reduce el costo de búsqueda de una lista tradicional, en la que es necesario recorrer los elementos de forma secuencial. Por otro lado, permite obtener un rendimiento de búsqueda similar al de un árbol balanceado, pero sin la necesidad de realizar operaciones de rebalanceo cada vez que se inserta o elimina un elemento.
+Esta estructura soluciona dos problemas principales, evita recorrer todo de forma secuencial como en una lista común y logra una velocidad de búsqueda parecida a la de un árbol balanceado, pero sin rebalancear la estructura cada vez que insertás o borrás algo.
 ### Definición y propiedades
 
 Se trata de una estructura de datos probabilística y jerárquica. Sus principales reglas e invariantes son:
