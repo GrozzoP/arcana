@@ -9,12 +9,12 @@ alias:
 
 ### Intuición
 
-Una **Lista por Saltos** (Skip List) es una [[linked list|lista enlazada]] con punteros adicionales que te permiten saltarte algunos elementos y acceder más rápidamente a la información.
+Una **Lista por Saltos** (Skip List) es una [Linked List](linked%20list.md) con punteros adicionales que te permiten saltarte algunos elementos y acceder rápidamente a la información.
 
-Esta estructura soluciona dos problemas principales, evita recorrer todo de forma secuencial como en una lista común y logra una velocidad de búsqueda parecida a la de un árbol balanceado, pero sin rebalancear la estructura cada vez que insertás o borrás algo.
+Esta estructura soluciona dos problemas principales, evita recorrer todo de forma secuencial como en una lista común y logra una velocidad de búsqueda parecida a la de un árbol balanceado, pero sin rebalancear la estructura cada vez que insertás/borrás algo.
 ### Definición y propiedades
 
-Se trata de una estructura de datos probabilística y jerárquica. Sus principales reglas e invariantes son:
+Es una estructura de datos probabilística y jerárquica. Sus principales reglas e invariantes son:
 
 - **Capa base completa:** El nivel inferior (Nivel 0) es una lista enlazada que contiene todos los elementos insertados, ordenados de menor a mayor.
 
@@ -29,11 +29,11 @@ Se trata de una estructura de datos probabilística y jerárquica. Sus principal
 
 Internamente, la estructura es gestionada por un nodo cabecera (header) sin valor de datos, el cual contiene punteros iniciales para todos los niveles posibles.
 
-![Representacion visual skip list](skipList.svg)
+![](../../attachments/grimorio/data-structures/skipList.svg)
 
 A continuación, se muestra un ejemplo del recorrido para hacer una búsqueda.
 
-![Representacion visual skip list busqueda](skipListBusqueda.svg)
+![](../../attachments/grimorio/data-structures/skipListBusqueda.svg)
 
 ## 2. Operaciones y complejidad
 
@@ -54,7 +54,7 @@ Al conservar las claves ordenadas, también facilita:
 
 Como operaciones especiales:
 
-- **`append(k)`**: agrega una clave al final, siempre que sea mayor que todas las existentes.
+- **`append(k)`**: agrega una clave al final, si es mayor que todas las existentes.
 - **`concat(A, B)`**: une directamente dos skip lists si todas las claves de `A` son menores que las de `B`. Si sus rangos se intercalan, se realiza un merge.
 
 ### 2.2 Complejidad temporal y espacial
@@ -87,11 +87,11 @@ El espacio total es `O(n)` esperado, porque cada nodo almacena una cantidad prom
 
 ### Idea de implementación
 
-Un Skip List es una lista enlazada ordenada con niveles extra de "atajos". Cada nodo tiene un valor `key` y un arreglo `forward[]` con un puntero por cada nivel en el que participa. La lista en sí misma mantiene un `level` (el nivel más alto actualmente en uso) y un nodo `head` sentinela con punteros a todos los niveles posibles. Además, define dos parámetros fijos: `MAX_LEVEL`, el tope que ningún nodo puede superar, y `P`, la probabilidad que gobierna cuántos niveles alcanza cada nodo nuevo.
+Cada nodo tiene un valor `key` y un arreglo `forward[]` con un puntero por cada nivel en el que participa. La lista en sí misma mantiene un `level` _(el nivel más alto actualmente en uso)_ y un nodo `head` sentinela con punteros a todos los niveles posibles. Además, define dos parámetros fijos: `MAX_LEVEL`, el tope que ningún nodo puede superar, y `P`, la probabilidad que gobierna cuántos niveles alcanza cada nodo nuevo.
 
 - Buscar una clave se hace de arriba hacia abajo: en el nivel más alto se avanza mientras el siguiente nodo sea menor a la clave buscada; cuando no se puede avanzar más, se baja un nivel. Al llegar al nivel 0, el siguiente nodo es el candidato.
 
-- Para `insert` se hace ese mismo recorrido, pero guardando en un arreglo `update[]` el último nodo visitado en cada nivel. Después se sortea el nivel del nuevo nodo mediante un proceso aleatorio: se sube un nivel con probabilidad `P` en cada paso, hasta un tope `MAX_LEVEL` (y si ese nivel supera al `level` actual de la lista, este se actualiza). Una vez determinado el nivel, se enlaza el nuevo nodo en cada uno de sus niveles usando `update[]`.
+- Para `insert` se hace ese mismo recorrido, guardando en `update[]` el último nodo visitado en cada nivel. Luego se sortea el nivel del nuevo nodo (subiendo con probabilidad P en cada paso, hasta `MAX_LEVEL`), actualizando el level de la lista si se supera. Finalmente, se enlaza el nodo en cada nivel usando `update[]`.
 
 - `delete` hace el mismo recorrido para obtener `update[]`, y si el nodo existe, lo desenlaza en cada nivel donde aparecía, ajustando `forward` de cada `update[i]`.
 
@@ -192,34 +192,34 @@ print(sl.search(9))   # False
 - Búsqueda de un rango de valores en un conjunto ordenado.
 - Trabajar con índices en memoria _(Memtables)_ para guardar datos en memoria antes de grabarlos en disco.
 - Cuando preferís el equilibrio probabilístico _(azar)_ en lugar de del reequilibrio determinístico _(en cada operación, se corrige y se verifica para que cumpla con ciertas reglas, como en un AVL-Tree o Red-Black-Tree)_.
-- Si se requiere una estructura fácil de versionar, sin presenciar reestructuraciones como las rotaciones de un árbol.
+- Si se requiere una estructura fácil de versionar, sin reestructuraciones como las de un árbol.
 
 ### Cuándo NO usarlo
 
-- Con una memoria limitada/pocos registros, debido a que se requieren muchos punteros extras.
-- Si la cantidad de datos son aptos para estar en un array, y se realizan pocas inserciones.
-- Necesitas garantías acerca del peor caso, porque esta estructura no ofrece límites exactos para esta medida de complejidad.
+- Con una memoria limitada/pocos registros, porque se necesitan muchos punteros extras.
+- Si la cantidad de datos son aptos para un array y se realizan pocas inserciones.
+- Necesitas garantías acerca del peor caso.
 - Cuando se precisan estructuras de datos compactas en disco.
-- En sistemas de tiempo real estrictos, donde no es tolerable que una operación tarde demasiado, al ser probabilística, no puede garantizar eso.
+- En sistemas de tiempo real estrictos.
 
 ### Comparaciones
 | Estructura       | Ventaja frente a Skip List                                      | Desventaja frente a Skip List                       |
 | ---------------- | ----------------------------------------------------------- | ----------------------------------------------- |
-| Lista enlazada            | Menor uso de memoria _(un puntero por nodo)_               | La búsqueda es O(n), sin niveles para saltar                |
+| Lista enlazada            | Menor uso de memoria _(puntero por nodo)_               | La búsqueda es O(n), sin niveles para saltar                |
 | Array   | Menor uso de memoria y acceso por índice                          | Inserciones/eliminaciones cuestan O(n)                           |
-| Árbol balanceado | Garantiza O(log n) en el peor caso, no solo en promedio | Más complejo de implementar y de utilizarlo de forma concurrente       |
+| Árbol balanceado | Garantiza O(log n) en el peor caso | Más complejo de implementar y de utilizarlo de forma concurrente       |
 | Tabla de hash          | Acceso promedio O(1), más rápido para búsqueda puntual         | No mantiene orden ni permite recorridos por rango                   |
 
 ### Ventajas / desventajas
 
 Las ventajas son:
-- Implementación simple, sin rotaciones ni lógica de rebalanceo, y es fácil constituir la concurrencia de forma segura.
+- Implementación simple, sin rotaciones ni lógica de rebalanceo.
 - Mantiene los elementos ordenados y permite recorridos por rango eficientes.
 - Se adapta bien a las inserciones y eliminaciones sin necesidad de reequilibrarse.
 - Complejidad temporal esperada es O(log n) para búsqueda, inserción y eliminación.
 
 Por otro lado, las desventajas son las siguientes:
-- No es determinista, porque el peor caso de las operaciones podría degradarse a O(n) _(todos los nodos quedan en un mismo nivel)_.
+- En el peor caso de las operaciones podría degradarse a O(n).
 - Mayor uso de memoria por nodo _(el doble que una lista enlazada simple)_.
 - No es apta para sistemas de tiempo real estrictos.
 - Son unidireccionales, no pueden recorrer hacia atrás.
@@ -228,7 +228,6 @@ Por otro lado, las desventajas son las siguientes:
 - "Necesito una alternativa más simple que un árbol balanceado"
 - "Hay múltiples hilos/procesos leyendo y escribiendo al mismo tiempo"
 - "El orden importa, pero no se necesita garantía absoluta de peor caso"
-- "Queremos un conjunto ordenado por puntaje/ranking"
 - "Se necesita consultar todos los elementos de un rango"
 
 ## 5. Relaciones y extensiones
