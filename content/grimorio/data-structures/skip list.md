@@ -160,9 +160,10 @@ class SkipList:
         if target is None or target.key != key:
             return  # no existe
         for i in range(self.level + 1):
-            if update[i].forward[i] != target:
-                break
-            update[i].forward[i] = target.forward[i]
+            if update[i].forward[i] == target:
+                update[i].forward[i] = target.forward[i]
+        while self.level > 0 and self.head.forward[self.level] is None:
+            self.level -= 1
 ```
 
 #### Ejemplo de uso
@@ -201,7 +202,7 @@ print(sl.search(9))   # False
 | Lista enlazada            | Menor uso de memoria _(puntero por nodo)_               | La búsqueda es O(n), sin niveles para saltar                |
 | Array   | Menor uso de memoria y acceso por índice                          | Inserciones/eliminaciones cuestan O(n)                           |
 | Árbol balanceado | Garantiza O(log n) en el peor caso | Más complejo de implementar y de utilizarlo de forma concurrente       |
-| Tabla de hash          | Acceso promedio O(1), más rápido para búsqueda puntual         | No mantiene orden ni permite recorridos por rango                   |
+| Tabla de hash          | Acceso promedio O(1)        | No mantiene orden ni permite recorridos por rango                   |
 
 ### Ventajas / desventajas
 
@@ -232,8 +233,8 @@ Por otro lado, las desventajas son las siguientes:
 
 ### Relación con otras estructuras
 - El nivel 0 funciona como una Linked List, contiene todos los elementos y funciona como una linked list  convencional.
-- Es similar al AVL-Tree o Red-Black Tree, ya que permiten realizar operaciones en O(log n).
-- En su caso de uso de índice en memoria, se asimila al rol que cumple B-Tree en bases de datos relacionales.
+- Es similar al AVL-Tree/Red-Black Tree, ya que permiten realizar operaciones en O(log n).
+- Para el uso de índice en memoria, se asimila al rol del B-Tree en bases de datos relacionales.
 
 ### Notas avanzadas
 - **Concurrencia:** Ideal para sistemas multiprocesador. Permite múltiples lecturas y escrituras simultáneas con muy baja contención de bloqueos, siendo mucho más simple de adaptar que los árboles balanceados.
