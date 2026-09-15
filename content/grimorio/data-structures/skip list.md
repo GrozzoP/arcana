@@ -80,10 +80,10 @@ El espacio total es `O(n)` esperado, porque cada nodo almacena una cantidad prom
 
 ### Idea de implementación
 
-Para la implantación se usa un `Node` con un valor `key` y un arreglo `forward[]` con punteros para cada nivel donde participa. La lista `SkipList` mantiene un nodo `head` centinela y un `level` (el nivel más alto en uso), además de dos parámetros fijos: `MAX_LEVEL` (límite de altura) y `P` (probabilidad que define cuántos niveles alcanza cada nodo nuevo).
+Para la implementación se usa un `Node` con un valor `key` y un arreglo `forward[]` con punteros para cada nivel donde participa. La lista `SkipList` mantiene un nodo `head` centinela y un `level` (el nivel más alto en uso), además de dos parámetros fijos: `MAX_LEVEL` (límite de altura) y `P` (probabilidad que define cuántos niveles alcanza cada nodo nuevo).
 
 - **`search`**: se avanza desde el nivel más alto mientras el siguiente nodo sea menor a la clave buscada. Cuando no se puede avanzar más, se baja un nivel hasta llegar al nivel 0 en donde el siguiente nodo es el candidato.
-- **`insert`**: hace el mismo recorrido guardando en `update[]` el último nodo visitado por nivel. Luego sortea la altura del nuevo nodo (sube de nivel con probabilidad `P`), actualiza `level` si hace falta y y lo enlaza en cada nivel usando `update[]`.
+- **`insert`**: hace el mismo recorrido guardando en `update[]` el último nodo visitado por nivel. Luego sortea la altura del nuevo nodo (sube de nivel con probabilidad `P`), actualiza `level` si hace falta y lo enlaza en cada nivel usando `update[]`.
 - **`delete`**: repite el recorrido para obtener `update[]` y, si la clave existe, desenlaza el nodo ajustando `forward` de cada `update[]`.
 
 ### Invariantes
