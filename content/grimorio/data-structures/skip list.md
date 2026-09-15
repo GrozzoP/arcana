@@ -80,22 +80,19 @@ El espacio total es `O(n)` esperado, porque cada nodo almacena una cantidad prom
 
 ### Idea de implementación
 
-Cada nodo tiene un valor `key` y un arreglo `forward[]` con un puntero por cada nivel en el que participa. La lista en sí misma mantiene un `level` _(el nivel más alto actualmente en uso)_ y un nodo `head` sentinela con punteros a todos los niveles posibles. Además, define dos parámetros fijos: `MAX_LEVEL`, el tope que ningún nodo puede superar, y `P`, la probabilidad que gobierna cuántos niveles alcanza cada nodo nuevo.
+Para la implantación se usa un `Node` con un valor `key` y un arreglo `forward[]` con punteros para cada nivel donde participa. La lista `SkipList` mantiene un nodo `head` centinela y un `level` (el nivel más alto en uso), además de dos parámetros fijos: `MAX_LEVEL` (límite de altura) y `P` (probabilidad que define cuántos niveles alcanza cada nodo nuevo).
 
-- Buscar una clave se hace de arriba hacia abajo: en el nivel más alto se avanza mientras el siguiente nodo sea menor a la clave buscada; cuando no se puede avanzar más, se baja un nivel. Al llegar al nivel 0, el siguiente nodo es el candidato.
-
-- Para `insert` se hace ese mismo recorrido, guardando en `update[]` el último nodo visitado en cada nivel. Luego se sortea el nivel del nuevo nodo (subiendo con probabilidad P en cada paso, hasta `MAX_LEVEL`), actualizando el level de la lista si se supera. Finalmente, se enlaza el nodo en cada nivel usando `update[]`.
-
-- `delete` hace el mismo recorrido para obtener `update[]`, y si el nodo existe, lo desenlaza en cada nivel donde aparecía, ajustando `forward` de cada `update[i]`.
-
+- **`search`**: se avanza desde el nivel más alto mientras el siguiente nodo sea menor a la clave buscada. Cuando no se puede avanzar más, se baja un nivel hasta llegar al nivel 0 en donde el siguiente nodo es el candidato.
+- **`insert`**: hace el mismo recorrido guardando en `update[]` el último nodo visitado por nivel. Luego sortea la altura del nuevo nodo (sube de nivel con probabilidad `P`), actualiza `level` si hace falta y y lo enlaza en cada nivel usando `update[]`.
+- **`delete`**: repite el recorrido para obtener `update[]` y, si la clave existe, desenlaza el nodo ajustando `forward` de cada `update[]`.
 
 ### Invariantes
 
-- Los niveles están anidados: todo nodo presente en el nivel *i* también está en el nivel *i-1* (y así hasta el nivel 0, donde están todos los elementos).
-- Cada nivel mantiene los elementos ordenados por clave.
-- El nivel de un nodo se fija al insertarlo (no cambia salvo que se borre y reinserte).
-- `head` siempre existe y tiene punteros válidos (o `None`) en los `MAX_LEVEL` niveles.
-- El nivel "activo" de la lista (`self.level`) nunca supera `MAX_LEVEL`, y solo crece cuando un nodo insertado sortea un nivel mayor al actual.
+- Los niveles están anidados: cualquier nodo presente en el nivel *i* también está en todos los niveles inferiores hasta el 0.
+- Cada nivel mantiene sus elementos ordenados por clave.
+- El nivel de un nodo se define al insertarlo y no cambia.
+- `head` siempre existe y tiene punteros válidos (o `None`) en sus `MAX_LEVEL` niveles.
+- El nivel activo de la lista (`self.level`) nunca supera `MAX_LEVEL`.
 
 ### Ejemplo de código
 
