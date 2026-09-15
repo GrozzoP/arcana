@@ -41,7 +41,7 @@ A continuación, se muestra un ejemplo del recorrido para hacer una búsqueda.
 
 Las operaciones básicas son:
 
-- **`find(k)`**: localiza un elemento a partir de su clave.
+- **`search(k)`**: localiza un elemento a partir de su clave.
 - **`insert(k)`**: agrega una clave en orden.
 - **`delete(k)`**: elimina una clave de todos los niveles en los que participa.
 - **`min()` / `max()`**: devuelven el primer y el último elemento.
@@ -55,7 +55,7 @@ Las operaciones básicas son:
 
 | Operación | Tiempo esperado | Peor caso |
 |---|---:|---:|
-| `find`, `insert`, `delete` | `O(log n)` | `O(n)` |
+| `search`, `insert`, `delete` | `O(log n)` | `O(n)` |
 | `range`, con `k` resultados | `O(log n + k)` | `O(n)` |
 | `min` | `O(1)` | `O(1)` |
 | `max` | `O(log n)` | `O(n)` |
