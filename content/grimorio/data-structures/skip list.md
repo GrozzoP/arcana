@@ -84,7 +84,7 @@ Para la implementación se usa un `Node` con un valor `key` y un arreglo `forwar
 
 - **`search`**: se avanza desde el nivel más alto mientras el siguiente nodo sea menor a la clave buscada. Cuando no se puede avanzar más, se baja un nivel hasta llegar al nivel 0 en donde el siguiente nodo es el candidato.
 - **`insert`**: hace el mismo recorrido guardando en `update[]` el último nodo visitado por nivel. Luego sortea la altura del nuevo nodo (sube de nivel con probabilidad `P`), actualiza `level` si hace falta y lo enlaza en cada nivel usando `update[]`.
-- **`delete`**: repite el recorrido para obtener `update[]` y, si la clave existe, desenlaza el nodo ajustando `forward` de cada `update[]`.
+- **`delete`**: repite el recorrido para obtener `update[]` y, si la clave existe, desenlaza el nodo ajustando `forward` de cada `update[]`, y reduce `level` si el nivel más alto quedó vacío.
 
 ### Invariantes
 
