@@ -130,7 +130,7 @@ class SkipList:
         update = [None] * (MAX_LEVEL + 1)
         node = self.head
         for i in range(self.level, -1, -1):
-            while node.forward[i] and node.forward[i].key < key:
+            while node.forward[i] and node.forward[i].key <= key:
                 node = node.forward[i]
             update[i] = node
 
@@ -146,19 +146,26 @@ class SkipList:
             update[i].forward[i] = new_node
 
     def delete(self, key):
-        update = [None] * (MAX_LEVEL + 1)
+        node = self.head
+        tail = None
+        while node.forward[0] and node.forward[0].key <= key:
+            node = node.forward[0]
+            if node.key == key:
+                tail = node
+        if tail is None:
+            return
+
+        update = [None] * (self.level + 1)
         node = self.head
         for i in range(self.level, -1, -1):
-            while node.forward[i] and node.forward[i].key < key:
+            while node.forward[i] and node.forward[i] is not tail and node.forward[i].key <= key:
                 node = node.forward[i]
             update[i] = node
 
-        target = node.forward[0]
-        if target is None or target.key != key:
-            return  # no existe
         for i in range(self.level + 1):
-            if update[i].forward[i] == target:
-                update[i].forward[i] = target.forward[i]
+            if update[i].forward[i] is tail:
+                update[i].forward[i] = tail.forward[i]
+
         while self.level > 0 and self.head.forward[self.level] is None:
             self.level -= 1
 ```
@@ -242,4 +249,5 @@ Por otro lado, las desventajas son las siguientes:
 - [Skip Lists: A Probabilistic Alternative to Balanced Trees](https://15721.courses.cs.cmu.edu/spring2018/papers/08-oltpindexes1/pugh-skiplists-cacm1990.pdf)
 - [What Cannot be Skipped About the Skiplist](https://arxiv.org/html/2403.04582v2)
 - [[BRA2008]] - Capítulo 3.10: [Skip Lists: Randomized Data Structures]
+- [Diseño Skip List](https://skiplist.readthedocs.io/en/latest/design.html)
 
